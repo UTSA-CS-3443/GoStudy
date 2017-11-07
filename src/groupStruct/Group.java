@@ -8,7 +8,7 @@ public class Group {
 	private String locationNotes;
 	private String time; //is there a time class? predefined times
 	private String access; //Public or private
-	private int seatLimit;
+	private String seatLimit;
 	
 	public String getGroupName() {
 		return groupName;
@@ -46,10 +46,10 @@ public class Group {
 	public void setAccess(String access) {
 		this.access = access;
 	}
-	public int getSeatLimit() {
+	public String getSeatLimit() {
 		return seatLimit;
 	}
-	public void setSeatLimit(int seatLimit) {
+	public void setSeatLimit(String seatLimit) {
 		this.seatLimit = seatLimit;
 	}
 	public String getLocationNotes() {
