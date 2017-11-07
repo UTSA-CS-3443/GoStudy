@@ -12,8 +12,17 @@ public class FileRead {
 	 //takes file as parameter, loops through line by line and creates a group
 	 public Group constructGroup(File file) {
 		 Group group = new Group();
-		 //BufferedReader br = new BufferedReader(new FileReader(file)); //try catch, why needed, where does stuff go?
-		 //group.setGroupName(br.readLine());
+		 BufferedReader br = null;
+		 try {
+			br = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} //try catch, why needed, where does stuff go?
+		 try {
+			group.setGroupName(br.readLine());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		 return group;
 	 }
 }
