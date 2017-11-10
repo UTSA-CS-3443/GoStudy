@@ -1,8 +1,14 @@
 package main;
 
+import groupStruct.Group;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 
 public class MyGroupsController {
@@ -17,13 +23,45 @@ public class MyGroupsController {
     @FXML private Label totalSpotsLabel;
     @FXML private Label openSpotsLabel;
     @FXML private Label meetingTimeLabel;
+    @FXML private Label groupNameLabel;
+    @FXML private ListView<Group> apartOfGroupListView;
+    @FXML private ListView<Group> ownGroupListView;
 
+    //a temporary way to test myGroupController ListViewers
+    private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
+    
+    //initialize controller
+    public void initialize() {
+    	myGroups.add(GoStudyMain.group1);
+    	myGroups.add(GoStudyMain.group2);
+    	
+    	ownGroupListView.setItems(myGroups);
+    	
+    	ownGroupListView.getSelectionModel().selectedItemProperty().addListener(
+    			new ChangeListener<Group>() {
+    				@Override
+    				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
+    					groupNameLabel.setText(newValue.getGroupName());
+    					buildingLabel.setText(newValue.getLocation());
+    					meetingAreaLabel.setText(newValue.getLocationNotes());
+    					openSpotsLabel.setText(newValue.getSeatLimit());
+    					totalSpotsLabel.setText(newValue.getSeatLimit());
+    					meetingTimeLabel.setText(newValue.getTime());
+    					classLabel.setText(newValue.getClassName());
+    					visibilityLabel.setText(newValue.getAccess());
+    				}
+    			}
+    			
+    			);
+    }
+    
+    
+    
     /*
-     *	These Action events are specific to the Find a Group
+     *	These Action events are specific to the My Groups
      *	Controller.
      */
 
-    
     @FXML
     void sendInvitesButtonPressed(ActionEvent event) {
 

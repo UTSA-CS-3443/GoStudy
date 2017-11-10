@@ -1,8 +1,8 @@
 package main;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -26,10 +26,10 @@ public class CreateGroupController {
     @FXML private TextField buildingTextField;
     @FXML private TextField groupNameTextField;
     @FXML private TextField classTextField;
+    @FXML private TextField majorTextField;
     @FXML private TextArea emailInvitesTextArea;
     @FXML private RadioButton publicRadioButton;
     @FXML private RadioButton privateRadioButton;
-    @FXML private ChoiceBox<?> majorChoiceBox;
     @FXML private Label userIdLabel;
     @FXML private ToggleGroup visibilityToggleGroup;
     
@@ -41,7 +41,6 @@ public class CreateGroupController {
     @FXML private Label errSpots;
     @FXML private Label errGroupName;
     @FXML private Label errEmail;
-    @FXML private Label errRoomNumber;
     @FXML private Label errVisibility;
     @FXML private Label errClass;
     

@@ -19,6 +19,10 @@ public class GoStudyMain extends Application{
 	private static Stage main_stage;
 	static Pane root;
 	
+	public static ArrayList<Group> groupList = FileRead.constructList();
+	public static Group group1 = groupList.get(0);
+	public static Group group2 = groupList.get(1);
+	
 	//switches to the screen given from name. name should NOT include ".fxml" at the end
 	public static void new_child(String name) {
 		root.getChildren().clear();
@@ -69,9 +73,6 @@ public class GoStudyMain extends Application{
 	}
 	
 	public static void main(String[] args) {
-		ArrayList<Group> groupList = FileRead.constructList();
-		Group group1 = groupList.get(0);
-		Group group2 = groupList.get(1);
 		System.out.println(group1.getGroupName());
 		System.out.println(group2.getGroupName());
 		

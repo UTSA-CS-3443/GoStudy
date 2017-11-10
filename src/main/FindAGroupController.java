@@ -23,7 +23,7 @@ public class FindAGroupController {
     @FXML private Label totalSpotsLabel;
     @FXML private TextField buildingTextField;
     @FXML private TextField nameTextField;
-    @FXML private ChoiceBox<String> majorChoiceBox;
+    @FXML private TextField majorTextField;
     @FXML private ListView<?> foundGroupsListView;
     @FXML private TextField classTextField;  
     
