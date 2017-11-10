@@ -1,8 +1,12 @@
 package main;
 
+import groupStruct.Group;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -23,11 +27,38 @@ public class FindAGroupController {
     @FXML private Label totalSpotsLabel;
     @FXML private TextField buildingTextField;
     @FXML private TextField nameTextField;
+    @FXML private Label groupNameLabel;
     @FXML private TextField majorTextField;
-    @FXML private ListView<?> foundGroupsListView;
+    @FXML private ListView<Group> foundGroupsListView;
     @FXML private TextField classTextField;  
     
-    		
+    //findAGroupController ObservableLists
+    private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
+    
+    public void initialize() {
+    foundGroups.addAll(GoStudyMain.groupList);
+	
+	foundGroupsListView.setItems(foundGroups);
+	
+	foundGroupsListView.getSelectionModel().selectedItemProperty().addListener(
+			new ChangeListener<Group>() {
+				@Override
+				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
+					groupNameLabel.setText(newValue.getGroupName());
+					buildingLabel.setText(newValue.getLocation());
+					meetingAreaLabel.setText(newValue.getLocationNotes());
+					openSpotsLabel.setText(newValue.getSeatLimit());
+					totalSpotsLabel.setText(newValue.getSeatLimit());
+					meetingTimeLabel.setText(newValue.getTime());
+					classLabel.setText(newValue.getClassName());
+					visibilityLabel.setText(newValue.getAccess());
+					majorLabel.setText(newValue.getClassName().substring(0,2));
+				}
+			} );
+    }
+    
+    
+    
     /*
      *	These Action events are specific to the Find a Group 
      *	Controller.
@@ -38,6 +69,7 @@ public class FindAGroupController {
     void searchButtonPressed(ActionEvent event) {
     	//perhaps create a search function that can be overloaded and pass the values from the text field as values?
     	//then search public groups for those things
+    	//
 
     }
 
@@ -73,7 +105,7 @@ public class FindAGroupController {
 
     @FXML
     void mapButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Map");
     }
 
     @FXML

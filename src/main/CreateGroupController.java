@@ -101,7 +101,7 @@ public class CreateGroupController {
     //handles Map Button pressed ActionEvent
     @FXML
     void mapButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Map");
     }
     
     //handles Settings button pressed Action Event

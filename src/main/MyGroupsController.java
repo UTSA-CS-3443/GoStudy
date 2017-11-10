@@ -27,13 +27,16 @@ public class MyGroupsController {
     @FXML private ListView<Group> apartOfGroupListView;
     @FXML private ListView<Group> ownGroupListView;
 
-    //a temporary way to test myGroupController ListViewers
+    //myGroupController ObservableLists
     private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
+    private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
     //initialize controller
     public void initialize() {
-    	myGroups.add(GoStudyMain.group1);
-    	myGroups.add(GoStudyMain.group2);
+    	
+    	//creates ObservableList for Owned Groups
+    	//change this to GoStudyMain.groupList to array of user's created groups
+    	myGroups.addAll(GoStudyMain.groupList);
     	
     	ownGroupListView.setItems(myGroups);
     	
@@ -49,10 +52,33 @@ public class MyGroupsController {
     					meetingTimeLabel.setText(newValue.getTime());
     					classLabel.setText(newValue.getClassName());
     					visibilityLabel.setText(newValue.getAccess());
+    					majorLabel.setText(newValue.getClassName().substring(0,2));
+    					ownerHBox.setVisible(true);
     				}
-    			}
-    			
-    			);
+    			} );
+    	
+    	//creates observableList for Groups the user is apart of
+    	//change GoStudyMain.groupList to array of groups the user is in.
+    	otherGroups.addAll(GoStudyMain.groupList);
+    	
+    	apartOfGroupListView.setItems(myGroups);
+    	
+    	apartOfGroupListView.getSelectionModel().selectedItemProperty().addListener(
+    			new ChangeListener<Group>() {
+    				@Override
+    				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
+    					groupNameLabel.setText(newValue.getGroupName());
+    					buildingLabel.setText(newValue.getLocation());
+    					meetingAreaLabel.setText(newValue.getLocationNotes());
+    					openSpotsLabel.setText(newValue.getSeatLimit());
+    					totalSpotsLabel.setText(newValue.getSeatLimit());
+    					meetingTimeLabel.setText(newValue.getTime());
+    					classLabel.setText(newValue.getClassName());
+    					visibilityLabel.setText(newValue.getAccess());
+    					majorLabel.setText(newValue.getClassName().substring(0,2));
+    					ownerHBox.setVisible(false);
+    				}
+    			} );
     }
     
     
@@ -110,7 +136,7 @@ public class MyGroupsController {
     //handles Map Button pressed ActionEvent
     @FXML
     void mapButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Map");
     }
 
     //handles Settings button pressed Action Event

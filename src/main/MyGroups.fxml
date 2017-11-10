@@ -86,7 +86,7 @@
          <center>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="543.0" prefWidth="302.0">
+                  <VBox prefHeight="543.0" prefWidth="749.0">
                      <children>
                         <Label fx:id="groupNameLabel" text="Group Name" underline="true">
                            <font>
@@ -96,10 +96,10 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane>
+                        <GridPane prefHeight="242.0" prefWidth="287.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="360.0" minWidth="10.0" prefWidth="148.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="581.0" minWidth="10.0" prefWidth="581.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -125,10 +125,10 @@
                               <Label text="Meeting Time:" GridPane.rowIndex="5" />
                               <Label fx:id="meetingTimeLabel" text="meetingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Label text="Spots Available:" GridPane.rowIndex="6" />
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                                  <children>
                                     <Label fx:id="openSpotsLabel" text="openSpotsLabel" />
-                                    <Label text="out of" />
+                                    <Label text=" out of " />
                                     <Label fx:id="totalSpotsLabel" text="totalSpotsLabel" />
                                  </children>
                               </HBox>

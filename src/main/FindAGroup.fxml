@@ -127,7 +127,7 @@
                <children>
                   <VBox prefHeight="543.0" prefWidth="302.0">
                      <children>
-                        <Label text="Group Name" underline="true">
+                        <Label fx:id="groupNameLabel" text="Group Name" underline="true">
                            <font>
                               <Font size="48.0" />
                            </font>
@@ -164,10 +164,10 @@
                               <Label text="Meeting Time:" GridPane.rowIndex="5" />
                               <Label fx:id="meetingTimeLabel" text="meetingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Label text="Spots Available:" GridPane.rowIndex="6" />
-                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.valignment="CENTER">
                                  <children>
                                     <Label fx:id="openSpotsLabel" text="openSpotsLabel" />
-                                    <Label text="out of" />
+                                    <Label text=" out of " />
                                     <Label fx:id="totalSpotsLabel" text="totalSpotsLabel" />
                                  </children>
                               </HBox>
