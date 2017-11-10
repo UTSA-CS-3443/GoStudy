@@ -54,13 +54,13 @@ public class MyGroupsController {
     //handles My Groups button pressed ActionEvent
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("MyGroups");
     }
     
     //handles Find a Group button pressed ActionEvent
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("FindAGroup");
     }
 
     //handles Create a Group button pressed ActionEvent

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
@@ -77,10 +78,11 @@
                         </Label>
                      </children>
                   </HBox>
-                  <GridPane hgap="5.0" layoutX="246.0" layoutY="69.0" prefHeight="401.0" prefWidth="362.0">
+                  <GridPane hgap="5.0" layoutX="246.0" layoutY="76.0" prefHeight="394.0" prefWidth="562.0">
                     <columnConstraints>
                       <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -99,7 +101,6 @@
                         <Label text="Class :" GridPane.rowIndex="2" />
                         <TextField fx:id="groupNameTextField" GridPane.columnIndex="1" />
                         <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <ChoiceBox fx:id="majorChoiceBox" prefHeight="25.0" prefWidth="199.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="Building :" GridPane.rowIndex="3" />
                         <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <TextField fx:id="roomNumberTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -131,6 +132,16 @@
                               <Label text="(Separated by commas)" textFill="#a1a1a1" />
                            </children>
                         </VBox>
+                        <TextField fx:id="majorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="errGroupName" text="Invalid Group Name" textFill="RED" visible="false" GridPane.columnIndex="2" />
+                        <Label fx:id="errMajor" text="Invalid Major" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="errClass" text="Invalid Class" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="errBuilding" text="Invalid Building" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="errRoomNumber" focusTraversable="false" text="Invalid Room Number" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label fx:id="errMeetingtime" focusTraversable="false" text="Invalid Meeting Time" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label fx:id="errSpots" focusTraversable="false" text="Invalid Number of Spots" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label fx:id="errVisibility" focusTraversable="false" text="Please select a visibility" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <Label fx:id="errEmail" focusTraversable="false" text="Invalid email" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                      </children>
                      <padding>
                         <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />

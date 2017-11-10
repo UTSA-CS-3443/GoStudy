@@ -2,9 +2,6 @@ package main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -13,6 +10,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 public class CreateGroupController {
+	
+	//an incomplete list of majors which can be used later ensure a valid major is entered.
+		/*
+		* 	"AIS","ACC","MATE","ASC","AFS","AAS","AMS","ANT","AIM","ARA","ARC","ART","AHC","AST","BBL","BIO","BME",
+		*	"BLW","BOH","CME","CHE","CHN","CE","CLA","CSS","COA","COM","CSH","CPE","CS","CSM","COU","CRJ","CRJ","C&I","DAN","DA","DEM","ECE",
+		*	"EDU","EDL","EDP","EE","EGR","ENG","ESL","EIS","ENT","ES","ES","FACT","FM","FIN","FL","FRN","GBA","GEM","GRG","GES","GEO","GER",
+		*	"GLA","GSL","GRK","HTH","HSA","HIS","HON"
+		*/
 
 	//instance variables which refer to GUI components
     @FXML private TextField roomNumberTextField;
@@ -27,7 +32,19 @@ public class CreateGroupController {
     @FXML private ChoiceBox<?> majorChoiceBox;
     @FXML private Label userIdLabel;
     @FXML private ToggleGroup visibilityToggleGroup;
- 
+    
+    //labels which can be set to visible in case there is an issue creating a group,
+    //and an error needs to be displayed to the user
+    @FXML private Label errMajor;
+    @FXML private Label errBuilding;  
+    @FXML private Label errMeetingtime;
+    @FXML private Label errSpots;
+    @FXML private Label errGroupName;
+    @FXML private Label errEmail;
+    @FXML private Label errRoomNumber;
+    @FXML private Label errVisibility;
+    @FXML private Label errClass;
+    
     /*
      *	These Action events are specific to the Create Group 
      *	Controller.
@@ -73,7 +90,7 @@ public class CreateGroupController {
     //handles Find a Group button pressed ActionEvent
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("FindAGroup");
     }
 
     //handles Create a Group button pressed ActionEvent
