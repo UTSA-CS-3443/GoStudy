@@ -103,8 +103,8 @@
                         <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Building :" GridPane.rowIndex="3" />
                         <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="roomNumberTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="Room Number :" GridPane.rowIndex="4" />
+                        <TextField fx:id="meetingAreaTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label text="MeetingArea :" GridPane.rowIndex="4" />
                         <Label text="Meeting Time :" GridPane.rowIndex="5" />
                         <TextField fx:id="meetingTimeTextBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label text="Spots Available :" GridPane.rowIndex="6" />

@@ -11,7 +11,7 @@ public class MyGroupsController {
     @FXML private Label visibilityLabel;
     @FXML private Label ownerLabel;
     @FXML private Label classLabel;
-    @FXML private Label roomNumberLabel;
+    @FXML private Label buildingLabel;
     @FXML private Label majorLabel;
     @FXML private Label meetingAreaLabel;
     @FXML private Label totalSpotsLabel;

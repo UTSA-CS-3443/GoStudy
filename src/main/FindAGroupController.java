@@ -17,11 +17,11 @@ public class FindAGroupController {
     @FXML private Label classLabel;
     @FXML private Label openSpotsLabel;
     @FXML private Label meetingTimeLabel;
-    @FXML private Label roomNumberLabel;
-    @FXML private Label majorLabel;
     @FXML private Label meetingAreaLabel;
+    @FXML private Label majorLabel;
+    @FXML private Label buildingLabel;
     @FXML private Label totalSpotsLabel;
-    @FXML private TextField meetingAreaTextField;
+    @FXML private TextField buildingTextField;
     @FXML private TextField nameTextField;
     @FXML private ChoiceBox<String> majorChoiceBox;
     @FXML private ListView<?> foundGroupsListView;

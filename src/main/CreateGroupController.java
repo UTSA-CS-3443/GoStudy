@@ -20,7 +20,7 @@ public class CreateGroupController {
 		*/
 
 	//instance variables which refer to GUI components
-    @FXML private TextField roomNumberTextField;
+    @FXML private TextField meetingAreaTextField;
     @FXML private TextField spotsAvailableTextField;
     @FXML private TextField meetingTimeTextBox;
     @FXML private TextField buildingTextField;

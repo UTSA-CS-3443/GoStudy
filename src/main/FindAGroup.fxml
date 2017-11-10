@@ -95,10 +95,10 @@
                               <Label text="Name:" />
                               <Label text="Major:" GridPane.rowIndex="1" />
                               <Label text="Class:" GridPane.rowIndex="2" />
-                              <Label text="Meeting Area:" GridPane.rowIndex="3" />
+                              <Label text="Building:" GridPane.rowIndex="3" />
                               <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
                               <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="meetingAreaTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <TextField fx:id="majorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                            <padding>
@@ -154,13 +154,13 @@
                               <Label text="Owner:" />
                               <Label text="Major:" GridPane.rowIndex="1" />
                               <Label text="Class:" GridPane.rowIndex="2" />
-                              <Label text="Meeting Area:" GridPane.rowIndex="3" />
-                              <Label text="Room Number:" GridPane.rowIndex="4" />
+                              <Label text="Building:" GridPane.rowIndex="3" />
+                              <Label text="Meeting Area:" GridPane.rowIndex="4" />
                               <Label fx:id="ownerLabel" text="ownerLabel" GridPane.columnIndex="1" />
                               <Label fx:id="majorLabel" text="majorLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="classLabel" text="classLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <Label fx:id="meetingAreaLabel" text="meetingAreaLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="roomNumberLabel" text="roomNumberLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="buildingLabel" text="buildingLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <Label fx:id="meetingAreaLabel" text="meetingAreaLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <Label text="Meeting Time:" GridPane.rowIndex="5" />
                               <Label fx:id="meetingTimeLabel" text="meetingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Label text="Spots Available:" GridPane.rowIndex="6" />
