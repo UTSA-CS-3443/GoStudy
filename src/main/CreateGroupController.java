@@ -67,7 +67,7 @@ public class CreateGroupController {
     //handles My Groups button pressed ActionEvent
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("MyGroups");
     }
 
     //handles Find a Group button pressed ActionEvent
@@ -79,13 +79,7 @@ public class CreateGroupController {
     //handles Create a Group button pressed ActionEvent
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
-    	try {
-    		Parent root = FXMLLoader.load(getClass().getResource("CreateGroup.fxml"));
-    		GoStudyMain.stage.setScene(new Scene(root, 950, 700));
-    		GoStudyMain.stage.show();
-    	}catch(Exception e) {
-    		e.printStackTrace();
-    	}
+    	GoStudyMain.new_child("CreateGroup");
     }
 
     //handles Map Button pressed ActionEvent
