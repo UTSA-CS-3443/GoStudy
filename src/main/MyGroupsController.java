@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Optional;
+
 import groupStruct.Group;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -7,8 +9,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextInputDialog;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
 public class MyGroupsController {
@@ -19,13 +25,14 @@ public class MyGroupsController {
     @FXML private Label classLabel;
     @FXML private Label buildingLabel;
     @FXML private Label majorLabel;
-    @FXML private Label meetingAreaLabel;
+    @FXML private Label meetingNotesLabel;
     @FXML private Label totalSpotsLabel;
     @FXML private Label openSpotsLabel;
     @FXML private Label meetingTimeLabel;
     @FXML private Label groupNameLabel;
     @FXML private ListView<Group> apartOfGroupListView;
     @FXML private ListView<Group> ownGroupListView;
+    @FXML private AnchorPane groupInfoAnchorPane;
 
     //myGroupController ObservableLists
     private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
@@ -46,7 +53,7 @@ public class MyGroupsController {
     				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
     					groupNameLabel.setText(newValue.getGroupName());
     					buildingLabel.setText(newValue.getLocation());
-    					meetingAreaLabel.setText(newValue.getLocationNotes());
+    					meetingNotesLabel.setText(newValue.getLocationNotes());
     					openSpotsLabel.setText(newValue.getSeatLimit());
     					totalSpotsLabel.setText(newValue.getSeatLimit());
     					meetingTimeLabel.setText(newValue.getTime());
@@ -54,6 +61,7 @@ public class MyGroupsController {
     					visibilityLabel.setText(newValue.getAccess());
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(true);
+    					groupInfoAnchorPane.setVisible(true);
     				}
     			} );
     	
@@ -69,7 +77,7 @@ public class MyGroupsController {
     				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
     					groupNameLabel.setText(newValue.getGroupName());
     					buildingLabel.setText(newValue.getLocation());
-    					meetingAreaLabel.setText(newValue.getLocationNotes());
+    					meetingNotesLabel.setText(newValue.getLocationNotes());
     					openSpotsLabel.setText(newValue.getSeatLimit());
     					totalSpotsLabel.setText(newValue.getSeatLimit());
     					meetingTimeLabel.setText(newValue.getTime());
@@ -77,6 +85,7 @@ public class MyGroupsController {
     					visibilityLabel.setText(newValue.getAccess());
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(false);
+    					groupInfoAnchorPane.setVisible(true);
     				}
     			} );
     }
@@ -90,17 +99,39 @@ public class MyGroupsController {
 
     @FXML
     void sendInvitesButtonPressed(ActionEvent event) {
-
+    	TextInputDialog sendInvites = new TextInputDialog();
+    	sendInvites.setHeaderText("Enter emails, separated by commas");
+    	sendInvites.setTitle("Send Invites");
+    	
+    	Optional<String> emails = sendInvites.showAndWait();
+    	System.out.print(emails);						//will return in the format "Optional[whateverUserEntered]"
+    	System.out.print(emails.isPresent());			//will return true if the user hit "OK" or false if "cancel"
+    	
+    	//have a method to parse emails. if parsed successfully. return the success message. otherwise show failure.
+    	Alert sendSuccess = new Alert(AlertType.INFORMATION);
+    	sendSuccess.setHeaderText("Successfuly sent emails");
+    	sendSuccess.setTitle("Success");
+    	//sendSuccess.show();
+    	
+    	Alert sendFailure = new Alert(AlertType.ERROR);
+    	sendFailure.setHeaderText("Failed to send emails");
+    	sendFailure.setTitle("Failure");
+    	//sendFailure.show();
     }
 
     @FXML
     void editGroupButtonPressed(ActionEvent event) {
-
+    	//takes you to group edit screen
     }
 
     @FXML
     void deleteGroupButtonPressed(ActionEvent event) {
-
+    	Alert confirm = new Alert(AlertType.CONFIRMATION);
+    	confirm.setHeaderText("Delete this group?");
+    	confirm.setTitle("User Confirmation");
+    	confirm.show();
+    	
+    	//need to figure how to get result properly :(
     }
     
     /*

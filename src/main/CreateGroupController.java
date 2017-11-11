@@ -3,11 +3,13 @@ package main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 
 public class CreateGroupController {
 	
@@ -20,7 +22,7 @@ public class CreateGroupController {
 		*/
 
 	//instance variables which refer to GUI components
-    @FXML private TextField meetingAreaTextField;
+    @FXML private TextArea meetingNotesTextArea;
     @FXML private TextField spotsAvailableTextField;
     @FXML private TextField meetingTimeTextBox;
     @FXML private TextField buildingTextField;
@@ -43,6 +45,7 @@ public class CreateGroupController {
     @FXML private Label errEmail;
     @FXML private Label errVisibility;
     @FXML private Label errClass;
+    @FXML private Label errRoomNumber;
     
     /*
      *	These Action events are specific to the Create Group 
@@ -52,13 +55,13 @@ public class CreateGroupController {
     //handles the public radio button pressed Action Event
     @FXML
     void publicRadioButtonPressed(ActionEvent event) {
-
+    	//these actually don't need to do anything
     }
 
     //handles the private radio button pressed Action Event
     @FXML
     void privateRadioButtonPressed(ActionEvent event) {
-
+    	//these actually don't need to do anything
     }
 
     //handles the create button pressed Action Event
@@ -66,6 +69,17 @@ public class CreateGroupController {
     void createButtonPressed(ActionEvent event) {
     	//should probably parse each text field, and alert user if entered incorrectly
     	//otherwise, create a group struct with provided info
+    	
+    	
+    	Alert createSuccess = new Alert(AlertType.INFORMATION);
+    	createSuccess.setHeaderText("Successfuly created group!");
+    	createSuccess.setTitle("Success");
+    	createSuccess.show();
+    	
+    	Alert createFailure = new Alert(AlertType.ERROR);
+    	createFailure.setHeaderText("Group could not be created.");
+    	createFailure.setTitle("Failure");
+    	//joinFailure.show();
     }
     
     /*

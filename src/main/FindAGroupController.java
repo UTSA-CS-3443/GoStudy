@@ -7,9 +7,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
 public class FindAGroupController {
@@ -21,7 +23,7 @@ public class FindAGroupController {
     @FXML private Label classLabel;
     @FXML private Label openSpotsLabel;
     @FXML private Label meetingTimeLabel;
-    @FXML private Label meetingAreaLabel;
+    @FXML private Label meetingNotesLabel;
     @FXML private Label majorLabel;
     @FXML private Label buildingLabel;
     @FXML private Label totalSpotsLabel;
@@ -46,13 +48,14 @@ public class FindAGroupController {
 				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
 					groupNameLabel.setText(newValue.getGroupName());
 					buildingLabel.setText(newValue.getLocation());
-					meetingAreaLabel.setText(newValue.getLocationNotes());
+					meetingNotesLabel.setText(newValue.getLocationNotes());
 					openSpotsLabel.setText(newValue.getSeatLimit());
 					totalSpotsLabel.setText(newValue.getSeatLimit());
 					meetingTimeLabel.setText(newValue.getTime());
 					classLabel.setText(newValue.getClassName());
 					visibilityLabel.setText(newValue.getAccess());
 					majorLabel.setText(newValue.getClassName().substring(0,2));
+					groupDisplayPane.setVisible(true);
 				}
 			} );
     }
@@ -67,9 +70,6 @@ public class FindAGroupController {
     //handles search button pressed action event
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	//perhaps create a search function that can be overloaded and pass the values from the text field as values?
-    	//then search public groups for those things
-    	//
 
     }
 
@@ -78,8 +78,27 @@ public class FindAGroupController {
     void resetButtonPressed(ActionEvent event) {
     	//clear list of found groups
     	//remove search terms from their respected text fields
-
+    	nameTextField.setText("");
+    	majorTextField.setText("");
+    	classTextField.setText("");
+    	buildingTextField.setText("");
+    	groupDisplayPane.setVisible(false);
     }
+    
+    @FXML
+    void joinGroupButtonPressed(ActionEvent event) {
+    	//should check to see if they are apart of the group before adding them
+    	Alert joinSuccess = new Alert(AlertType.INFORMATION);
+    	joinSuccess.setHeaderText("Successfuly joined group!");
+    	joinSuccess.setTitle("Success");
+    	joinSuccess.show();
+    	
+    	Alert joinFailure = new Alert(AlertType.ERROR);
+    	joinFailure.setHeaderText("You are already in this group.");
+    	joinFailure.setTitle("Failure");
+    	//joinFailure.show();
+    }
+    
     
     /*
      *	These Action events all deal with the Menu bar buttons, and should

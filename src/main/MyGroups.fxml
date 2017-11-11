@@ -84,7 +84,7 @@
             </SplitPane>
          </left>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="groupInfoAnchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" visible="false">
                <children>
                   <VBox prefHeight="543.0" prefWidth="749.0">
                      <children>
@@ -116,12 +116,12 @@
                               <Label text="Major:" GridPane.rowIndex="1" />
                               <Label text="Class:" GridPane.rowIndex="2" />
                               <Label text="Building:" GridPane.rowIndex="3" />
-                              <Label text="Meeting Area:" GridPane.rowIndex="4" />
+                              <Label text="Meeting Notes:" GridPane.rowIndex="4" />
                               <Label fx:id="ownerLabel" text="ownerLabel" GridPane.columnIndex="1" />
                               <Label fx:id="majorLabel" text="majorLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="classLabel" text="classLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label fx:id="buildingLabel" text="buildingLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="meetingAreaLabel" text="meetingAreaLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="meetingNotesLabel" text="meetingNotesLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <Label text="Meeting Time:" GridPane.rowIndex="5" />
                               <Label fx:id="meetingTimeLabel" text="meetingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Label text="Spots Available:" GridPane.rowIndex="6" />
@@ -136,7 +136,7 @@
                               <Label fx:id="visibilityLabel" text="visibilityLabel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                            </children>
                         </GridPane>
-                        <HBox fx:id="ownerHBox" alignment="BOTTOM_LEFT" prefHeight="73.0" prefWidth="315.0" spacing="20.0">
+                        <HBox fx:id="ownerHBox" alignment="BOTTOM_LEFT" prefHeight="73.0" prefWidth="315.0" spacing="20.0" visible="false">
                            <children>
                               <Button mnemonicParsing="false" onAction="#sendInvitesButtonPressed" text="Send Invites" />
                               <Button mnemonicParsing="false" onAction="#editGroupButtonPressed" text="Edit Group" />

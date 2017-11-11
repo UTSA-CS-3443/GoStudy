@@ -123,9 +123,9 @@
             </SplitPane>
          </left>
          <center>
-            <AnchorPane fx:id="groupDisplayPane" prefHeight="536.0" prefWidth="749.0" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="groupDisplayPane" prefHeight="536.0" prefWidth="749.0" visible="false" BorderPane.alignment="CENTER">
                <children>
-                  <VBox prefHeight="543.0" prefWidth="302.0">
+                  <VBox prefHeight="543.0" prefWidth="746.0">
                      <children>
                         <Label fx:id="groupNameLabel" text="Group Name" underline="true">
                            <font>
@@ -135,10 +135,10 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane>
+                        <GridPane prefHeight="233.0" prefWidth="315.0">
                           <columnConstraints>
-                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="358.0" minWidth="10.0" prefWidth="123.0" />
+                            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="606.0" minWidth="10.0" prefWidth="603.0" />
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -155,12 +155,12 @@
                               <Label text="Major:" GridPane.rowIndex="1" />
                               <Label text="Class:" GridPane.rowIndex="2" />
                               <Label text="Building:" GridPane.rowIndex="3" />
-                              <Label text="Meeting Area:" GridPane.rowIndex="4" />
+                              <Label text="Meeting Notes:" GridPane.rowIndex="4" />
                               <Label fx:id="ownerLabel" text="ownerLabel" GridPane.columnIndex="1" />
                               <Label fx:id="majorLabel" text="majorLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <Label fx:id="classLabel" text="classLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <Label fx:id="buildingLabel" text="buildingLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label fx:id="meetingAreaLabel" text="meetingAreaLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label fx:id="meetingNotesLabel" text="meetingNotesLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <Label text="Meeting Time:" GridPane.rowIndex="5" />
                               <Label fx:id="meetingTimeLabel" text="meetingTimeLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                               <Label text="Spots Available:" GridPane.rowIndex="6" />
@@ -175,6 +175,20 @@
                               <Label fx:id="visibilityLabel" text="visibilityLabel" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                            </children>
                         </GridPane>
+                        <VBox alignment="TOP_CENTER" prefHeight="197.0" prefWidth="648.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#joinGroupButtonPressed" text="Join Group!" />
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                           </VBox.margin>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="550.0" top="10.0" />
+                           </padding>
+                        </VBox>
                      </children>
                      <opaqueInsets>
                         <Insets />
