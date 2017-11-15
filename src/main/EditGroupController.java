@@ -2,11 +2,13 @@ package main;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.Alert.AlertType;
 
 public class EditGroupController extends CommonController{
 	
@@ -71,7 +73,23 @@ public class EditGroupController extends CommonController{
     	//as this might mean people need to be removed from the group
     	//if everything is successful, display message, return to MyGroups
     	
+    	GoStudyMain.selectedGroup.setClassName(classTextField.getText());
+    	GoStudyMain.selectedGroup.setGroupName(groupNameTextField.getText());
+    	GoStudyMain.selectedGroup.setLocation(buildingTextField.getText());
+    	GoStudyMain.selectedGroup.setLocationNotes(meetingNotesTextArea.getText());
+    	GoStudyMain.selectedGroup.setTime(meetingTimeTextField.getText());
+    	GoStudyMain.selectedGroup.setSeatLimit(spotsAvailableTextField.getText());
     	
+    	Alert editSuccess = new Alert(AlertType.INFORMATION);
+    	editSuccess.setHeaderText("Successfuly edited group!");
+    	editSuccess.setTitle("Success");
+    	editSuccess.showAndWait();
+    	GoStudyMain.new_child("MyGroups");
+    	
+    	Alert editFailure = new Alert(AlertType.ERROR);
+    	editFailure.setHeaderText("Group could not be edited.");
+    	editFailure.setTitle("Failure");
+    	//editFailure.show();
     }
     
     /*

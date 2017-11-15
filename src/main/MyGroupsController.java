@@ -41,10 +41,7 @@ public class MyGroupsController extends CommonController{
     private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
     //initialize controller
-    
-    public void on_load(){};
-    
-    public void initialize() {
+    public void initialize(){
     	
     	//creates ObservableList for Owned Groups
     	//change this to GoStudyMain.groupList to array of user's created groups
@@ -181,4 +178,11 @@ public class MyGroupsController extends CommonController{
     void settingsButtonPressed(ActionEvent event) {
 
     }
+
+
+	@Override
+	void on_load() {
+		// TODO Auto-generated method stub
+		
+	}
 }

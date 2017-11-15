@@ -81,7 +81,7 @@ public class CreateGroupController extends CommonController {
     	Alert createFailure = new Alert(AlertType.ERROR);
     	createFailure.setHeaderText("Group could not be created.");
     	createFailure.setTitle("Failure");
-    	//joinFailure.show();
+    	//createFailure.show();
     }
     
     /*
