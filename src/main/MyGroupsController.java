@@ -19,6 +19,8 @@ import javafx.scene.layout.HBox;
 
 public class MyGroupsController {
 
+	public static Group selectedGroup;		//the currently selected group.
+	
 	@FXML private HBox ownerHBox;
     @FXML private Label visibilityLabel;
     @FXML private Label ownerLabel;
@@ -62,6 +64,7 @@ public class MyGroupsController {
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(true);
     					groupInfoAnchorPane.setVisible(true);
+    					selectedGroup = newValue;
     				}
     			} );
     	
@@ -91,7 +94,6 @@ public class MyGroupsController {
     }
     
     
-    
     /*
      *	These Action events are specific to the My Groups
      *	Controller.
@@ -111,7 +113,7 @@ public class MyGroupsController {
     	Alert sendSuccess = new Alert(AlertType.INFORMATION);
     	sendSuccess.setHeaderText("Successfuly sent emails");
     	sendSuccess.setTitle("Success");
-    	//sendSuccess.show();
+    	sendSuccess.show();
     	
     	Alert sendFailure = new Alert(AlertType.ERROR);
     	sendFailure.setHeaderText("Failed to send emails");
@@ -122,6 +124,7 @@ public class MyGroupsController {
     @FXML
     void editGroupButtonPressed(ActionEvent event) {
     	//takes you to group edit screen
+    	GoStudyMain.new_child("EditGroup");
     }
 
     @FXML

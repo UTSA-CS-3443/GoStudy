@@ -83,11 +83,11 @@ public class CreateGroupController {
     }
     
     /*
-    *	These Action events all deal with the Menu bar buttons, and should
-    *	be the same across all Controllers, except the login page and account
-    *	creation controllers.
-    */
-    
+     *	These Action events all deal with the Menu bar buttons, and should
+     *	be the same across all Controllers, except the login page and account
+     *	creation controllers.
+     */
+     
     //handles SignOut button pressed ActionEvent
     @FXML
     void signOutButtonPressed(ActionEvent event) {

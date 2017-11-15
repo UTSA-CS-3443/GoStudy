@@ -20,8 +20,7 @@ public class GoStudyMain extends Application{
 	static Pane root;
 	
 	public static ArrayList<Group> groupList = FileRead.constructList();
-	public static Group group1 = groupList.get(0);
-	public static Group group2 = groupList.get(1);
+	public static Group selectedGroup = groupList.get(0);
 	
 	//switches to the screen given from name. name should NOT include ".fxml" at the end
 	public static void new_child(String name) {
@@ -46,6 +45,7 @@ public class GoStudyMain extends Application{
 			init_screen("CreateGroup");
 			init_screen("FindAGroup");
 			init_screen("Map");
+			init_screen("EditGroup");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -72,11 +72,9 @@ public class GoStudyMain extends Application{
 				e.printStackTrace();
 			}
 	}
+
 	
 	public static void main(String[] args) {
-		System.out.println(group1.getGroupName());
-		System.out.println(group2.getGroupName());
-		
 		launch(args);
 	}
 }
