@@ -15,7 +15,7 @@ import javafx.scene.layout.Pane;
 
 public class GoStudyMain extends Application{
 
-	static Map<String, Pane> screens = new HashMap<String, Pane>();		//this keeps track of all the .fxml and their associated controllers
+	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
 	private static Stage main_stage;
 	static Pane root;
 	
@@ -26,15 +26,16 @@ public class GoStudyMain extends Application{
 	public static void new_child(String name) {
 		root.getChildren().clear();
 		
-		Pane child = screens.get(name);
+		Pane child = screens.get(name).getPane();
 		root.getChildren().add(child);
+		screens.get(name).getController().on_load();
 	}
 	
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
-		
 		Pane screen = (Pane) fxmlLoader.load();
-		screens.put(name, screen);
+		Object controller = fxmlLoader.getController();
+		screens.put(name, new ScreenInfo(screen, (CommonController) controller));
 	}
 	
 	//place all .fxmls here so it can be put into screens

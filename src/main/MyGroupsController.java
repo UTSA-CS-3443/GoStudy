@@ -17,7 +17,7 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
-public class MyGroupsController {
+public class MyGroupsController extends CommonController{
 
 	public static Group selectedGroup;		//the currently selected group.
 	
@@ -41,6 +41,9 @@ public class MyGroupsController {
     private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
     //initialize controller
+    
+    public void on_load(){};
+    
     public void initialize() {
     	
     	//creates ObservableList for Owned Groups
@@ -64,7 +67,7 @@ public class MyGroupsController {
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(true);
     					groupInfoAnchorPane.setVisible(true);
-    					selectedGroup = newValue;
+    					GoStudyMain.selectedGroup = newValue;
     				}
     			} );
     	

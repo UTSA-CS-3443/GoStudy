@@ -1,6 +1,5 @@
 package main;
 
-import groupStruct.Group;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,18 +8,17 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
-public class EditGroupController {
-	public Group editGroup;
+public class EditGroupController extends CommonController{
 	
 	//instance variables which refer to GUI components
     @FXML private ToggleGroup visibilityToggleGroup;
-    @FXML private static TextField majorTextField;
+    @FXML private TextField majorTextField;
     @FXML private TextField buildingTextField;
     @FXML private TextField groupNameTextField;
     @FXML private TextField spotsAvailableTextField;
-    @FXML private static TextField meetingTimeTextField;
-    @FXML private static TextField classTextField;
-    @FXML private static TextArea meetingNotesTextArea;
+    @FXML private TextField meetingTimeTextField;
+    @FXML private TextField classTextField;
+    @FXML private TextArea meetingNotesTextArea;
     @FXML private Label userIdLabel;
     @FXML private RadioButton publicRadioButton;
     @FXML private RadioButton privateRadioButton;
@@ -35,24 +33,21 @@ public class EditGroupController {
     @FXML private Label errMajor;
     @FXML private Label errBuilding;
     
-    /*
+    
     //displays data from the selected group from MyGroups
-    public void initialize() {
-    	groupNameTextField.setText(editGroup.getGroupName());
-    	majorTextField.setText(editGroup.getClassName().substring(0,2));
-    	classTextField.setText(editGroup.getClassName());
-    	meetingTimeTextField.setText(editGroup.getTime());
-    	buildingTextField.setText(editGroup.getLocation());
-    	meetingNotesTextArea.setText(editGroup.getLocationNotes());
+    public void on_load() {
+    	groupNameTextField.setText(GoStudyMain.selectedGroup.getGroupName());
+    	majorTextField.setText(GoStudyMain.selectedGroup.getClassName().substring(0,2));
+    	classTextField.setText(GoStudyMain.selectedGroup.getClassName());
+    	meetingTimeTextField.setText(GoStudyMain.selectedGroup.getTime());
+    	buildingTextField.setText(GoStudyMain.selectedGroup.getLocation());
+    	meetingNotesTextArea.setText(GoStudyMain.selectedGroup.getLocationNotes());
+    	spotsAvailableTextField.setText(GoStudyMain.selectedGroup.getSeatLimit());
+    	if(GoStudyMain.selectedGroup.getAccess().equals("PUBLIC"))
+    		publicRadioButton.setSelected(true);
+    	else
+    		privateRadioButton.setSelected(true);
     }
-    */
-    
-    public static void setMajor(String major) {
-    	majorTextField.setText(major);
-    }
-    
-    
-    
     /*
      *	These Action events are specific to the Edit Group 
      *	Controller.

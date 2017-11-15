@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.SettingsController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="950.0">
+         <children>
+            <AnchorPane prefHeight="93.0" prefWidth="319.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="GoStudy">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="72.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="7.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="98.0" prefWidth="402.0" />
+            <AnchorPane prefHeight="93.0" prefWidth="162.0">
+               <children>
+                  <Label layoutX="120.0" layoutY="71.0" text="UserID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="98.0" prefWidth="56.0">
+               <children>
+                  <Hyperlink layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="17.0" prefWidth="55.0" text="Sign Out" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <ToolBar prefHeight="52.0" prefWidth="950.0">
+        <items>
+            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Groups">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#myGroupButtonPressed" text="My Groups" />
+                <MenuItem mnemonicParsing="false" onAction="#findAGroupButtonPressed" text="Find a Group" />
+                  <MenuItem mnemonicParsing="false" onAction="#createAGroupButtonPressed" text="Create a Group" />
+              </items>
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </MenuButton>
+          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Map" />
+            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Settings" />
+        </items>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <AnchorPane prefHeight="547.0" prefWidth="950.0" />
+   </children>
+</VBox>

@@ -4,14 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
-public class MapController {
+public class MapController extends CommonController {
 
     @FXML private ListView<?> mapGroupsListView;
     @FXML void signOutButtonPressed(ActionEvent event) {
 
     }
 
-    
+    public void on_load(){};
     
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
