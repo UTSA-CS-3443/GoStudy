@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
@@ -9,7 +8,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MapController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.SettingsController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="950.0">
          <children>
@@ -65,34 +64,6 @@
             <Insets />
          </VBox.margin>
       </ToolBar>
-      <BorderPane prefHeight="546.0" prefWidth="950.0">
-         <left>
-            <SplitPane focusTraversable="false" maxHeight="1.7976931348623157E308" orientation="VERTICAL" prefHeight="543.0" prefWidth="201.0" BorderPane.alignment="CENTER">
-              <items>
-                <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="158.0">
-                     <children>
-                        <ListView fx:id="mapGroupsListView" focusTraversable="false" layoutX="-3.0" layoutY="33.0" maxHeight="1.7976931348623157E308" prefHeight="510.0" prefWidth="204.0" />
-                        <Label layoutX="6.0" layoutY="6.0" text="Available Groups:" />
-                     </children>
-                  </AnchorPane>
-              </items>
-            </SplitPane>
-         </left>
-         <center>
-            <ScrollPane prefViewportHeight="543.0" prefViewportWidth="749.0">
-               <content>
-                  <Pane prefHeight="543.0" prefWidth="743.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <ImageView>
-                           <image>
-                              <Image url="@../../mapImage/UTSA-Map.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </content>
-            </ScrollPane>
-         </center>
-      </BorderPane>
+      <AnchorPane prefHeight="547.0" prefWidth="950.0" />
    </children>
 </VBox>

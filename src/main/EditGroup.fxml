@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.EditGroupController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="950.0">
+         <children>
+            <AnchorPane prefHeight="93.0" prefWidth="319.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="GoStudy">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="72.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="7.0" />
+               </padding>
+            </AnchorPane>
+            <AnchorPane prefHeight="98.0" prefWidth="402.0" />
+            <AnchorPane prefHeight="93.0" prefWidth="162.0">
+               <children>
+                  <Label fx:id="userIdLabel" layoutX="120.0" layoutY="71.0" text="UserID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="98.0" prefWidth="56.0">
+               <children>
+                  <Hyperlink layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="17.0" prefWidth="55.0" text="Sign Out" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <ToolBar prefHeight="52.0" prefWidth="950.0">
+        <items>
+            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Groups">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#myGroupButtonPressed" text="My Groups" />
+                <MenuItem mnemonicParsing="false" onAction="#findAGroupButtonPressed" text="Find a Group" />
+                  <MenuItem mnemonicParsing="false" onAction="#createAGroupButtonPressed" text="Create a Group" />
+              </items>
+               <padding>
+                  <Insets left="3.0" right="3.0" />
+               </padding>
+            </MenuButton>
+          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Map" />
+            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Settings" />
+        </items>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </ToolBar>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="937.0">
+               <children>
+                  <HBox layoutX="365.0" layoutY="14.0" prefHeight="53.0" prefWidth="286.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="290.0" text="Edit Group" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <GridPane hgap="5.0" layoutX="246.0" layoutY="76.0" prefHeight="379.0" prefWidth="562.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Group Name :" />
+                        <Label text="Major :" GridPane.rowIndex="1" />
+                        <Label text="Class :" GridPane.rowIndex="2" />
+                        <TextField fx:id="groupNameTextField" GridPane.columnIndex="1" />
+                        <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Building :" GridPane.rowIndex="3" />
+                        <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Meeting Notes :" GridPane.rowIndex="4" />
+                        <Label text="Meeting Time :" GridPane.rowIndex="5" />
+                        <TextField fx:id="meetingTimeTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Spots Available :" GridPane.rowIndex="6" />
+                        <TextField fx:id="spotsAvailableTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <HBox prefHeight="20.0" prefWidth="168.0" spacing="40.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <children>
+                              <RadioButton fx:id="publicRadioButton" mnemonicParsing="false" onAction="#publicRadioButtonPressed" text="Public">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="visibilityToggleGroup" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="privateRadioButton" mnemonicParsing="false" onAction="#privateRadioButtonPressed" text="Private" toggleGroup="$visibilityToggleGroup">
+                                 <padding>
+                                    <Insets left="35.0" />
+                                 </padding>
+                              </RadioButton>
+                           </children>
+                           <GridPane.margin>
+                              <Insets top="6.0" />
+                           </GridPane.margin>
+                        </HBox>
+                        <TextField fx:id="majorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="errGroupName" text="Invalid Group Name" textFill="RED" visible="false" GridPane.columnIndex="2" />
+                        <Label fx:id="errMajor" text="Invalid Major" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="errClass" text="Invalid Class" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="errBuilding" text="Invalid Building" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="errRoomNumber" focusTraversable="false" text="Invalid Room Number" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                        <Label fx:id="errMeetingtime" focusTraversable="false" text="Invalid Meeting Time" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <Label fx:id="errSpots" focusTraversable="false" text="Invalid Number of Spots" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                        <Label fx:id="errVisibility" focusTraversable="false" text="Please select a visibility" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                        <TextArea fx:id="meetingNotesTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                     <padding>
+                        <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+                     </padding>
+                  </GridPane>
+                  <HBox alignment="CENTER" layoutX="386.0" layoutY="458.0" prefHeight="36.0" prefWidth="200.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#editButtonPressed" prefHeight="25.0" prefWidth="50.0" text="Edit">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

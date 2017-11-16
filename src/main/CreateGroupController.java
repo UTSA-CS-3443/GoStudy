@@ -11,7 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.Alert.AlertType;
 
-public class CreateGroupController {
+public class CreateGroupController extends CommonController {
 	
 	//an incomplete list of majors which can be used later ensure a valid major is entered.
 		/*
@@ -47,6 +47,8 @@ public class CreateGroupController {
     @FXML private Label errClass;
     @FXML private Label errRoomNumber;
     
+    public void on_load(){};
+    
     /*
      *	These Action events are specific to the Create Group 
      *	Controller.
@@ -79,15 +81,15 @@ public class CreateGroupController {
     	Alert createFailure = new Alert(AlertType.ERROR);
     	createFailure.setHeaderText("Group could not be created.");
     	createFailure.setTitle("Failure");
-    	//joinFailure.show();
+    	//createFailure.show();
     }
     
     /*
-    *	These Action events all deal with the Menu bar buttons, and should
-    *	be the same across all Controllers, except the login page and account
-    *	creation controllers.
-    */
-    
+     *	These Action events all deal with the Menu bar buttons, and should
+     *	be the same across all Controllers, except the login page and account
+     *	creation controllers.
+     */
+     
     //handles SignOut button pressed ActionEvent
     @FXML
     void signOutButtonPressed(ActionEvent event) {

@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
-public class FindAGroupController {
+public class FindAGroupController extends CommonController {
 
 	//instance variables which refer to GUI components
 	@FXML private AnchorPane groupDisplayPane;
@@ -36,6 +36,8 @@ public class FindAGroupController {
     
     //findAGroupController ObservableLists
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
+    
+    public void on_load(){};
     
     public void initialize() {
     foundGroups.addAll(GoStudyMain.groupList);

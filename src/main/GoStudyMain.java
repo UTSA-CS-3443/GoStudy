@@ -15,27 +15,27 @@ import javafx.scene.layout.Pane;
 
 public class GoStudyMain extends Application{
 
-	static Map<String, Pane> screens = new HashMap<String, Pane>();		//this keeps track of all the .fxml and their associated controllers
+	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
 	private static Stage main_stage;
 	static Pane root;
 	
 	public static ArrayList<Group> groupList = FileRead.constructList();
-	public static Group group1 = groupList.get(0);
-	public static Group group2 = groupList.get(1);
+	public static Group selectedGroup = groupList.get(0);
 	
 	//switches to the screen given from name. name should NOT include ".fxml" at the end
 	public static void new_child(String name) {
 		root.getChildren().clear();
 		
-		Pane child = screens.get(name);
+		Pane child = screens.get(name).getPane();
 		root.getChildren().add(child);
+		screens.get(name).getController().on_load();
 	}
 	
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
-		
 		Pane screen = (Pane) fxmlLoader.load();
-		screens.put(name, screen);
+		Object controller = fxmlLoader.getController();
+		screens.put(name, new ScreenInfo(screen, (CommonController) controller));
 	}
 	
 	//place all .fxmls here so it can be put into screens
@@ -46,6 +46,7 @@ public class GoStudyMain extends Application{
 			init_screen("CreateGroup");
 			init_screen("FindAGroup");
 			init_screen("Map");
+			init_screen("EditGroup");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -68,15 +69,15 @@ public class GoStudyMain extends Application{
 				primaryStage.setResizable(false);
 				primaryStage.show();
 				
+				
+				
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
 	}
+
 	
 	public static void main(String[] args) {
-		System.out.println(group1.getGroupName());
-		System.out.println(group2.getGroupName());
-		
 		launch(args);
 	}
 }
