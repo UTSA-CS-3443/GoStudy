@@ -20,6 +20,7 @@ public class GoStudyMain extends Application{
 	static Pane root;
 	
 	public static ArrayList<Group> groupList = FileRead.constructList();
+	public static Group selectedGroup = groupList.get(0);
 	public static Group group1 = groupList.get(0);
 	public static Group group2 = groupList.get(1);
 	
@@ -27,7 +28,7 @@ public class GoStudyMain extends Application{
 	public static void new_child(String name) {
 		root.getChildren().clear();
 		
-		Pane child = screens.get(name).getPane();;
+		Pane child = screens.get(name).getPane();
 		root.getChildren().add(child);
 		screens.get(name).getController().on_load();
 	}
@@ -35,8 +36,8 @@ public class GoStudyMain extends Application{
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
 		Pane screen = (Pane) fxmlLoader.load();
-		Object controller = fxmlLoader.load();
-		screens.put(name, screen);
+		Object controller = fxmlLoader.getController();
+		screens.put(name, new ScreenInfo(screen, (CommonController) controller));
 	}
 	
 	//place all .fxmls here so it can be put into screens
