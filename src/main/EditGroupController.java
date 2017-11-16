@@ -126,7 +126,7 @@ public class EditGroupController extends CommonController{
 
     @FXML
     void settingsButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Settings");
     }
 
 }

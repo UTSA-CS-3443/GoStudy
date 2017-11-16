@@ -49,6 +49,7 @@ public class GoStudyMain extends Application{
 			init_screen("FindAGroup");
 			init_screen("Map");
 			init_screen("EditGroup");
+			init_screen("Settings");
 			
 		}catch(Exception e) {
 			e.printStackTrace();

@@ -176,7 +176,7 @@ public class MyGroupsController extends CommonController{
     //handles Settings button pressed Action Event
     @FXML
     void settingsButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Settings");
     }
 
 
