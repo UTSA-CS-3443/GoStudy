@@ -41,15 +41,14 @@ public class MyGroupsController extends CommonController{
     private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
     //initialize controller
-    public void initialize() {
-    }
-    
-    
-    public void on_load(){
-    	myGroups.addAll(GoStudyMain.groupList);
-    	ownGroupListView.setItems(myGroups);
+    public void initialize(){
+    	
     	//creates ObservableList for Owned Groups
     	//change this to GoStudyMain.groupList to array of user's created groups
+    	myGroups.addAll(GoStudyMain.groupList);
+    	
+    	ownGroupListView.setItems(myGroups);
+    	
     	ownGroupListView.getSelectionModel().selectedItemProperty().addListener(
     			new ChangeListener<Group>() {
     				@Override
@@ -125,8 +124,6 @@ public class MyGroupsController extends CommonController{
     @FXML
     void editGroupButtonPressed(ActionEvent event) {
     	//takes you to group edit screen
-    	otherGroups.clear();
-    	myGroups.clear();
     	GoStudyMain.new_child("EditGroup");
     }
 
@@ -136,7 +133,7 @@ public class MyGroupsController extends CommonController{
     	confirm.setHeaderText("Delete this group?");
     	confirm.setTitle("User Confirmation");
     	confirm.show();
-    	
+    	 
     	//need to figure how to get result properly :(
     }
     
@@ -182,4 +179,10 @@ public class MyGroupsController extends CommonController{
 
     }
 
+
+	@Override
+	void on_load() {
+		// TODO Auto-generated method stub
+		
+	}
 }
