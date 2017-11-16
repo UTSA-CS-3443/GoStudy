@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.geometry.*?>
@@ -78,7 +79,19 @@
             </SplitPane>
          </left>
          <center>
-            <Pane prefHeight="543.0" prefWidth="743.0" BorderPane.alignment="CENTER" />
+            <ScrollPane prefViewportHeight="543.0" prefViewportWidth="749.0">
+               <content>
+                  <Pane prefHeight="543.0" prefWidth="743.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView>
+                           <image>
+                              <Image url="@../../../../Desktop/UTSA-Map.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
          </center>
       </BorderPane>
    </children>
