@@ -81,7 +81,7 @@ public class EditGroupController extends CommonController{
     	GoStudyMain.selectedGroup.setSeatLimit(spotsAvailableTextField.getText());
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);
-    	editSuccess.setHeaderText("Successfuly edited group!");
+    	editSuccess.setHeaderText("Successfully edited group!");
     	editSuccess.setTitle("Success");
     	editSuccess.showAndWait();
     	GoStudyMain.new_child("MyGroups");

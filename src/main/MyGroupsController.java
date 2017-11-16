@@ -22,6 +22,7 @@ public class MyGroupsController extends CommonController{
 	public static Group selectedGroup;		//the currently selected group.
 	
 	@FXML private HBox ownerHBox;
+    @FXML private HBox apartOfHBox;
     @FXML private Label visibilityLabel;
     @FXML private Label ownerLabel;
     @FXML private Label classLabel;
@@ -63,6 +64,7 @@ public class MyGroupsController extends CommonController{
     					visibilityLabel.setText(newValue.getAccess());
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(true);
+    					apartOfHBox.setVisible(false);
     					groupInfoAnchorPane.setVisible(true);
     					GoStudyMain.selectedGroup = newValue;
     				}
@@ -88,6 +90,7 @@ public class MyGroupsController extends CommonController{
     					visibilityLabel.setText(newValue.getAccess());
     					majorLabel.setText(newValue.getClassName().substring(0,2));
     					ownerHBox.setVisible(false);
+    					apartOfHBox.setVisible(true);
     					groupInfoAnchorPane.setVisible(true);
     				}
     			} );
@@ -111,7 +114,7 @@ public class MyGroupsController extends CommonController{
     	
     	//have a method to parse emails. if parsed successfully. return the success message. otherwise show failure.
     	Alert sendSuccess = new Alert(AlertType.INFORMATION);
-    	sendSuccess.setHeaderText("Successfuly sent emails");
+    	sendSuccess.setHeaderText("Successfully sent emails");
     	sendSuccess.setTitle("Success");
     	sendSuccess.show();
     	
@@ -135,6 +138,15 @@ public class MyGroupsController extends CommonController{
     	confirm.show();
     	 
     	//need to figure how to get result properly :(
+    }
+    
+    @FXML
+    void leaveGroupButtonPressed(ActionEvent event) {
+    	Alert confirm = new Alert(AlertType.CONFIRMATION);
+    	confirm.setHeaderText("Leave this group?");
+    	confirm.setTitle("User Confirmation");
+    	confirm.show();
+    	 
     }
     
     /*

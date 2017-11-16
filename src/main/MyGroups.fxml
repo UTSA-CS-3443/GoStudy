@@ -84,7 +84,7 @@
             </SplitPane>
          </left>
          <center>
-            <AnchorPane fx:id="groupInfoAnchorPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" visible="false">
+            <AnchorPane fx:id="groupInfoAnchorPane" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
                <children>
                   <VBox prefHeight="543.0" prefWidth="749.0">
                      <children>
@@ -141,6 +141,15 @@
                               <Button mnemonicParsing="false" onAction="#sendInvitesButtonPressed" text="Send Invites" />
                               <Button mnemonicParsing="false" onAction="#editGroupButtonPressed" text="Edit Group" />
                               <Button mnemonicParsing="false" onAction="#deleteGroupButtonPressed" text="Delete Group" />
+                           </children>
+                        </HBox>
+                        <HBox fx:id="apartOfHBox" alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" visible="false">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#leaveGroupButtonPressed" text="Leave Group">
+                                 <HBox.margin>
+                                    <Insets right="340.0" />
+                                 </HBox.margin>
+                              </Button>
                            </children>
                         </HBox>
                      </children>

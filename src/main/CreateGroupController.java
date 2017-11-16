@@ -74,7 +74,7 @@ public class CreateGroupController extends CommonController {
     	
     	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
-    	createSuccess.setHeaderText("Successfuly created group!");
+    	createSuccess.setHeaderText("Successfully created group!");
     	createSuccess.setTitle("Success");
     	createSuccess.show();
     	

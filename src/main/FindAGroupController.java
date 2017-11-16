@@ -91,7 +91,7 @@ public class FindAGroupController extends CommonController {
     void joinGroupButtonPressed(ActionEvent event) {
     	//should check to see if they are apart of the group before adding them
     	Alert joinSuccess = new Alert(AlertType.INFORMATION);
-    	joinSuccess.setHeaderText("Successfuly joined group!");
+    	joinSuccess.setHeaderText("Successfully joined group!");
     	joinSuccess.setTitle("Success");
     	joinSuccess.show();
     	
