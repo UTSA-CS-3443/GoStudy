@@ -79,9 +79,9 @@
             </SplitPane>
          </left>
          <center>
-            <ScrollPane prefViewportHeight="543.0" prefViewportWidth="749.0">
+            <ScrollPane hmax="100.0" hvalue="50.0" pannable="true" prefViewportHeight="543.0" prefViewportWidth="749.0" vmax="100.0" vvalue="50.0">
                <content>
-                  <Pane prefHeight="543.0" prefWidth="743.0" BorderPane.alignment="CENTER">
+                  <Pane prefHeight="663.0" prefWidth="974.0" BorderPane.alignment="CENTER">
                      <children>
                         <ImageView>
                            <image>
