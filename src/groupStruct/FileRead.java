@@ -26,12 +26,14 @@ public class FileRead {
 		 try {
 			br = new BufferedReader(new FileReader(file));
 			group.setGroupName(br.readLine());
+			group.setFileName(file.getName());
 			group.setClassName(br.readLine());
 			group.setLocation(br.readLine());
 			group.setLocationNotes(br.readLine());
 			group.setTime(br.readLine());
 			group.setAccess(br.readLine());
 			group.setSeatLimit(br.readLine());
+			br.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

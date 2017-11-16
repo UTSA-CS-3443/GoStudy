@@ -10,6 +10,31 @@ public class Group {
 	private String access; //Public or private
 	private String seatLimit;
 	
+	public static Group newGroup(String groupName, String className, String location, String locationNotes
+			, String time, String access, String seatLimit) {
+		Group group = new Group();
+		group.groupName = groupName;
+		group.fileName = stringToFileName(groupName);
+		group.className = className;
+		group.location = location;
+		group.locationNotes = locationNotes;
+		group.time = time;
+		group.access = access;
+		group.seatLimit = seatLimit;
+		return group;
+	}
+	
+	@Override 
+	public String toString() {
+		return this.groupName;
+	}
+	
+	public static String stringToFileName(String string) {
+		string = string.replaceAll(" ", "_");
+		string = string + ".txt";
+		return string;
+	}
+	
 	public String getGroupName() {
 		return groupName;
 	}
