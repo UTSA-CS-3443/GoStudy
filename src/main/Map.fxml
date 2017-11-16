@@ -85,7 +85,7 @@
                      <children>
                         <ImageView>
                            <image>
-                              <Image url="@../../../../Desktop/UTSA-Map.png" />
+                              <Image url="@../../mapImage/UTSA-Map.png" />
                            </image>
                         </ImageView>
                      </children>
