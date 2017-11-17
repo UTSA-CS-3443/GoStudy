@@ -1,6 +1,9 @@
 package main;
 
+import java.util.ArrayList;
+
 import groupStruct.Group;
+import groupStruct.findGroup;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -72,7 +75,18 @@ public class FindAGroupController extends CommonController {
     //handles search button pressed action event
     @FXML
     void searchButtonPressed(ActionEvent event) {
-
+    	//need the array list of public groups for findGroup
+    	//need to either get rid of Major or implement major
+    	//String groupName
+    	//String majorName
+    	//String className
+    	//String buildingName
+    	//ArrayList<Group> matchedGroups = new ArrayList<>();
+    	//matchedGroups = findGroup.findGroupByName(groupName, currentGroups);
+    	//matchedGroups = findGroup.findGroupByMajor(majorName, matchedGroups);
+    	//matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
+    	//matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
+    	//return matchedGroups??
     }
 
     //handles reset button pressed action event

@@ -1,5 +1,6 @@
 package main;
 
+import groupStruct.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -72,13 +73,23 @@ public class EditGroupController extends CommonController{
     	//maybe display a warning message if the user tries to make available spots smaller?
     	//as this might mean people need to be removed from the group
     	//if everything is successful, display message, return to MyGroups
-    	
-    	GoStudyMain.selectedGroup.setClassName(classTextField.getText());
+    	String access;
+    	if (privateRadioButton.isSelected())
+    		access = "Private";
+    	else
+    		access = "Public";
+    	//creates edited group
+    	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), buildingTextField.getText()
+    			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), spotsAvailableTextField.getText(), access);
+    	/*GoStudyMain.selectedGroup.setClassName(classTextField.getText());
     	GoStudyMain.selectedGroup.setGroupName(groupNameTextField.getText());
     	GoStudyMain.selectedGroup.setLocation(buildingTextField.getText());
     	GoStudyMain.selectedGroup.setLocationNotes(meetingNotesTextArea.getText());
     	GoStudyMain.selectedGroup.setTime(meetingTimeTextField.getText());
     	GoStudyMain.selectedGroup.setSeatLimit(spotsAvailableTextField.getText());
+    	*/
+    	
+    	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup);
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);
     	editSuccess.setHeaderText("Successfuly edited group!");
