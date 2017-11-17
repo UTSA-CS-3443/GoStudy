@@ -74,7 +74,7 @@ public class CreateGroupController extends CommonController {
     	
     	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
-    	createSuccess.setHeaderText("Successfuly created group!");
+    	createSuccess.setHeaderText("Successfully created group!");
     	createSuccess.setTitle("Success");
     	createSuccess.show();
     	
@@ -123,6 +123,6 @@ public class CreateGroupController extends CommonController {
     //handles Settings button pressed Action Event
     @FXML
     void settingsButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Settings");
     }
 }

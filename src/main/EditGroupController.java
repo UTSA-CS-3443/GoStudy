@@ -1,4 +1,4 @@
-package main;
+	package main;
 
 import groupStruct.*;
 import javafx.event.ActionEvent;
@@ -92,7 +92,7 @@ public class EditGroupController extends CommonController{
     	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup);
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);
-    	editSuccess.setHeaderText("Successfuly edited group!");
+    	editSuccess.setHeaderText("Successfully edited group!");
     	editSuccess.setTitle("Success");
     	editSuccess.showAndWait();
     	GoStudyMain.new_child("MyGroups");
@@ -137,7 +137,7 @@ public class EditGroupController extends CommonController{
 
     @FXML
     void settingsButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Settings");
     }
 
 }
