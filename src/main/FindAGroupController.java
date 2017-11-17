@@ -37,7 +37,9 @@ public class FindAGroupController extends CommonController {
     //findAGroupController ObservableLists
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
     
-    public void on_load(){};
+    public void on_load(){
+    	foundGroupsListView.refresh();
+    };
     
     public void initialize() {
     foundGroups.addAll(GoStudyMain.groupList);

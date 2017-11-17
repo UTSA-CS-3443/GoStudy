@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
@@ -41,9 +42,16 @@ public class MyGroupsController extends CommonController{
     private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
     private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
+
+	@Override
+	void on_load() {
+		ownGroupListView.refresh();
+		apartOfGroupListView.refresh();
+		groupInfoAnchorPane.setVisible(false);
+	}
+    
     //initialize controller
     public void initialize(){
-    	
     	//creates ObservableList for Owned Groups
     	//change this to GoStudyMain.groupList to array of user's created groups
     	myGroups.addAll(GoStudyMain.groupList);
@@ -135,9 +143,12 @@ public class MyGroupsController extends CommonController{
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
     	confirm.setHeaderText("Delete this group?");
     	confirm.setTitle("User Confirmation");
-    	confirm.show();
-    	 
-    	//need to figure how to get result properly :(
+    	confirm.showAndWait();
+    	
+    	Optional<ButtonType> result = confirm.showAndWait();
+    	if(result.isPresent() && result.get() == ButtonType.OK) {
+    		//delete the group
+    	}
     }
     
     @FXML
@@ -145,8 +156,22 @@ public class MyGroupsController extends CommonController{
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
     	confirm.setHeaderText("Leave this group?");
     	confirm.setTitle("User Confirmation");
-    	confirm.show();
-    	 
+    	
+    	Optional<ButtonType> result = confirm.showAndWait();
+    	if(result.isPresent() && result.get() == ButtonType.OK) {
+    		//remove user from group(?) 
+    	}
+    	
+    	Alert changeSuccess = new Alert(AlertType.INFORMATION);
+    	changeSuccess.setHeaderText("Successfully left group");
+    	changeSuccess.setTitle("Success");
+    	changeSuccess.show();
+    	
+    	Alert changeFailure = new Alert(AlertType.ERROR);
+    	changeFailure.setHeaderText("Failed to leave group.");
+    	changeFailure.setTitle("Failure");
+    	//changeFailure.show();
+    	
     }
     
     /*
@@ -191,10 +216,4 @@ public class MyGroupsController extends CommonController{
     	GoStudyMain.new_child("Settings");
     }
 
-
-	@Override
-	void on_load() {
-		// TODO Auto-generated method stub
-		
-	}
 }
