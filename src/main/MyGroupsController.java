@@ -142,13 +142,13 @@ public class MyGroupsController extends CommonController{
     void deleteGroupButtonPressed(ActionEvent event) {
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
     	confirm.setHeaderText("Delete this group?");
-    	confirm.setTitle("User Confirmation");
-    	confirm.showAndWait();
     	
     	Optional<ButtonType> result = confirm.showAndWait();
     	if(result.isPresent() && result.get() == ButtonType.OK) {
     		//delete the group
+    		on_load();
     	}
+    	
     }
     
     @FXML

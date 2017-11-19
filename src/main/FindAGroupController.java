@@ -37,6 +37,8 @@ public class FindAGroupController extends CommonController {
     @FXML private ListView<Group> foundGroupsListView;
     @FXML private TextField classTextField;  
     
+	private ArrayList<Group> matchedGroups;
+    
     //findAGroupController ObservableLists
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
     
@@ -45,8 +47,6 @@ public class FindAGroupController extends CommonController {
     };
     
     public void initialize() {
-    foundGroups.addAll(GoStudyMain.groupList);
-	
 	foundGroupsListView.setItems(foundGroups);
 	
 	foundGroupsListView.getSelectionModel().selectedItemProperty().addListener(
@@ -65,9 +65,7 @@ public class FindAGroupController extends CommonController {
 					groupDisplayPane.setVisible(true);
 				}
 			} );
-    }
-    
-    
+    } 
     
     /*
      *	These Action events are specific to the Find a Group 
@@ -77,17 +75,43 @@ public class FindAGroupController extends CommonController {
     //handles search button pressed action event
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	//Dear Annie, the first call of findGroup uses "currentGroups"
-    	//idk if this is suppose to be GoStudyMain.groupList or foundGroups
-    	//for the other calls of findGroup it uses the array list that is returned from the first findGroup
-    	//I also didn't implement findGroupByMajor because the Groups object doesn't have a major attribute
+    	//clears the last search
+    	foundGroups.clear();
+    	
+    	//gets text to search by
     	String groupName = nameTextField.getText();
     	String className = classTextField.getText();
     	String buildingName = buildingTextField.getText();
-    	ArrayList<Group> matchedGroups;
-    	matchedGroups  = findGroup.findGroupByName(groupName, currentGroups);
-    	matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
-    	matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
+    	
+    	//prevents user from searching if they did not enter anything into the textFields
+    	if(!(groupName.equals("") && className.equals("") && buildingName.equals(""))) {
+    		//searches based on terms, returns matched groups in an arrayList
+	    	matchedGroups  = findGroup.findGroupByName(groupName, GoStudyMain.groupList);
+	    	System.out.println("Results from building group name...");	
+	    	for(Group g : matchedGroups)
+	    			System.out.println(g);
+	    	matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
+	    	System.out.println("Results from building class search...");
+	    	for(Group g : matchedGroups)
+    			System.out.println(g);
+	    	matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
+	    	System.out.println("Results from building name search...");
+	    	for(Group g : matchedGroups)
+    			System.out.println(g);
+    	
+	    	//adds the matched groups, refreshes ListView
+	    	foundGroups.addAll(matchedGroups);
+	    	foundGroupsListView.refresh();
+    	}
+    	
+    	
+     	Alert noMatches = new Alert(AlertType.INFORMATION);
+    	noMatches.setHeaderText("No matches were found :(");
+    	noMatches.setTitle("Sorry");
+    	
+    	//alerts the user no matches were found.
+    	if(foundGroups.isEmpty())
+    		noMatches.showAndWait();
     }
 
     //handles reset button pressed action event
@@ -99,6 +123,8 @@ public class FindAGroupController extends CommonController {
     	majorTextField.setText("");
     	classTextField.setText("");
     	buildingTextField.setText("");
+    	foundGroups.clear();
+    	foundGroupsListView.refresh();
     	groupDisplayPane.setVisible(false);
     }
     

@@ -75,20 +75,13 @@ public class EditGroupController extends CommonController{
     	//if everything is successful, display message, return to MyGroups
     	String access;
     	if (privateRadioButton.isSelected())
-    		access = "Private";
+    		access = "PRIVATE";
     	else
-    		access = "Public";
+    		access = "PUBLIC";
     	//creates edited group
     	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), buildingTextField.getText()
-    			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), spotsAvailableTextField.getText(), access);
-    	/*GoStudyMain.selectedGroup.setClassName(classTextField.getText());
-    	GoStudyMain.selectedGroup.setGroupName(groupNameTextField.getText());
-    	GoStudyMain.selectedGroup.setLocation(buildingTextField.getText());
-    	GoStudyMain.selectedGroup.setLocationNotes(meetingNotesTextArea.getText());
-    	GoStudyMain.selectedGroup.setTime(meetingTimeTextField.getText());
-    	GoStudyMain.selectedGroup.setSeatLimit(spotsAvailableTextField.getText());
-    	*/
-    	
+    			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), access, spotsAvailableTextField.getText());
+
     	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup);
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);
