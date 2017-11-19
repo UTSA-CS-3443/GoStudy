@@ -9,6 +9,9 @@ public class Group {
 	private String time; //is there a time class? predefined times
 	private String access; //Public or private
 	private String seatLimit;
+	//needs User object for owner and users array list
+	//private User groupOwner;
+	//private ArrayList<User> groupMembers;
 	
 	public static Group newGroup(String groupName, String className, String location, String locationNotes
 			, String time, String access, String seatLimit) {

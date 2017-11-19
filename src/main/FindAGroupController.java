@@ -77,18 +77,17 @@ public class FindAGroupController extends CommonController {
     //handles search button pressed action event
     @FXML
     void searchButtonPressed(ActionEvent event) {
-    	//need the array list of public groups for findGroup
-    	//need to either get rid of Major or implement major
-    	//String groupName
-    	//String majorName
-    	//String className
-    	//String buildingName
-    	//ArrayList<Group> matchedGroups = new ArrayList<>();
-    	//matchedGroups = findGroup.findGroupByName(groupName, currentGroups);
-    	//matchedGroups = findGroup.findGroupByMajor(majorName, matchedGroups);
-    	//matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
-    	//matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
-    	//return matchedGroups??
+    	//Dear Annie, the first call of findGroup uses "currentGroups"
+    	//idk if this is suppose to be GoStudyMain.groupList or foundGroups
+    	//for the other calls of findGroup it uses the array list that is returned from the first findGroup
+    	//I also didn't implement findGroupByMajor because the Groups object doesn't have a major attribute
+    	String groupName = nameTextField.getText();
+    	String className = classTextField.getText();
+    	String buildingName = buildingTextField.getText();
+    	ArrayList<Group> matchedGroups;
+    	matchedGroups  = findGroup.findGroupByName(groupName, currentGroups);
+    	matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
+    	matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
     }
 
     //handles reset button pressed action event
