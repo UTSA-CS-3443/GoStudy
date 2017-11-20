@@ -1,8 +1,11 @@
 package main;
 
+import java.util.Optional;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -48,7 +51,12 @@ public class SettingsController extends CommonController{
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
     	confirm.setHeaderText("Delete your account?");
     	confirm.setTitle("User Confirmation");
-    	confirm.showAndWait();
+    	
+    	Optional<ButtonType> result = confirm.showAndWait();
+    	if(result.isPresent() && result.get() == ButtonType.OK) {
+    		//delete user
+    		on_load();
+    	}
     	
     	Alert sendSuccess = new Alert(AlertType.INFORMATION);
     	sendSuccess.setHeaderText("Successfully deleted your account. We didn't like you anyway!! ;` - `; ");

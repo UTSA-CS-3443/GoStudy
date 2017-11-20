@@ -72,7 +72,6 @@ public class CreateGroupController extends CommonController {
     	//should probably parse each text field, and alert user if entered incorrectly
     	//otherwise, create a group struct with provided info
     	
-    	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
     	createSuccess.setHeaderText("Successfully created group!");
     	createSuccess.setTitle("Success");
