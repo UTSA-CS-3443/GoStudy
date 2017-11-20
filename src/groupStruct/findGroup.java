@@ -17,12 +17,25 @@ public class findGroup {
 			// empty it will not search, so you dont need to worry about accidentally returning all groups
 			// if nothing is searched for.
 	public static ArrayList<Group> findGroupByName(String name, ArrayList<Group> currentGroups) {
+<<<<<<< HEAD
 		ArrayList<Group> matchedGroups = new ArrayList<>();
 		// if (!name.equals("")) {
 		for (Group group : currentGroups) {
 			if (group.getGroupName().toLowerCase().contains(name.toLowerCase())) {
 				matchedGroups.add(group);
 			}
+=======
+
+		ArrayList<Group> matchedGroups = new ArrayList<>();
+		if(name.equals(""))
+				matchedGroups.addAll(currentGroups);
+		else
+			for (Group group: currentGroups) {
+				if (group.getGroupName().toLowerCase().contains(name.toLowerCase())) {
+					matchedGroups.add(group);
+				}
+				
+>>>>>>> 06563832a49af13390de699cfb78d1e4ea18998e
 		}
 		// }
 		return matchedGroups;
@@ -41,11 +54,22 @@ public class findGroup {
 
 	public static ArrayList<Group> findGroupByClass(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
+<<<<<<< HEAD
 		// if (!name.equals("")) {
 		for (Group group : currentGroups) {
 			if (group.getClassName().toLowerCase().contains(name.toLowerCase())) {
 				matchedGroups.add(group);
 			}
+=======
+		if(name.equals(""))
+			matchedGroups.addAll(currentGroups);
+		else 
+			for (Group group: currentGroups) {
+				if (group.getClassName().toLowerCase().contains(name.toLowerCase())) {
+					matchedGroups.add(group);
+				}
+			
+>>>>>>> 06563832a49af13390de699cfb78d1e4ea18998e
 		}
 		// }
 		return matchedGroups;
@@ -53,11 +77,22 @@ public class findGroup {
 
 	public static ArrayList<Group> findGroupByBuilding(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
+<<<<<<< HEAD
 		// if (!name.equals("")) {
 		for (Group group : currentGroups) {
 			if (group.getLocation().toLowerCase().contains(name.toLowerCase())) {
 				matchedGroups.add(group);
 			}
+=======
+		if(name.equals(""))
+			matchedGroups.addAll(currentGroups);
+		else
+			for (Group group: currentGroups) {
+				if (group.getLocation().toLowerCase().contains(name.toLowerCase())) {
+					matchedGroups.add(group);
+				}
+			
+>>>>>>> 06563832a49af13390de699cfb78d1e4ea18998e
 		}
 		// }
 		return matchedGroups;

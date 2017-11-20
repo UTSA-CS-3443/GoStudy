@@ -74,6 +74,7 @@ public class CreateGroupController extends CommonController {
     void createButtonPressed(ActionEvent event) {
     	//should probably parse each text field, and alert user if entered incorrectly
     	//otherwise, create a group struct with provided info
+<<<<<<< HEAD
     	String access;
     	if (privateRadioButton.isSelected())
     		access = "PRIVATE";
@@ -82,6 +83,8 @@ public class CreateGroupController extends CommonController {
     	Group newGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextBox.getText(), access, spotsAvailableTextField.getText());
     	GroupFileEdit.createGroupFile(newGroup);
+=======
+>>>>>>> 06563832a49af13390de699cfb78d1e4ea18998e
     	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
     	createSuccess.setHeaderText("Successfully created group!");
