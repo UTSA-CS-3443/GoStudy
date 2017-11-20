@@ -27,6 +27,7 @@ public class GroupFileEdit {
 					BufferedWriter writer = new BufferedWriter(new FileWriter("Groups/" + group.getFileName()));
 					writer.write(group.getGroupName() + "\n");
 					writer.write(group.getClassName() + "\n");
+					writer.write(group.getMajorName() + "\n");
 					writer.write(group.getLocation() + "\n");
 					writer.write(group.getLocationNotes() + "\n");
 					writer.write(group.getTime() + "\n");
@@ -58,13 +59,6 @@ public class GroupFileEdit {
 			System.out.println(path + " does not exist: deleteGroupFile");
 			return false;
 		}
-		//Path path1 = Paths.get(path);
-		//try {
-		//	Files.delete(path1);
-		//} catch (IOException e) {
-			// TODO Auto-generated catch block
-		//	e.printStackTrace();
-		//}
 		boolean success = file.delete();
 		if (!success) {
 			System.out.println(path + " could not be deleted: deleteGroupFile");

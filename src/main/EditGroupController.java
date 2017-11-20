@@ -79,7 +79,7 @@ public class EditGroupController extends CommonController{
     	else
     		access = "PUBLIC";
     	//creates edited group
-    	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), buildingTextField.getText()
+    	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), access, spotsAvailableTextField.getText());
 
     	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup);

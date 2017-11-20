@@ -1,6 +1,9 @@
 package main;
 
 
+import groupStruct.FileRead;
+import groupStruct.Group;
+import groupStruct.GroupFileEdit;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -71,7 +74,14 @@ public class CreateGroupController extends CommonController {
     void createButtonPressed(ActionEvent event) {
     	//should probably parse each text field, and alert user if entered incorrectly
     	//otherwise, create a group struct with provided info
-    	
+    	String access;
+    	if (privateRadioButton.isSelected())
+    		access = "PRIVATE";
+    	else
+    		access = "PUBLIC";
+    	Group newGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
+    			, meetingNotesTextArea.getText(), meetingTimeTextBox.getText(), access, spotsAvailableTextField.getText());
+    	GroupFileEdit.createGroupFile(newGroup);
     	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
     	createSuccess.setHeaderText("Successfully created group!");
@@ -82,7 +92,7 @@ public class CreateGroupController extends CommonController {
     	createFailure.setHeaderText("Group could not be created.");
     	createFailure.setTitle("Failure");
     	//createFailure.show();
-    }
+    	}
     
     /*
      *	These Action events all deal with the Menu bar buttons, and should

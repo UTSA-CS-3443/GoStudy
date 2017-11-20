@@ -74,45 +74,34 @@ public class FindAGroupController extends CommonController {
     
     //handles search button pressed action event
     @FXML
-    void searchButtonPressed(ActionEvent event) {
-    	//clears the last search
-    	foundGroups.clear();
-    	
-    	//gets text to search by
-    	String groupName = nameTextField.getText();
-    	String className = classTextField.getText();
-    	String buildingName = buildingTextField.getText();
-    	
-    	//prevents user from searching if they did not enter anything into the textFields
-    	if(!(groupName.equals("") && className.equals("") && buildingName.equals(""))) {
-    		//searches based on terms, returns matched groups in an arrayList
-	    	matchedGroups  = findGroup.findGroupByName(groupName, GoStudyMain.groupList);
-	    	System.out.println("Results from building group name...");	
-	    	for(Group g : matchedGroups)
-	    			System.out.println(g);
-	    	matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
-	    	System.out.println("Results from building class search...");
-	    	for(Group g : matchedGroups)
-    			System.out.println(g);
-	    	matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
-	    	System.out.println("Results from building name search...");
-	    	for(Group g : matchedGroups)
-    			System.out.println(g);
-    	
-	    	//adds the matched groups, refreshes ListView
-	    	foundGroups.addAll(matchedGroups);
-	    	foundGroupsListView.refresh();
-    	}
-    	
-    	
-     	Alert noMatches = new Alert(AlertType.INFORMATION);
-    	noMatches.setHeaderText("No matches were found :(");
-    	noMatches.setTitle("Sorry");
-    	
-    	//alerts the user no matches were found.
-    	if(foundGroups.isEmpty())
-    		noMatches.showAndWait();
-    }
+	void searchButtonPressed(ActionEvent event) {
+		// clears the last search
+		foundGroups.clear();
+
+		// gets text to search by
+		String groupName = nameTextField.getText();
+		String className = classTextField.getText();
+		String majorName = majorTextField.getText();
+		String buildingName = buildingTextField.getText();
+
+		matchedGroups = findGroup.findGroupByName(groupName, GoStudyMain.groupList);
+		matchedGroups = findGroup.findGroupByMajor(majorName, matchedGroups);
+		matchedGroups = findGroup.findGroupByClass(className, matchedGroups);
+		matchedGroups = findGroup.findGroupByBuilding(buildingName, matchedGroups);
+
+		// adds the matched groups, refreshes ListView
+		foundGroups.addAll(matchedGroups);
+		foundGroupsListView.refresh();
+		// }
+
+		Alert noMatches = new Alert(AlertType.INFORMATION);
+		noMatches.setHeaderText("No matches were found :(");
+		noMatches.setTitle("Sorry");
+
+		// alerts the user no matches were found.
+		if (foundGroups.isEmpty())
+			noMatches.showAndWait();
+	}
 
     //handles reset button pressed action event
     @FXML

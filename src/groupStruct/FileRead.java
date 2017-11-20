@@ -28,6 +28,7 @@ public class FileRead {
 			group.setGroupName(br.readLine());
 			group.setFileName(file.getName());
 			group.setClassName(br.readLine());
+			group.setMajorName(br.readLine());
 			group.setLocation(br.readLine());
 			group.setLocationNotes(br.readLine());
 			group.setTime(br.readLine());

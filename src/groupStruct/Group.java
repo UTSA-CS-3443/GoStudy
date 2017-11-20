@@ -3,6 +3,7 @@ package groupStruct;
 public class Group {
 	private String groupName; //AOA Final
 	private String fileName; //replace spaces with underscore and add ".txt", AOA_Final.txt
+	private String majorName;
 	private String className; //predefined?
 	private String location; //make a location enum for predefined locations like NPB, or location class?
 	private String locationNotes;
@@ -13,12 +14,13 @@ public class Group {
 	//private User groupOwner;
 	//private ArrayList<User> groupMembers;
 	
-	public static Group newGroup(String groupName, String className, String location, String locationNotes
+	public static Group newGroup(String groupName, String className, String majorName, String location, String locationNotes
 			, String time, String access, String seatLimit) {
 		Group group = new Group();
 		group.groupName = groupName;
 		group.fileName = stringToFileName(groupName);
 		group.className = className;
+		group.majorName = majorName;
 		group.location = location;
 		group.locationNotes = locationNotes;
 		group.time = time;
@@ -85,6 +87,14 @@ public class Group {
 	}
 	public void setLocationNotes(String locationNotes) {
 		this.locationNotes = locationNotes;
+	}
+
+	public String getMajorName() {
+		return majorName;
+	}
+
+	public void setMajorName(String majorName) {
+		this.majorName = majorName;
 	}	
 }
 //getters

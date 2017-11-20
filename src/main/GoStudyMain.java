@@ -21,8 +21,8 @@ public class GoStudyMain extends Application{
 	
 	public static ArrayList<Group> groupList = FileRead.constructList();
 	public static Group selectedGroup = groupList.get(0);
-	public static Group group1 = groupList.get(0);
-	public static Group group2 = groupList.get(1);
+	//public static Group group1 = groupList.get(0);
+	//public static Group group2 = groupList.get(1);
 	
 	//switches to the screen given from name. name should NOT include ".fxml" at the end
 	public static void new_child(String name) {
