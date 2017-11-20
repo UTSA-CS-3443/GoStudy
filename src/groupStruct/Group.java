@@ -1,5 +1,9 @@
 package groupStruct;
 
+import java.util.ArrayList;
+
+import users.User;
+
 public class Group {
 	private String groupName; //AOA Final
 	private String fileName; //replace spaces with underscore and add ".txt", AOA_Final.txt
@@ -11,8 +15,8 @@ public class Group {
 	private String access; //Public or private
 	private String seatLimit;
 	//needs User object for owner and users array list
-	//private User groupOwner;
-	//private ArrayList<User> groupMembers;
+	private User groupOwner;
+	private ArrayList<User> groupMembers;
 	
 	public static Group newGroup(String groupName, String className, String majorName, String location, String locationNotes
 			, String time, String access, String seatLimit) {
@@ -95,6 +99,22 @@ public class Group {
 
 	public void setMajorName(String majorName) {
 		this.majorName = majorName;
+	}
+
+	public User getGroupOwner() {
+		return groupOwner;
+	}
+
+	public void setGroupOwner(User groupOwner) {
+		this.groupOwner = groupOwner;
+	}
+
+	public ArrayList<User> getGroupMembers() {
+		return groupMembers;
+	}
+
+	public void setGroupMembers(ArrayList<User> groupMembers) {
+		this.groupMembers = groupMembers;
 	}	
 }
 //getters
