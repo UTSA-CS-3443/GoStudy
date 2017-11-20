@@ -103,8 +103,7 @@
                         <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Building :" GridPane.rowIndex="3" />
                         <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <TextField fx:id="meetingAreaTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label text="MeetingArea :" GridPane.rowIndex="4" />
+                        <Label text="Meeting Notes :" GridPane.rowIndex="4" />
                         <Label text="Meeting Time :" GridPane.rowIndex="5" />
                         <TextField fx:id="meetingTimeTextBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label text="Spots Available :" GridPane.rowIndex="6" />
@@ -142,6 +141,7 @@
                         <Label fx:id="errSpots" focusTraversable="false" text="Invalid Number of Spots" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                         <Label fx:id="errVisibility" focusTraversable="false" text="Please select a visibility" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="7" />
                         <Label fx:id="errEmail" focusTraversable="false" text="Invalid email" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <TextArea fx:id="meetingNotesTextArea" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      </children>
                      <padding>
                         <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
