@@ -110,6 +110,8 @@ public class MyGroupsController extends CommonController{
      *	Controller.
      */
 
+    /*
+     * Probably will not be implemented, leaving here though just in case
     @FXML
     void sendInvitesButtonPressed(ActionEvent event) {
     	TextInputDialog sendInvites = new TextInputDialog();
@@ -131,6 +133,7 @@ public class MyGroupsController extends CommonController{
     	sendFailure.setTitle("Failure");
     	//sendFailure.show();
     }
+    */
 
     @FXML
     void editGroupButtonPressed(ActionEvent event) {
@@ -184,6 +187,7 @@ public class MyGroupsController extends CommonController{
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	//should change views to the login page
+    	GoStudyMain.new_child("Login");
     }
 
     //handles My Groups button pressed ActionEvent

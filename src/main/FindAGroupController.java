@@ -166,6 +166,6 @@ public class FindAGroupController extends CommonController {
     
     @FXML 
     void signOutButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Login");
     }
 }

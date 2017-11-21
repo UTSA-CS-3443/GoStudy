@@ -71,7 +71,6 @@ public class GoStudyMain extends Application{
 				primaryStage.setTitle("GoStudy");
 				primaryStage.setScene(scene);
 				primaryStage.centerOnScreen();
-				primaryStage.setResizable(false);
 				primaryStage.show();
 				
 			} catch(Exception e) {
