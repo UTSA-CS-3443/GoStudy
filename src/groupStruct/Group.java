@@ -14,9 +14,9 @@ public class Group {
 	private String time; //is there a time class? predefined times
 	private String access; //Public or private
 	private String seatLimit;
-	//needs User object for owner and users array list
 	private User groupOwner;
 	private ArrayList<User> groupMembers;
+	private int iSeatsTaken;
 	
 	public static Group newGroup(String groupName, String className, String majorName, String location, String locationNotes
 			, String time, String access, String seatLimit) {
@@ -30,16 +30,22 @@ public class Group {
 		group.time = time;
 		group.access = access;
 		group.seatLimit = seatLimit;
+		group.iSeatsTaken = Integer.parseInt(seatLimit);
 		return group;
 	}
 	
 	
 	//check if seat limit has not been met, otherwise join and add one to members
 	public boolean joinGroup(User user) {
+		if (this.groupMembers.size() == this.iSeatsTaken)
+			return false;
+		if (this.access.equals("PRIVATE")) //this not needed
+			return false;
 		if (this.groupMembers.contains(user))
 			return false;
 		else {
 			this.groupMembers.add(user);
+			this.iSeatsTaken++;
 			return true;
 		}
 	}
@@ -49,6 +55,7 @@ public class Group {
 			return false;
 		else {
 			this.groupMembers.remove(user);
+			this.iSeatsTaken--;
 			return true;
 		}
 	}
@@ -135,7 +142,9 @@ public class Group {
 
 	public void setGroupMembers(ArrayList<User> groupMembers) {
 		this.groupMembers = groupMembers;
-	}	
+	}
+
+	
 }
 //getters
 //editGroupName, editClassName, etc, this will edit the group text file
