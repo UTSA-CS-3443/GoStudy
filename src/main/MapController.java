@@ -47,5 +47,51 @@ public class MapController extends CommonController {
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
+    
+    //building buttons
+    void UCButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void PEButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void HUCButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void MSButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void JPLButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void BBButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void FLNButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void EBButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void AETButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void RWCButtonPressed(ActionEvent event) 
+    {
+    
+    }
+    void MBButtonPressed(ActionEvent event) 
+    {
+    
+    }
 
 }
