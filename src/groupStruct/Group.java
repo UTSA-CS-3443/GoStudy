@@ -33,6 +33,26 @@ public class Group {
 		return group;
 	}
 	
+	
+	//check if seat limit has not been met, otherwise join and add one to members
+	public boolean joinGroup(User user) {
+		if (this.groupMembers.contains(user))
+			return false;
+		else {
+			this.groupMembers.add(user);
+			return true;
+		}
+	}
+	
+	public boolean leaveGroup(User user) {
+		if (!this.groupMembers.contains(user))
+			return false;
+		else {
+			this.groupMembers.remove(user);
+			return true;
+		}
+	}
+	
 	@Override 
 	public String toString() {
 		return this.groupName;
