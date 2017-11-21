@@ -1,5 +1,8 @@
 package main;
 
+import groupStruct.Group;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
@@ -16,6 +19,8 @@ public class MapController extends CommonController {
 
     }
 
+   // private final ObservableList<Group> mapGroupsListView = FXCollections.observableArrayList();
+    
     public void on_load(){};
     
     @FXML
@@ -47,6 +52,7 @@ public class MapController extends CommonController {
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
+    //maybe side
     
     //building buttons
     void UCButtonPressed(ActionEvent event) 
