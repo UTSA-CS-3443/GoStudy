@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="444.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Label fx:id="LblMainWindow" layoutX="96.0" layoutY="107.0" prefHeight="27.0" prefWidth="252.0" text="   Create new user account:">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <PasswordField fx:id="txtPasswordtoo" layoutX="131.0" layoutY="222.0" promptText="Password" />
+      <TextField fx:id="txtUsernametoo" layoutX="131.0" layoutY="171.0" promptText="Username" />
+      <Button layoutX="178.0" layoutY="353.0" mnemonicParsing="false" onAction="#create" text="create" />
+      <Text layoutX="39.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password must contain: a digit, lowercase letter, uppercase letter, a special character, and at least 8 chearacters. There must be no whitespace. " textAlignment="CENTER" wrappingWidth="365.97265625" />
+   </children>
+</AnchorPane>
