@@ -39,9 +39,10 @@ public class MapController extends CommonController {
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
     private ArrayList<Group> matchedGroups;
 
+    public Group selectedGroup;
     
     @FXML void signOutButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Login");
     }
     
     public void on_load(){
@@ -57,7 +58,8 @@ public class MapController extends CommonController {
     			new ChangeListener<Group>() {
     				@Override
     				public void changed(ObservableValue<? extends Group> ov, Group oldValue, Group newValue) {
-    				
+    					GroupController.getMapGroup(newValue);
+    					GoStudyMain.new_child("Group");
     				}
     			} );
     }			

@@ -52,6 +52,7 @@ public class GoStudyMain extends Application{
 			init_screen("Settings");
 			init_screen("Login");
 			init_screen("CreateUser");
+			init_screen("Group");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -62,11 +63,11 @@ public class GoStudyMain extends Application{
 	public void start(Stage primaryStage) {
 		try {
 				main_stage = primaryStage;
-				root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+				root = FXMLLoader.load(getClass().getResource("Map.fxml"));
 				Scene scene = new Scene(root);
 				
 				init_screens();
-				new_child("Login");
+				new_child("Map");
 				
 				primaryStage.setTitle("GoStudy");
 				primaryStage.setScene(scene);
