@@ -100,57 +100,57 @@
                <content>
                   <Pane prefHeight="663.0" prefWidth="974.0" BorderPane.alignment="CENTER">
                      <children>
-                        <ImageView layoutX="-119.0" layoutY="-76.0">
+                        <ImageView layoutX="-322.0" layoutY="-139.0">
                            <image>
-                              <Image url="@../../mapImage/UTSA-Map.png" />
+                              <Image url="@../../mapImage/UTSA-Map.jpg" />
                            </image>
                         </ImageView>
-                        <Button fx:id="PE" layoutX="397.0" layoutY="239.0" mnemonicParsing="false" onAction="#PEButtonPressed" opacity="0.61" prefHeight="36.0" prefWidth="43.0" text="PE">
+                        <Button fx:id="PE" layoutX="311.0" layoutY="251.0" mnemonicParsing="false" onAction="#PEButtonPressed" opacity="0.61" prefHeight="36.0" prefWidth="43.0" text="PE">
                            <font>
                               <Font size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="UC" layoutX="436.0" layoutY="188.0" mnemonicParsing="false" onAction="#UCButtonPressed" opacity="0.48" prefHeight="51.0" prefWidth="85.0" text="UC" />
-                        <Button fx:id="HUC" layoutX="476.0" layoutY="244.0" mnemonicParsing="false" onAction="#HUCButtonPressed" opacity="0.51" prefHeight="60.0" prefWidth="48.0" text="HUC" />
-                        <Button fx:id="MS" layoutX="524.0" layoutY="220.0" mnemonicParsing="false" onAction="#MSButtonPressed" opacity="0.45" text="MS">
+                        <Button fx:id="UC" layoutX="370.0" layoutY="171.0" mnemonicParsing="false" onAction="#UCButtonPressed" opacity="0.48" prefHeight="60.0" prefWidth="85.0" text="UC" />
+                        <Button fx:id="HUC" layoutX="408.0" layoutY="242.0" mnemonicParsing="false" onAction="#HUCButtonPressed" opacity="0.51" prefHeight="60.0" prefWidth="48.0" text="HUC" />
+                        <Button fx:id="MS" layoutX="473.0" layoutY="207.0" mnemonicParsing="false" onAction="#MSButtonPressed" opacity="0.45" prefHeight="71.0" prefWidth="50.0" text="MS">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="JPL" layoutX="596.0" layoutY="167.0" mnemonicParsing="false" onAction="#JPLButtonPressed" opacity="0.52" prefHeight="24.0" prefWidth="50.0" text="JPL">
+                        <Button fx:id="JPL" layoutX="560.0" layoutY="153.0" mnemonicParsing="false" onAction="#JPLButtonPressed" opacity="0.52" prefHeight="24.0" prefWidth="50.0" text="JPL">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="BB" layoutX="568.0" layoutY="132.0" mnemonicParsing="false" onAction="#BBButtonPressed" opacity="0.59" prefHeight="39.0" prefWidth="54.0" text="BB">
+                        <Button fx:id="BB" layoutX="529.0" layoutY="106.0" mnemonicParsing="false" onAction="#BBButtonPressed" opacity="0.59" prefHeight="39.0" prefWidth="54.0" text="BB">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="EB" layoutX="589.0" layoutY="290.0" mnemonicParsing="false" onAction="#EBButtonPressed" opacity="0.42" prefHeight="5.0" prefWidth="21.0" text="EB">
+                        <Button fx:id="EB" layoutX="553.0" layoutY="304.0" mnemonicParsing="false" onAction="#EBButtonPressed" opacity="0.42" prefHeight="5.0" prefWidth="21.0" text="EB">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="AET" layoutX="576.0" layoutY="337.0" mnemonicParsing="false" onAction="#AETButtonPressed" opacity="0.35" prefHeight="54.0" prefWidth="41.0" text="AET">
+                        <Button fx:id="AET" layoutX="540.0" layoutY="362.0" mnemonicParsing="false" onAction="#AETButtonPressed" opacity="0.35" prefHeight="54.0" prefWidth="41.0" text="AET">
                            <font>
                               <Font size="12.0" />
                            </font>
                         </Button>
-                        <Button fx:id="ART" layoutX="595.0" layoutY="228.0" mnemonicParsing="false" onAction="#ARTButtonPressed" opacity="0.49" prefHeight="48.0" prefWidth="68.0" text="ART">
+                        <Button fx:id="ART" layoutX="555.0" layoutY="228.0" mnemonicParsing="false" onAction="#ARTButtonPressed" opacity="0.49" prefHeight="63.0" prefWidth="108.0" text="ART">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Button>
-                        <Button fx:id="RWC" layoutX="320.0" layoutY="310.0" mnemonicParsing="false" onAction="#RWCButtonPressed" opacity="0.48" prefHeight="90.0" prefWidth="87.0" text="RWC" />
-                        <Button fx:id="MB" layoutX="647.0" layoutY="151.0" mnemonicParsing="false" onAction="#MBButtonPressed" opacity="0.39" prefHeight="54.0" prefWidth="47.0" text="MB">
+                        <Button fx:id="RWC" layoutX="220.0" layoutY="322.0" mnemonicParsing="false" onAction="#RWCButtonPressed" opacity="0.48" prefHeight="98.0" prefWidth="87.0" text="RWC" />
+                        <Button fx:id="MB" layoutX="624.0" layoutY="133.0" mnemonicParsing="false" onAction="#MBButtonPressed" opacity="0.39" prefHeight="54.0" prefWidth="47.0" text="MB">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="NPB" layoutX="508.0" layoutY="79.0" mnemonicParsing="false" onAction="#NPBButtonPressed" opacity="0.48" prefHeight="51.0" prefWidth="17.0" text="NPB" />
-                        <Button fx:id="MH" layoutX="514.0" layoutY="156.0" mnemonicParsing="false" onAction="#MHButtonPressed" opacity="0.48" prefHeight="51.0" prefWidth="63.0" text="MH" />
-                        <Button fx:id="FLN" layoutX="544.0" layoutY="255.0" mnemonicParsing="false" onAction="#FLNButtonPressed" opacity="0.49" prefHeight="41.0" prefWidth="68.0" text="FLN">
+                        <Button fx:id="NPB" layoutX="442.0" layoutY="56.0" mnemonicParsing="false" onAction="#NPBButtonPressed" opacity="0.48" prefHeight="54.0" prefWidth="48.0" text="NPB" />
+                        <Button fx:id="MH" layoutX="466.0" layoutY="147.0" mnemonicParsing="false" onAction="#MHButtonPressed" opacity="0.48" prefHeight="51.0" prefWidth="63.0" text="MH" />
+                        <Button fx:id="FLN" layoutX="503.0" layoutY="258.0" mnemonicParsing="false" onAction="#FLNButtonPressed" opacity="0.49" prefHeight="54.0" prefWidth="68.0" text="FLN">
                            <font>
                               <Font size="14.0" />
                            </font>
