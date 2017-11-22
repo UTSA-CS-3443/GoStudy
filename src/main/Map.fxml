@@ -102,7 +102,7 @@
                      <children>
                         <ImageView layoutX="-119.0" layoutY="-76.0">
                            <image>
-                              <Image url="@../../../../../workspace/hello1/hello/mapImage/UTSA-Map.png" />
+                              <Image url="@../../mapImage/UTSA-Map.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="PE" layoutX="397.0" layoutY="239.0" mnemonicParsing="false" onAction="#PEButtonPressed" opacity="0.61" prefHeight="36.0" prefWidth="43.0" text="PE">
