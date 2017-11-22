@@ -14,7 +14,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * 
+ * @author Gloria Trevino
+ * @author Victoria Huerta
+ * 
+ * The main contoller for the login screen. 
+ *
+ */
 public class LoginController extends CommonController{
 
 	private Parent root;
@@ -34,46 +41,52 @@ public class LoginController extends CommonController{
 	/**
 	 * public void Login(ActionEvent event)
 	 * 
-	 * 
-	 * TODO: need to let a user login succesfully
-	 * 
+	 * Controls the buttons on the login page.
 	 * 
 	 * @param event
 	 * @throws Exception
 	 */
 	public void Login(ActionEvent event) throws Exception {
-		// if these two fields match
-		// will read from user.txt line by line the user name and password and see if
-		// they both match
-		String username = txtUsername.getText();
-		String adjusted = username.replaceAll("\\s+$", "");
-		String pass = txtPassword.getText();
-		String user = adjusted + "," + pass;
+		
+		String username = txtUsername.getText();	//grabs username from textfield 
+		String adjusted = username.replaceAll("\\s+$", ""); //removes extra space added at the end of the username string
+		String pass = txtPassword.getText();	//grabs password from password field
+		String user = adjusted + "," + pass; //combines username and passoword 
+		
+		//checks if textfields were null 
+		if(username.trim().isEmpty() || pass.isEmpty()) {
+			lblLabel.setText("   Hey, you didn't put anything!");
+		} else {
+		
+			try {
+				//opens file for reading 
+				File file = new File("users.txt");
+				FileReader fileReader = new FileReader(file);
+				BufferedReader bufferedReader = new BufferedReader(fileReader);
+				StringBuffer stringBuffer = new StringBuffer(); 		//empty "string"
+				String line;
+				//adds each line in the file into the stringbuffer
+				while ((line = bufferedReader.readLine()) != null) {
+					stringBuffer.append(line);
+					stringBuffer.append("\n");
+				}
+				fileReader.close();	//close file
+				System.out.println("Contents of file:");
+				System.out.println(stringBuffer.toString());
+				//looks for user in the stringBuffer
+				if ((stringBuffer.toString()).contains(user)) {
+					//goes to MyGroups if login is successful -- annie
+					GoStudyMain.new_child("MyGroups");
+				} else {
+					//If user doesn't exist
+					lblLabel.setText("\t  User not found");
+				}
 
-		try {
-			File file = new File("users.txt");
-			FileReader fileReader = new FileReader(file);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			StringBuffer stringBuffer = new StringBuffer();
-			String line;
-			while ((line = bufferedReader.readLine()) != null) {
-				stringBuffer.append(line);
-				stringBuffer.append("\n");
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			fileReader.close();
-			System.out.println("Contents of file:");
-			System.out.println(stringBuffer.toString());
-			if ((stringBuffer.toString()).contains(user)) {
-				//goes to MyGroups if login is successful -- annie
-				GoStudyMain.new_child("MyGroups");
-			} else {
-				lblLabel.setText("\t  User not found");
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
-		//TODO: make sure the textfileds aren't null
+		
 	}//end login function
 
 	public void NewUser(ActionEvent event2) throws Exception {

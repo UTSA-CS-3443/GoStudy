@@ -13,10 +13,23 @@ import java.util.ArrayList;
 
 import groupStruct.Group;
 
+/**
+ * 
+ * @author Sam Burnett, Gloria Trevino
+ *
+ */
 public class User {
+	
 	private String userName;
 	private String password;
-
+	
+	public static User newUser(String userName, String password) {
+		User user = new User();
+		user.userName = userName;
+		user.setPassword(password);
+		return user;
+	}
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -25,6 +38,15 @@ public class User {
 		this.userName = userName;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
 	// creates a array list of groups that are owned by the user
 	public ArrayList<Group> ownedGroups(ArrayList<Group> groupList) {
 		ArrayList<Group> ownedGroups = new ArrayList<>();
@@ -49,20 +71,7 @@ public class User {
 		return memberedGroups;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public static User newUser(String userName, String password) {
-		User user = new User();
-		user.userName = userName;
-		user.setPassword(password);
-		return user;
-	}
+	
 
 	public int changePassword(String newPassword, String UserName) {
 
