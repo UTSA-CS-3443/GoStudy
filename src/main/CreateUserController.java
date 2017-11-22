@@ -9,16 +9,20 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class CreateUserController extends CommonController{
 	
 	@FXML private TextField txtUsernametoo;
     @FXML private PasswordField txtPasswordtoo;
     @FXML private Label LblMainWindow;
-
+    
     @FXML
     public void create(ActionEvent event3) {
 	
@@ -105,6 +109,10 @@ public class CreateUserController extends CommonController{
 	}
 	}
 
+    @FXML
+    public void byefelica(ActionEvent event3) {
+    		GoStudyMain.new_child("Login");
+    }
 	@Override
 	void on_load() {
 		// TODO Auto-generated method stub
