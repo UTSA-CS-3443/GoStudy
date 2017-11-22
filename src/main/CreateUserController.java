@@ -12,9 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 public class CreateUserController extends CommonController{
@@ -83,8 +85,13 @@ public class CreateUserController extends CommonController{
 					BufferedWriter bw = new BufferedWriter(fileWritter);
 					bw.write(name);
 					bw.close(); // closes file
-
+					
 					LblMainWindow.setText("New user created");
+					Alert confirm = new Alert(AlertType.CONFIRMATION);
+	    				confirm.setHeaderText("You now exist. Congratulatons.");
+	    				confirm.setTitle("User Confirmation");
+	    				confirm.showAndWait();
+	    				GoStudyMain.new_child("Login");
 					// PrintWriter out = new PrintWriter("users.txt", "UTF-8");
 
 					// out.println(username + "," + password);

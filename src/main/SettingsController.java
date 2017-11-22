@@ -35,7 +35,7 @@ public class SettingsController extends CommonController{
     		if(boo == 1){
     	
     			Alert confirm = new Alert(AlertType.CONFIRMATION);
-    			confirm.setHeaderText("You cant change your password >:(");
+    			confirm.setHeaderText("Stop changing your password... it was changed.");
     			confirm.setTitle("User Confirmation");
     			confirm.show();
     		}
