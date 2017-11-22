@@ -6,6 +6,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import users.User;
+
 //goes through Groups directory and creates Group objects and adds them to the groups list
 public class FileRead {
 	 //creates groupList, loops through files and calls constructGroup
@@ -22,6 +24,7 @@ public class FileRead {
 	 //takes file as parameter, loops through line by line and creates a group
 	 public static Group constructGroup(File file) {
 		 Group group = new Group();
+		 User user = new User();
 		 BufferedReader br = null;
 		 try {
 			br = new BufferedReader(new FileReader(file));
@@ -34,6 +37,8 @@ public class FileRead {
 			group.setTime(br.readLine());
 			group.setAccess(br.readLine());
 			group.setSeatLimit(br.readLine());
+			user.setUserName(br.readLine());
+			group.setGroupOwner(user);
 			br.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

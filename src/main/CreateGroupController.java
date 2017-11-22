@@ -12,6 +12,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import users.User;
 import javafx.scene.control.Alert.AlertType;
 
 public class CreateGroupController extends CommonController {
@@ -81,7 +82,9 @@ public class CreateGroupController extends CommonController {
     		access = "PUBLIC";
     	Group newGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextBox.getText(), access, spotsAvailableTextField.getText());
-    	GroupFileEdit.createGroupFile(newGroup);
+    	User user = new User();
+    	user.setUserName("pablo_migo");
+    	GroupFileEdit.createGroupFile(newGroup, user);
 
     	
     	Alert createSuccess = new Alert(AlertType.INFORMATION);

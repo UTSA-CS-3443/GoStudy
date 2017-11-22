@@ -9,10 +9,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import users.User;
+
 public class GroupFileEdit {
 	
 	//validate user information
-	public static boolean createGroupFile(Group group) {
+	public static boolean createGroupFile(Group group, User user) {
 			try {
 				File f = new File("Groups/" + group.getFileName());
 				if (!validateAll(group)) {
@@ -33,6 +35,7 @@ public class GroupFileEdit {
 					writer.write(group.getTime() + "\n");
 					writer.write(group.getAccess() + "\n");
 					writer.write(group.getSeatLimit() + "\n");
+					writer.write(user.getUserName() + "\n");
 					writer.close();
 					return true;
 				}
@@ -42,17 +45,17 @@ public class GroupFileEdit {
 			}
 	}
 	
-	public static boolean editGroup(Group oldGroup, Group editGroup){
-		 boolean success = deleteGroupFile(oldGroup);
+	public static boolean editGroup(Group oldGroup, Group editGroup, User user){
+		 boolean success = deleteGroupFile(oldGroup, user);
 		 if (!success) {
 			 System.out.println("Edit failed because delete failed: editGroup");
 		 	 return false;
 		 }
-		 success = createGroupFile(editGroup);
+		 success = createGroupFile(editGroup, user);
 		 return success;
 	}
 	
-	public static boolean deleteGroupFile(Group group) {
+	public static boolean deleteGroupFile(Group group, User user) {
 		String path = "Groups/" + group.getFileName();
 		File file = new File(path);
 		if (!file.exists()) {

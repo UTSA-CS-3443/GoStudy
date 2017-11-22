@@ -1,8 +1,9 @@
 AOA Final
-CS3343
+CS3333
 CS
 FLAWN
-Room:  3.43.3
-6:00
+Room 3.4.3
+5:00 AM
 PUBLIC
-10
+500
+pablo_migo

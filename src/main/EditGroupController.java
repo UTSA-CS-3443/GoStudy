@@ -9,6 +9,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import users.User;
 import javafx.scene.control.Alert.AlertType;
 
 public class EditGroupController extends CommonController{
@@ -81,8 +82,9 @@ public class EditGroupController extends CommonController{
     	//creates edited group
     	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), access, spotsAvailableTextField.getText());
-
-    	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup);
+    	User user = new User();
+    	user.setUserName("pablo_migo");
+    	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup, user);
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);
     	editSuccess.setHeaderText("Successfully edited group!");
