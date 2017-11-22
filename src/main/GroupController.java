@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
 
@@ -21,10 +22,12 @@ public class GroupController extends CommonController{
     @FXML private Label openSpotsLabel;
     @FXML private AnchorPane groupDisplayPane;
     @FXML private Label meetingTimeLabel;
+	@FXML private Labeled userIdLabel;
     
     private static Group newValue;
 
     public void on_load() {
+    	userIdLabel.setText("Annie");
 		groupNameLabel.setText(newValue.getGroupName());
 		buildingLabel.setText(newValue.getLocation());
 		meetingNotesLabel.setText(newValue.getLocationNotes());

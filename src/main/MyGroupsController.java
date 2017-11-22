@@ -13,6 +13,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.AnchorPane;
@@ -37,6 +38,7 @@ public class MyGroupsController extends CommonController{
     @FXML private ListView<Group> apartOfGroupListView;
     @FXML private ListView<Group> ownGroupListView;
     @FXML private AnchorPane groupInfoAnchorPane;
+    @FXML private Labeled userIdLabel;
 
     //myGroupController ObservableLists
     private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
@@ -45,6 +47,7 @@ public class MyGroupsController extends CommonController{
 
 	@Override
 	void on_load() {
+		userIdLabel.setText("Annie");
 		ownGroupListView.refresh();
 		apartOfGroupListView.refresh();
 		groupInfoAnchorPane.setVisible(false);
