@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="444.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane minHeight="444.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.CreateUserController">
    <children>
       <Label fx:id="LblMainWindow" layoutX="96.0" layoutY="107.0" prefHeight="27.0" prefWidth="252.0" text="   Create new user account:">
          <font>

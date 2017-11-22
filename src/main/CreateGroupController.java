@@ -107,7 +107,7 @@ public class CreateGroupController extends CommonController {
     //handles SignOut button pressed ActionEvent
     @FXML
     void signOutButtonPressed(ActionEvent event) {
-    	//should change views to the login page
+    	GoStudyMain.new_child("Login");
     }
 
     //handles My Groups button pressed ActionEvent

@@ -81,27 +81,19 @@
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="UserID:" />
-                        <Label text="Email:" GridPane.rowIndex="1" />
                         <Label fx:id="userIdLabel" text="userIdLabel" GridPane.columnIndex="1" />
-                        <Label text="Password:" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" onAction="#changeEmailButtonPressed" text="Change Email" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Label text="Password:" GridPane.rowIndex="1" />
+                        <Button mnemonicParsing="false" onAction="#changePasswordButtonPressed" text="Change Password" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#changePasswordButtonPressed" text="Change Password" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                           <GridPane.margin>
-                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <TextField fx:id="emailTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

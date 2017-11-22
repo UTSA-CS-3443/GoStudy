@@ -107,7 +107,7 @@ public class EditGroupController extends CommonController{
     
     @FXML
     void signOutButtonPressed(ActionEvent event) {
-
+    	GoStudyMain.new_child("Login");
     }
 
     @FXML
