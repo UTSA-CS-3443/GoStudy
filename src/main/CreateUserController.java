@@ -9,16 +9,22 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
 public class CreateUserController extends CommonController{
 	
 	@FXML private TextField txtUsernametoo;
     @FXML private PasswordField txtPasswordtoo;
     @FXML private Label LblMainWindow;
-
+    
     @FXML
     public void create(ActionEvent event3) {
 	
@@ -79,8 +85,13 @@ public class CreateUserController extends CommonController{
 					BufferedWriter bw = new BufferedWriter(fileWritter);
 					bw.write(name);
 					bw.close(); // closes file
-
+					
 					LblMainWindow.setText("New user created");
+					Alert confirm = new Alert(AlertType.CONFIRMATION);
+	    				confirm.setHeaderText("You now exist. Congratulatons.");
+	    				confirm.setTitle("User Confirmation");
+	    				confirm.showAndWait();
+	    				GoStudyMain.new_child("Login");
 					// PrintWriter out = new PrintWriter("users.txt", "UTF-8");
 
 					// out.println(username + "," + password);
@@ -105,6 +116,10 @@ public class CreateUserController extends CommonController{
 	}
 	}
 
+    @FXML
+    public void byefelica(ActionEvent event3) {
+    		GoStudyMain.new_child("Login");
+    }
 	@Override
 	void on_load() {
 		// TODO Auto-generated method stub

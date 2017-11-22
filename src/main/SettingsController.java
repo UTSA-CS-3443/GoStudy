@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import users.User;
 import javafx.scene.control.Alert.AlertType;
 
 public class SettingsController extends CommonController{
@@ -29,10 +30,18 @@ public class SettingsController extends CommonController{
 
     @FXML
     void changePasswordButtonPressed(ActionEvent event) {
-    	Alert confirm = new Alert(AlertType.CONFIRMATION);
-    	confirm.setHeaderText("You cant change your password >:(");
-    	confirm.setTitle("User Confirmation");
-    	confirm.show();
+    		String newPassword = passwordTextField.getText();
+    		String Username = "annie";
+    		User user = new User();
+    		int boo = user.changePassword(newPassword, Username);
+    		System.out.println(boo);
+    		if(boo == 1){
+    	
+    			Alert confirm = new Alert(AlertType.CONFIRMATION);
+    			confirm.setHeaderText("Stop changing your password... it was changed.");
+    			confirm.setTitle("User Confirmation");
+    			confirm.show();
+    		}
     }
 
     @FXML
