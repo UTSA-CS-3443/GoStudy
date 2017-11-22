@@ -27,7 +27,7 @@
             <AnchorPane prefHeight="98.0" prefWidth="402.0" />
             <AnchorPane prefHeight="93.0" prefWidth="162.0">
                <children>
-                  <Label layoutX="120.0" layoutY="71.0" text="UserID">
+                  <Label fx:id="userIdLabel2" layoutX="120.0" layoutY="71.0" text="UserID">
                      <font>
                         <Font size="18.0" />
                      </font>

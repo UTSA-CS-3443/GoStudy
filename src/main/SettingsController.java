@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import users.User;
@@ -19,6 +20,8 @@ public class SettingsController extends CommonController{
     @FXML private Label userIdLabel;
     //@FXML private TextField emailTextField;
     @FXML private PasswordField passwordTextField;
+	@FXML private Labeled userIdLabel2;
+    
 
     /*
      *	These Action events are specific to the Settings
@@ -102,6 +105,8 @@ public class SettingsController extends CommonController{
 
 	@Override
 	void on_load() {
+		userIdLabel.setText("Annie");
+		userIdLabel2.setText("Annie");
 		// TODO Auto-generated method stub
 	}
 

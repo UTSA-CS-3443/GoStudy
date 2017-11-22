@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import groupStruct.Group;
 import groupStruct.findGroup;
 import javafx.scene.control.Button;
+import javafx.scene.control.Labeled;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -36,6 +37,7 @@ public class MapController extends CommonController {
 	@FXML private Button HUC;
 	@FXML private Button EB;
 	@FXML private Button RWC;
+	@FXML private Labeled userIdLabel;
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
     private ArrayList<Group> matchedGroups;
 
@@ -46,7 +48,7 @@ public class MapController extends CommonController {
     }
     
     public void on_load(){
-    	//
+    	userIdLabel.setText("Annie");
     	mapGroupsListView.refresh();
     }
     

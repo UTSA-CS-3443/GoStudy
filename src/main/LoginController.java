@@ -90,6 +90,7 @@ public class LoginController extends CommonController{
 
 	@Override
 	void on_load() {
+		
 		// TODO Auto-generated method stub
 		
 	}

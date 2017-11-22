@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
+import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -41,9 +42,11 @@ public class FindAGroupController extends CommonController {
     
     //findAGroupController ObservableLists
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
+	@FXML private Labeled userIdLabel;
     
     public void on_load(){
     	foundGroupsListView.refresh();
+    	userIdLabel.setText("Annie");
     };
     
     public void initialize() {

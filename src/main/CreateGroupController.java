@@ -51,7 +51,9 @@ public class CreateGroupController extends CommonController {
     @FXML private Label errClass;
     @FXML private Label errRoomNumber;
     
-    public void on_load(){};
+    public void on_load(){
+    	userIdLabel.setText("Annie");
+    };
     
     /*
      *	These Action events are specific to the Create Group 
