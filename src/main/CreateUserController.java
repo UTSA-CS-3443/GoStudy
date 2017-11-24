@@ -28,6 +28,11 @@ public class CreateUserController extends CommonController {
 	@FXML
 	private Label LblMainWindow;
 
+	/**
+	 * Creates a new user, and adds their info to the user.txt
+	 * 
+	 * @param event3
+	 */
 	@FXML
 	public void create(ActionEvent event3) {
 
@@ -36,15 +41,17 @@ public class CreateUserController extends CommonController {
 		System.out.println(username);
 		System.out.println(password);
 
-		String adjusted = username.replaceAll("\\s+$", "");
+		String adjusted = username.replaceAll("\\s+$", ""); // delete extra whitespace
 		String user = adjusted + "," + password;
 
 		try {
+			// opens file
 			File file = new File("users.txt");
 			FileReader fileReader = new FileReader(file);
 			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			StringBuffer stringBuffer = new StringBuffer();
+			StringBuffer stringBuffer = new StringBuffer(); // a temp holder for users.txt file
 			String line;
+			// reads each line and adds each to the temp string
 			while ((line = bufferedReader.readLine()) != null) {
 				stringBuffer.append(line);
 				stringBuffer.append("\n");
@@ -52,8 +59,10 @@ public class CreateUserController extends CommonController {
 			fileReader.close();
 			System.out.println("Contents of file:");
 			System.out.println(stringBuffer.toString());
+			// user doesn't already exist
 			if (!(stringBuffer.toString()).contains(user)) {
 
+				// checks that the password matches the required characters
 				if (password.matches("^.*(?=.{8,})(?=..*[0-9])(?=.*[A-Z])(?=.*[@!#$%^&+=]).*$")) {
 
 					try {
@@ -71,6 +80,7 @@ public class CreateUserController extends CommonController {
 						bw.write(name);
 						bw.close(); // closes file
 
+						// alert for new user created and goes to login screen
 						LblMainWindow.setText("New user created");
 						Alert confirm = new Alert(AlertType.CONFIRMATION);
 						confirm.setHeaderText("You now exist. Congratulations.");
@@ -94,6 +104,11 @@ public class CreateUserController extends CommonController {
 		}
 	}
 
+	/**
+	 * To go back to login page, if new user was accidently clicked
+	 * 
+	 * @param event3
+	 */
 	@FXML
 	public void byefelica(ActionEvent event3) {
 		GoStudyMain.new_child("Login");

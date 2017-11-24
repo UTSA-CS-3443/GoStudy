@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import groupStruct.Group;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  * 
@@ -19,17 +21,17 @@ import groupStruct.Group;
  *
  */
 public class User {
-	
+
 	private String userName;
 	private String password;
-	
+
 	public static User newUser(String userName, String password) {
 		User user = new User();
 		user.userName = userName;
 		user.setPassword(password);
 		return user;
 	}
-	
+
 	public String getUserName() {
 		return userName;
 	}
@@ -46,7 +48,6 @@ public class User {
 		this.password = password;
 	}
 
-	
 	// creates a array list of groups that are owned by the user
 	public ArrayList<Group> ownedGroups(ArrayList<Group> groupList) {
 		ArrayList<Group> ownedGroups = new ArrayList<>();
@@ -71,44 +72,66 @@ public class User {
 		return memberedGroups;
 	}
 
-	
-
+	/**
+	 * changePassword takes in a new password to change the password of the user
+	 * that is currently logged into the system, by opening the file, users.txt and
+	 * rewriting the line containing the user's information.
+	 * 
+	 * @param newPassword
+	 * @param UserName
+	 * @return
+	 */
 	public int changePassword(String newPassword, String UserName) {
 
 		System.out.println(newPassword);
 		System.out.println(UserName);
+		// checks that the new password still matches the required characters for a
+		// password
 		if (newPassword.matches("^.*(?=.{8,})(?=..*[0-9])(?=.*[A-Z])(?=.*[@!#$%^&+=]).*$")) {
 
 			try {
-
+				// opens file
 				File file = new File("users.txt");
 				FileReader fileReader = new FileReader(file);
 
+				// reads file line by line
 				try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))) {
 					for (String line; (line = br.readLine()) != null;) {
-
+						// finds the user whose password will be changed
 						if (line.contains(UserName)) {
 							System.out.println("Previous password:" + line);
-							String user = UserName + "," + newPassword;
+							String user = UserName + "," + newPassword; // rewrites the whole line
 							change(line, user);
 
-							return 1;
+							return 1; // successfully changed password
 						} else {
-							return 0;
-						}
-					}
-				}
+							return 0; // Unsuccessfully changed password
+						} // end if
+					} // end for
+				} // end try
 
 			} catch (IOException e) {
-				// exception handling left as an exercise for the reader
+				e.printStackTrace();
 			}
 		} else {
-			// password not sufficient
-		}
+			// if password doesn't match required characters: pop up alert
+			Alert confirm = new Alert(AlertType.CONFIRMATION);
+			confirm.setHeaderText("Password doesn't match required characters: a digit, lowercase letter, "
+					+ "uppercase letter, a special character, and at least 8 chearacters. There must be no whitespace.");
+			confirm.setTitle("User Confirmation");
+			confirm.show();
+		} // end if: password regex
 		return 0;
 
 	}// ends changePassword
 
+	/**
+	 * 
+	 * change Changes the password
+	 * 
+	 * @param toReplace
+	 * @param replaceTo
+	 */
 	public void change(String toReplace, String replaceTo) {
 		try {
 			// input the file content to the StringBuffer "input"
