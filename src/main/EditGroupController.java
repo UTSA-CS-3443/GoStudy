@@ -41,7 +41,7 @@ public class EditGroupController extends CommonController{
     //displays data from the selected group from MyGroups
     public void on_load() {
     	groupNameTextField.setText(GoStudyMain.selectedGroup.getGroupName());
-    	majorTextField.setText(GoStudyMain.selectedGroup.getClassName().substring(0,2));
+    	majorTextField.setText(GoStudyMain.selectedGroup.getMajorName());
     	classTextField.setText(GoStudyMain.selectedGroup.getClassName());
     	meetingTimeTextField.setText(GoStudyMain.selectedGroup.getTime());
     	buildingTextField.setText(GoStudyMain.selectedGroup.getLocation());
@@ -69,11 +69,6 @@ public class EditGroupController extends CommonController{
 
     @FXML
     void editButtonPressed(ActionEvent event) {
-    	//functions similar to createGroup...
-    	//needs to make sure user entered everything correctly.
-    	//maybe display a warning message if the user tries to make available spots smaller?
-    	//as this might mean people need to be removed from the group
-    	//if everything is successful, display message, return to MyGroups
     	String access;
     	if (privateRadioButton.isSelected())
     		access = "PRIVATE";

@@ -66,6 +66,7 @@ public class FindAGroupController extends CommonController {
 					visibilityLabel.setText(newValue.getAccess());
 					majorLabel.setText(newValue.getClassName().substring(0,2));
 					groupDisplayPane.setVisible(true);
+					ownerLabel.setText("Shrek");
 				}
 			} );
     } 

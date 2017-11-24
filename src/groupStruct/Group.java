@@ -121,7 +121,12 @@ public class Group {
 	}
 
 	public String getMajorName() {
-		return majorName;
+		//TODO temp fix for demo video for returning proper major name
+		if(className.length() == 7)
+			return className.substring(0, 3);
+		else
+			return className.substring(0,2);
+		//return majorName;
 	}
 
 	public void setMajorName(String majorName) {

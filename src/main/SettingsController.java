@@ -60,6 +60,7 @@ public class SettingsController extends CommonController{
     	sendSuccess.setHeaderText("Successfully deleted your account. We didn't like you anyway!! ;` - `; ");
     	sendSuccess.setTitle("Success");
     	sendSuccess.showAndWait();
+    	GoStudyMain.new_child("Login");
     	
     	Alert sendFailure = new Alert(AlertType.ERROR);
     	sendFailure.setHeaderText("Failed to send emails");

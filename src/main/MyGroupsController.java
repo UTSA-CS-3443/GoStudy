@@ -2,6 +2,7 @@ package main;
 
 import java.util.Optional;
 
+import groupStruct.FileRead;
 import groupStruct.Group;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,7 +16,6 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 
@@ -47,7 +47,14 @@ public class MyGroupsController extends CommonController{
 
 	@Override
 	void on_load() {
+		GoStudyMain.groupList = FileRead.constructList();
 		userIdLabel.setText("Annie");
+		myGroups.clear();
+		otherGroups.clear();
+		
+		myGroups.addAll(GoStudyMain.groupList);
+    	otherGroups.addAll(GoStudyMain.groupList);
+    	
 		ownGroupListView.refresh();
 		apartOfGroupListView.refresh();
 		groupInfoAnchorPane.setVisible(false);
@@ -57,8 +64,6 @@ public class MyGroupsController extends CommonController{
     public void initialize(){
     	//creates ObservableList for Owned Groups
     	//change this to GoStudyMain.groupList to array of user's created groups
-    	myGroups.addAll(GoStudyMain.groupList);
-    	
     	ownGroupListView.setItems(myGroups);
     	
     	ownGroupListView.getSelectionModel().selectedItemProperty().addListener(
@@ -73,18 +78,19 @@ public class MyGroupsController extends CommonController{
     					meetingTimeLabel.setText(newValue.getTime());
     					classLabel.setText(newValue.getClassName());
     					visibilityLabel.setText(newValue.getAccess());
-    					majorLabel.setText(newValue.getClassName().substring(0,2));
+    					majorLabel.setText(newValue.getMajorName());
     					ownerHBox.setVisible(true);
     					apartOfHBox.setVisible(false);
     					groupInfoAnchorPane.setVisible(true);
     					GoStudyMain.selectedGroup = newValue;
+    					apartOfGroupListView.getSelectionModel().select(-1);
+    					//TODO temp fix for demo video
+    					ownerLabel.setText("Annie");
     				}
     			} );
     	
     	//creates observableList for Groups the user is apart of
     	//change GoStudyMain.groupList to array of groups the user is in.
-    	otherGroups.addAll(GoStudyMain.groupList);
-    	
     	apartOfGroupListView.setItems(myGroups);
     	
     	apartOfGroupListView.getSelectionModel().selectedItemProperty().addListener(
@@ -99,10 +105,13 @@ public class MyGroupsController extends CommonController{
     					meetingTimeLabel.setText(newValue.getTime());
     					classLabel.setText(newValue.getClassName());
     					visibilityLabel.setText(newValue.getAccess());
-    					majorLabel.setText(newValue.getClassName().substring(0,2));
+    					majorLabel.setText(newValue.getMajorName());
     					ownerHBox.setVisible(false);
     					apartOfHBox.setVisible(true);
     					groupInfoAnchorPane.setVisible(true);
+    					ownGroupListView.getSelectionModel().select(-1);
+    					//TODO temp fix for demo video
+    					ownerLabel.setText("Shrek");
     				}
     			} );
     }

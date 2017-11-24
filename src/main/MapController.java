@@ -42,13 +42,11 @@ public class MapController extends CommonController {
     private ArrayList<Group> matchedGroups;
 
     public Group selectedGroup;
-    
-    @FXML void signOutButtonPressed(ActionEvent event) {
-    	GoStudyMain.new_child("Login");
-    }
-    
+
     public void on_load(){
     	userIdLabel.setText("Annie");
+    	foundGroups.clear();
+       	mapGroupsListView.getSelectionModel().select(-1);
     	mapGroupsListView.refresh();
     }
     
@@ -214,4 +212,9 @@ public class MapController extends CommonController {
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
+    
+    @FXML void signOutButtonPressed(ActionEvent event) {
+    	GoStudyMain.new_child("Login");
+    }
+    
 }

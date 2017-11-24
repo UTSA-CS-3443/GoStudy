@@ -92,7 +92,8 @@ public class CreateGroupController extends CommonController {
     	Alert createSuccess = new Alert(AlertType.INFORMATION);
     	createSuccess.setHeaderText("Successfully created group!");
     	createSuccess.setTitle("Success");
-    	createSuccess.show();
+    	createSuccess.showAndWait();
+    	GoStudyMain.new_child("MyGroups");
     	
     	Alert createFailure = new Alert(AlertType.ERROR);
     	createFailure.setHeaderText("Group could not be created.");

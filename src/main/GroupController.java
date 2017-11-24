@@ -36,8 +36,9 @@ public class GroupController extends CommonController{
 		meetingTimeLabel.setText(newValue.getTime());
 		classLabel.setText(newValue.getClassName());
 		visibilityLabel.setText(newValue.getAccess());
-		majorLabel.setText(newValue.getClassName().substring(0,2));
+		majorLabel.setText(newValue.getMajorName());
 		groupDisplayPane.setVisible(true);
+		ownerLabel.setText("Shrek");
     }
     
     public static void getMapGroup(Group mapGroup) {
