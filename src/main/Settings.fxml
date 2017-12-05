@@ -14,7 +14,7 @@
          <children>
             <AnchorPane prefHeight="93.0" prefWidth="319.0">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="GoStudy">
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-background-color: #ffe6f3;" text="GoStudy">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="72.0" />
                      </font>
@@ -36,7 +36,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="98.0" prefWidth="56.0">
                <children>
-                  <Hyperlink layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="17.0" prefWidth="55.0" text="Sign Out" />
+                  <Hyperlink layoutX="-9.0" layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="25.0" prefWidth="64.0" text="Sign Out" textFill="#eb75e3" />
                </children>
             </AnchorPane>
          </children>
@@ -44,7 +44,7 @@
       <Separator prefWidth="200.0" />
       <ToolBar prefHeight="52.0" prefWidth="950.0">
         <items>
-            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Groups">
+            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #ffe6f3;" text="Groups">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#myGroupButtonPressed" text="My Groups" />
                 <MenuItem mnemonicParsing="false" onAction="#findAGroupButtonPressed" text="Find a Group" />
@@ -54,8 +54,8 @@
                   <Insets left="3.0" right="3.0" />
                </padding>
             </MenuButton>
-          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Map" />
-            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Settings" />
+          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Map" />
+            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Settings" />
         </items>
          <padding>
             <Insets left="5.0" right="5.0" />
@@ -68,7 +68,7 @@
          <children>
             <VBox layoutX="14.0" layoutY="14.0" prefHeight="519.0" prefWidth="920.0">
                <children>
-                  <Label text="Settings" underline="true">
+                  <Label style="-fx-background-color: #ffe6f3;" text="Settings" underline="true">
                      <font>
                         <Font size="36.0" />
                      </font>
@@ -88,12 +88,12 @@
                         <Label text="UserID:" />
                         <Label fx:id="userIdLabel" text="userIdLabel" GridPane.columnIndex="1" />
                         <Label text="Password:" GridPane.rowIndex="1" />
-                        <Button mnemonicParsing="false" onAction="#changePasswordButtonPressed" text="Change Password" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <Button mnemonicParsing="false" onAction="#changePasswordButtonPressed" style="-fx-background-color: #ffcce6;" text="Change Password" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </GridPane.margin>
                         </Button>
-                        <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <PasswordField fx:id="passwordTextField" style="-fx-background-color: #ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      </children>
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -104,7 +104,7 @@
                   </GridPane>
                   <VBox prefHeight="362.0" prefWidth="920.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#deleteProfileButtonPressed" text="Delete Profile">
+                        <Button mnemonicParsing="false" onAction="#deleteProfileButtonPressed" style="-fx-background-color: #ffcce6;" text="Delete Profile">
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                            </padding>

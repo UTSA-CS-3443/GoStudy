@@ -15,7 +15,7 @@
          <children>
             <AnchorPane prefHeight="93.0" prefWidth="319.0">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="GoStudy">
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-background-color: #ffe6f3;" text="GoStudy">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="72.0" />
                      </font>
@@ -37,7 +37,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="98.0" prefWidth="56.0">
                <children>
-                  <Hyperlink layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="17.0" prefWidth="55.0" text="Sign Out" />
+                  <Hyperlink layoutX="-9.0" layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="25.0" prefWidth="64.0" text="Sign Out" textFill="#d755b9" />
                </children>
             </AnchorPane>
          </children>
@@ -45,7 +45,7 @@
       <Separator prefWidth="200.0" />
       <ToolBar prefHeight="52.0" prefWidth="950.0">
         <items>
-            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Groups">
+            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="93.0" style="-fx-background-color: #ffe6f3;" text="Groups">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#myGroupButtonPressed" text="My Groups" />
                 <MenuItem mnemonicParsing="false" onAction="#findAGroupButtonPressed" text="Find a Group" />
@@ -55,8 +55,8 @@
                   <Insets left="3.0" right="3.0" />
                </padding>
             </MenuButton>
-          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Map" />
-            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Settings" />
+          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Map" />
+            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Settings" />
         </items>
          <padding>
             <Insets left="5.0" right="5.0" />
@@ -67,7 +67,7 @@
       </ToolBar>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="937.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="538.0" prefWidth="937.0" style="-fx-background-color: #ffcce6;">
                <children>
                   <HBox layoutX="365.0" layoutY="14.0" prefHeight="53.0" prefWidth="286.0">
                      <children>
@@ -102,15 +102,15 @@
                         <TextField fx:id="groupNameTextField" GridPane.columnIndex="1" />
                         <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Building :" GridPane.rowIndex="3" />
-                        <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="buildingTextField" style="-fx-background-color: #ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Meeting Notes :" GridPane.rowIndex="4" />
                         <Label text="Meeting Time :" GridPane.rowIndex="5" />
-                        <TextField fx:id="meetingTimeTextBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <TextField fx:id="meetingTimeTextBox" style="-fx-background-color: #ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                         <Label text="Spots Available :" GridPane.rowIndex="6" />
                         <TextField fx:id="spotsAvailableTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <HBox prefHeight="20.0" prefWidth="168.0" spacing="40.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                            <children>
-                              <RadioButton fx:id="publicRadioButton" mnemonicParsing="false" onAction="#publicRadioButtonPressed" text="Public">
+                              <RadioButton fx:id="publicRadioButton" mnemonicParsing="false" onAction="#publicRadioButtonPressed" prefHeight="18.0" prefWidth="70.0" text="Public">
                                  <toggleGroup>
                                     <ToggleGroup fx:id="visibilityToggleGroup" />
                                  </toggleGroup></RadioButton>
@@ -124,14 +124,14 @@
                               <Insets top="6.0" />
                            </GridPane.margin>
                         </HBox>
-                        <TextArea fx:id="emailInvitesTextArea" prefHeight="52.0" prefWidth="182.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                        <TextArea fx:id="emailInvitesTextArea" prefHeight="52.0" prefWidth="182.0" style="-fx-background-color: #ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                         <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="8">
                            <children>
                               <Label text="Email Invites :" />
                               <Label text="(Separated by commas)" textFill="#a1a1a1" />
                            </children>
                         </VBox>
-                        <TextField fx:id="majorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="majorTextField" style="-fx-background-color: #ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="errGroupName" text="Invalid Group Name" textFill="RED" visible="false" GridPane.columnIndex="2" />
                         <Label fx:id="errMajor" text="Invalid Major" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                         <Label fx:id="errClass" text="Invalid Class" textFill="RED" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="2" />
@@ -149,7 +149,7 @@
                   </GridPane>
                   <HBox alignment="CENTER" layoutX="386.0" layoutY="481.0" prefHeight="43.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" onAction="#createButtonPressed" text="Create!" />
+                        <Button mnemonicParsing="false" onAction="#createButtonPressed" style="-fx-background-color: #ffe6f3;" text="Create!" />
                      </children>
                   </HBox>
                </children>
