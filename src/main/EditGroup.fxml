@@ -37,7 +37,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="98.0" prefWidth="56.0" style="-fx-background-color: #ffcce6;">
                <children>
-                  <Hyperlink layoutX="-13.0" layoutY="74.0" onAction="#signOutButtonPressed" prefHeight="35.0" prefWidth="85.0" text="Sign Out" />
+                  <Hyperlink layoutX="-13.0" layoutY="74.0" onAction="#signOutButtonPressed" prefHeight="35.0" prefWidth="85.0" text="Sign Out" textFill="#ff4fd3" />
                </children>
             </AnchorPane>
          </children>
