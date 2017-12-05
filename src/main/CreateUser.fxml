@@ -13,9 +13,9 @@
             <Font size="19.0" />
          </font></Label>
       <PasswordField fx:id="txtPasswordtoo" layoutX="364.0" layoutY="337.0" promptText="Password" style="-fx-background-color: ffe6f3;" />
-      <TextField fx:id="txtUsernametoo" layoutX="364.0" layoutY="284.0" promptText="Username" style="-fx-background-color: ffe6f3;" />
-      <Button layoutX="420.0" layoutY="514.0" mnemonicParsing="false" onAction="#create" text="create" />
-      <Text layoutX="278.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password must contain: a digit, lowercase letter, uppercase letter, a special character, and at least 8 chearacters. There must be no whitespace. " textAlignment="CENTER" wrappingWidth="365.97265625" />
-      <Button fx:id="closeButton" layoutX="319.0" layoutY="583.0" mnemonicParsing="false" onAction="#byefelica" text="No, I don't want to create another user!" />
+      <TextField fx:id="txtUsernametoo" layoutX="364.0" layoutY="284.0" promptText="Username" style="-fx-background-color: #ffe6f3;" />
+      <Button layoutX="420.0" layoutY="514.0" mnemonicParsing="false" onAction="#create" style="-fx-background-color: ffe6f3;" text="create" />
+      <Text layoutX="278.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password must contain: a digit(but do not start with a digit), lowercase letter, uppercase letter, a special character, and at least 8 characters. There must be no whitespace. " textAlignment="CENTER" wrappingWidth="365.97265625" />
+      <Button fx:id="closeButton" layoutX="319.0" layoutY="583.0" mnemonicParsing="false" onAction="#byefelica" style="-fx-background-color: ffe6f3;" text="No, I don't want to create another user!" />
    </children>
 </AnchorPane>
