@@ -65,5 +65,5 @@ Any issues, email gloriabytes@gmail.com.
 * Professor Fernandez
 * Annie's dad
 
-##Notes
+## Notes
 We are newbies, have mercy!
