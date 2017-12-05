@@ -1,6 +1,6 @@
 # GoStudy
 
-GoStudy is a desktop app that allows you to make, find and join a study group on campus at The University of Texas at San Antonio. When creating a file, you can specify the name of the group study, what will be worked on in the study group, and where and when the group will be held. If you don't have a group, but are looking for a particular study group on campus, then you can search for it on the main map by clicking around campus. If you do know the name of the study group then you can search for it by typing it in the search bar. From there, you can join! 
+    GoStudy is a desktop app that allows you to make, find and join a study group on campus at The University of Texas at San Antonio. When creating a file, you can specify the name of the group study, what will be worked on in the study group, and where and when the group will be held. If you don't have a group, but are looking for a particular study group on campus, then you can search for it on the main map by clicking around campus. If you do know the name of the study group then you can search for it by typing it in the search bar. From there, you can join! 
 
 ## Getting Started
 
@@ -9,16 +9,26 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 1 .Install Eclipse
+
     Instructions here: (http://www.cs.utsa.edu/~cs3443/notes/eclipse-hints.html)
+    
 2.Install the Eclipse JavaFX plugin
+
   In Eclipse, Help, Install New Software
+  
   In the drop-down menu (next to "Work with:"), choose the release site In Eclipse Mars, 
   this is "Oxygen -      (http://download.eclipse.org/releases/oxygen")
+  
   Filter the list by typing "fx" in the textbox below.
+  
   Click the checkbox for "e(fx)clipse - IDE"
+  
   Click Next through the installation
+  
   Restart Eclipse
+  
 3.Install SceneBuider
+
   Download the installer: (http://www.oracle.com/technetwork/java/javafxscenebuilder-1x-archive-2199384.html)
   Download and install SceneBuilder 2.0
 
