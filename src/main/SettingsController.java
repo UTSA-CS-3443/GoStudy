@@ -23,10 +23,7 @@ import javafx.scene.control.Alert.AlertType;
 
 public class SettingsController extends CommonController{
 
-	
-   // @FXML private Label emailLabel;
     @FXML private Label userIdLabel;
-    //@FXML private TextField emailTextField;
     @FXML private PasswordField passwordTextField;
 	@FXML private Labeled userIdLabel2;
     
@@ -36,6 +33,10 @@ public class SettingsController extends CommonController{
      *	Controller.
      */
 
+	/**
+	 * changes the user's password
+	 * @param event
+	 */
     @FXML
     void changePasswordButtonPressed(ActionEvent event) {
     		String newPassword = passwordTextField.getText();
@@ -52,6 +53,10 @@ public class SettingsController extends CommonController{
     		}
     }
 
+    /**
+     * delete's the user's account
+     * @param event
+     */
     @FXML
     void deleteProfileButtonPressed(ActionEvent event) {
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
@@ -81,42 +86,56 @@ public class SettingsController extends CommonController{
      *	be the same across all Controllers, except the login page and account
      *	creation controllers.
      */
-        
+    /**
+     * changes screen to Login
+     */ 
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");
     }
-
+    /**
+     * changes screen to MyGroups
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
-
+    /**
+     * changes screen to FindAGroup
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
-
+    /**
+     * changes screen to CreateAGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
-
+    /**
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
-
+    /**
+     * changes screen to Settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
 
+    /**
+     * when settings screen is loaded, do nothing
+     */
 	@Override
 	void on_load() {
 		userIdLabel.setText("Annie");
 		userIdLabel2.setText("Annie");
-		// TODO Auto-generated method stub
 	}
 
 }
