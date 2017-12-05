@@ -10,18 +10,18 @@
     
 2.Install the Eclipse JavaFX plugin
 
-  In Eclipse, Help, Install New Software
+   In Eclipse, Help, Install New Software
   
-  In the drop-down menu (next to "Work with:"), choose the release site In Eclipse Mars, 
-  this is "Oxygen -      (http://download.eclipse.org/releases/oxygen")
+   In the drop-down menu (next to "Work with:"), choose the release site In Eclipse Mars, 
+   this is "Oxygen -      (http://download.eclipse.org/releases/oxygen")
   
-  Filter the list by typing "fx" in the textbox below.
+   Filter the list by typing "fx" in the textbox below.
   
-  Click the checkbox for "e(fx)clipse - IDE"
+   Click the checkbox for "e(fx)clipse - IDE"
   
-  Click Next through the installation
+   Click Next through the installation
   
-  Restart Eclipse
+   Restart Eclipse
   
 3.Install SceneBuider
 
