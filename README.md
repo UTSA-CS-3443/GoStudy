@@ -6,14 +6,14 @@
 
 1 .Install Eclipse
 
-    Instructions here: (http://www.cs.utsa.edu/~cs3443/notes/eclipse-hints.html)
+   Instructions here: (http://www.cs.utsa.edu/~cs3443/notes/eclipse-hints.html)
     
 2.Install the Eclipse JavaFX plugin
 
    In Eclipse, Help, Install New Software
   
    In the drop-down menu (next to "Work with:"), choose the release site In Eclipse Mars, 
-   this is "Oxygen -      (http://download.eclipse.org/releases/oxygen")
+   this is "Oxygen -  (http://download.eclipse.org/releases/oxygen")
   
    Filter the list by typing "fx" in the textbox below.
   
