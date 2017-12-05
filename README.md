@@ -1,6 +1,6 @@
 # GoStudy
 
-    GoStudy is a desktop app that allows you to make, find and join a study group on campus at The University of Texas at San Antonio. When creating a file, you can specify the name of the group study, what will be worked on in the study group, and where and when the group will be held. If you don't have a group, but are looking for a particular study group on campus, then you can search for it on the main map by clicking around campus. If you do know the name of the study group then you can search for it by typing it in the search bar. From there, you can join! 
+   GoStudy is a desktop app that allows you to make, find and join a study group on campus at The University of Texas at San Antonio. When creating a file, you can specify the name of the group study, what will be worked on in the study group, and where and when the group will be held. If you don't have a group, but are looking for a particular study group on campus, then you can search for it on the main map by clicking around campus. If you do know the name of the study group then you can search for it by typing it in the search bar. From there, you can join! 
 
 ## Getting Started
 
