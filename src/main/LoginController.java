@@ -49,7 +49,7 @@ public class LoginController extends CommonController {
 	/**
 	 * public void Login(ActionEvent event)
 	 * 
-	 * Controls the buttons on the login page.
+	 * Controls the buttons on the main login page.
 	 * 
 	 * @param event
 	 * @throws Exception
