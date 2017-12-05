@@ -2,10 +2,6 @@
 
    GoStudy is a desktop app that allows you to make, find and join a study group on campus at The University of Texas at San Antonio. When creating a file, you can specify the name of the group study, what will be worked on in the study group, and where and when the group will be held. If you don't have a group, but are looking for a particular study group on campus, then you can search for it on the main map by clicking around campus. If you do know the name of the study group then you can search for it by typing it in the search bar. From there, you can join! 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 
 1 .Install Eclipse
@@ -33,7 +29,7 @@ These instructions will get you a copy of the project up and running on your loc
   Download and install SceneBuilder 2.0
 
 Source:(http://www.cs.utsa.edu/~cs3443/javafx/index.html)
-### Installing
+### Getting Started
 
   1. Clone or download the URL for GoStudy app on GitHub. (https://github.com/UTSA-CS-3443/GoStudy)
   2. Open Eclipse. On Eclipse, click File -> Import
