@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="700.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.CreateUserController">
+<AnchorPane minHeight="700.0" prefWidth="950.0" style="-fx-background-color: #ffcce6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.CreateUserController">
    <children>
       <Label fx:id="LblMainWindow" layoutX="322.0" layoutY="206.0" prefHeight="27.0" prefWidth="252.0" text="   Create new user account:">
          <font>
             <Font size="19.0" />
          </font></Label>
-      <PasswordField fx:id="txtPasswordtoo" layoutX="364.0" layoutY="337.0" promptText="Password" />
-      <TextField fx:id="txtUsernametoo" layoutX="364.0" layoutY="284.0" promptText="Username" />
+      <PasswordField fx:id="txtPasswordtoo" layoutX="364.0" layoutY="337.0" promptText="Password" style="-fx-background-color: ffe6f3;" />
+      <TextField fx:id="txtUsernametoo" layoutX="364.0" layoutY="284.0" promptText="Username" style="-fx-background-color: ffe6f3;" />
       <Button layoutX="420.0" layoutY="514.0" mnemonicParsing="false" onAction="#create" text="create" />
       <Text layoutX="278.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password must contain: a digit, lowercase letter, uppercase letter, a special character, and at least 8 chearacters. There must be no whitespace. " textAlignment="CENTER" wrappingWidth="365.97265625" />
       <Button fx:id="closeButton" layoutX="319.0" layoutY="583.0" mnemonicParsing="false" onAction="#byefelica" text="No, I don't want to create another user!" />
