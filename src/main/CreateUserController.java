@@ -19,6 +19,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Victoria Huerta
+ * @author Gloria Trevino
+ * 
+ * main controller for create user screen
+ *
+ */
 public class CreateUserController extends CommonController {
 
 	@FXML

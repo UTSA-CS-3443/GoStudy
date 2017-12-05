@@ -12,6 +12,14 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import users.User;
 import javafx.scene.control.Alert.AlertType;
+/**
+ * 
+ * @author Annie Stephenson
+ * @author Gloria Trevino - only for the change password
+ * 
+ * Controller for the settings
+ *
+ */
 
 public class SettingsController extends CommonController{
 

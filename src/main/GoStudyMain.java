@@ -67,7 +67,7 @@ public class GoStudyMain extends Application{
 				Scene scene = new Scene(root);
 				
 				init_screens();
-				new_child("Map");
+				new_child("Login");
 				
 				primaryStage.setTitle("GoStudy");
 				primaryStage.setScene(scene);
