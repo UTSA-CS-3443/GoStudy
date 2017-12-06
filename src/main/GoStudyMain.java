@@ -12,7 +12,12 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
-
+/**
+ * Main is set to modularize screen views to allow new screens to be easily implemented
+ * Extends Application for JavaFX
+ * @author gitSchwifty
+ *
+ */
 public class GoStudyMain extends Application{
 
 	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
@@ -24,7 +29,10 @@ public class GoStudyMain extends Application{
 	//public static Group group1 = groupList.get(0);
 	//public static Group group2 = groupList.get(1);
 	
-	//switches to the screen given from name. name should NOT include ".fxml" at the end
+	 /*switches to the screen given from name. name should NOT include ".fxml" at the end
+	 * 
+	 * @param name String in order
+	 */
 	public static void new_child(String name) {
 		root.getChildren().clear();
 		
@@ -32,7 +40,11 @@ public class GoStudyMain extends Application{
 		root.getChildren().add(child);
 		screens.get(name).getController().on_load();
 	}
-	
+	/**
+	 * Initializes screens for FXML Loader
+	 * @param name
+	 * @throws Exception
+	 */
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
 		Pane screen = (Pane) fxmlLoader.load();
@@ -40,7 +52,9 @@ public class GoStudyMain extends Application{
 		screens.put(name, new ScreenInfo(screen, (CommonController) controller));
 	}
 	
-	//place all .fxmls here so it can be put into screens
+	 /*place all .fxmls here so it can be put into screens
+	 * 
+	 */
 	public void init_screens() {
 		try {
 			
@@ -58,12 +72,15 @@ public class GoStudyMain extends Application{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Start application by primaryStage
+	 * Login screen
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 				main_stage = primaryStage;
-				root = FXMLLoader.load(getClass().getResource("Map.fxml"));
+				root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 				Scene scene = new Scene(root);
 				
 				init_screens();
@@ -78,7 +95,10 @@ public class GoStudyMain extends Application{
 				e.printStackTrace();
 			}
 	}
-	
+	/**
+	 * Launch in main
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
