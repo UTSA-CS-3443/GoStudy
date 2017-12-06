@@ -59,7 +59,7 @@ Any issues, email gloriabytes@gmail.com.
 * **Samuel Burnett** - *Back end work for groups* 
 * **Carlos Martinez** - *Back end work for groups* 
 * **Carla Cardenas** - *Map GUI and back end* 
-* **John Lee** - *Map GUI and back end* 
+* **John Le** - *Map GUI and back end* 
 * **Victoria Huerta** - *Login and Create User GUI and back end* 
 * **Gloria Trevino** - *Login and Create User GUI and back end* 
 
