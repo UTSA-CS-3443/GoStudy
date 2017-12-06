@@ -16,9 +16,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 /**
  * 
- * Currently does not display full map.
- * Needs button implementation to display groups
- *
+ *	MapController extends common controller interface
+ *	Constructs our map user interface functions
  */
 public class MapController extends CommonController {
 
@@ -42,7 +41,11 @@ public class MapController extends CommonController {
     private ArrayList<Group> matchedGroups;
 
     public Group selectedGroup;
-
+    /**
+     * Used to load and refresh this screen's view
+     * User currently hardcoded for display
+     * @return void
+     */
     public void on_load(){
     	userIdLabel.setText("Annie");
     	foundGroups.clear();
@@ -50,7 +53,10 @@ public class MapController extends CommonController {
     	mapGroupsListView.refresh();
     }
     
-     //try to make groups pop up
+     /**
+      * Initializes group list view for map's group display
+      * @return void
+      */
     public void initialize() {
     	mapGroupsListView.setItems(foundGroups);//currentGroups
     	
@@ -65,7 +71,10 @@ public class MapController extends CommonController {
     }			
     
     //building buttons
-    
+    /**
+     * PE building button pressed event
+     * @param event
+     */
     @FXML
     void PEButtonPressed(ActionEvent event) //should find groups based on building name and print on side 
     {
@@ -75,6 +84,11 @@ public class MapController extends CommonController {
         mapGroupsListView.refresh(); 
 	
     }
+    /**
+     * UC Button pressed action event
+     * Displays groups at this location upon click
+     * @param event
+     */
     @FXML
     void UCButtonPressed(ActionEvent event) 
     {
@@ -83,6 +97,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * HUC Map button clicked event
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void HUCButtonPressed(ActionEvent event) 
     {
@@ -91,6 +110,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * MS Button clicked event
+     * displays buttons at this location
+     * @param event
+     */
     @FXML
     void MSButtonPressed(ActionEvent event) 
     {
@@ -99,6 +123,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * JPL button clicked event
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void JPLButtonPressed(ActionEvent event) 
     {
@@ -107,6 +136,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * BB Button clicked event 
+     * Displays groups at this location 
+     * @param event
+     */
     @FXML
     void BBButtonPressed(ActionEvent event) 
     {
@@ -116,6 +150,11 @@ public class MapController extends CommonController {
         mapGroupsListView.refresh(); 
     
     }
+    /**
+     * EB Button cliked event
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void EBButtonPressed(ActionEvent event) 
     {
@@ -125,6 +164,11 @@ public class MapController extends CommonController {
         mapGroupsListView.refresh(); 
     
     }
+    /**
+     * AET button clicked event
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void AETButtonPressed(ActionEvent event) 
     {
@@ -133,6 +177,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * ART Button clicked event
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void ARTButtonPressed(ActionEvent event) 
     {
@@ -141,6 +190,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * RWC Button pressed
+     * Clicking displays groups at this location
+     * @param event
+     */
     @FXML
     void RWCButtonPressed(ActionEvent event) 
     {
@@ -149,6 +203,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * MB Button clicked event
+     * Displays buildings at this location
+     * @param event
+     */
     @FXML
     void MBButtonPressed(ActionEvent event) 
     {
@@ -157,6 +216,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * NPB Button clicked event
+     * Clicking displays groups at this location
+     * @param event
+     */
     @FXML
     void NPBButtonPressed(ActionEvent event) 
     {
@@ -165,6 +229,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * MH Button clicked event
+     * displays groups at this location
+     * @param event
+     */
     @FXML
     void MHButtonPressed(ActionEvent event) 
     {
@@ -173,6 +242,11 @@ public class MapController extends CommonController {
         foundGroups.addAll(matchedGroups);
         mapGroupsListView.refresh(); 
     }
+    /**
+     * FLN Button building clicked
+     * Displays groups at this location
+     * @param event
+     */
     @FXML
     void FLNButtonPressed(ActionEvent event) 
     {
@@ -182,37 +256,56 @@ public class MapController extends CommonController {
         mapGroupsListView.refresh(); 
     }
     
-    //other buttons
+    /**
+     * Menu button pressed
+     * Changes scene within the application to my groups view
+     * @param event
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
-
+    /**
+     * find group buttton event
+     * Changes view to find group search function
+     * @param event
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
 	/**
-	 * new_child previously "CreateAGroup", caused application to crash.
-	 * Renamed to correct string input to switch to CreateGroup scene
+	 * group creation button event
+	 * Clicking will change view to this view for group creation
 	 * @param event
 	 */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
-
+    /**
+     * Map button
+     * Yassss
+     * @param event
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     	
     }
-
+    /**
+     * Changes to settings view
+     * @param event
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
-    
+    /**
+     * sign out button will return view back to primary screen view
+     * Back to login screen
+     * @param event
+     */
     @FXML void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");
     }

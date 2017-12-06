@@ -27,7 +27,7 @@
             <AnchorPane prefHeight="98.0" prefWidth="402.0" />
             <AnchorPane prefHeight="93.0" prefWidth="162.0">
                <children>
-                  <Label fx:id="userIdLabel2" layoutX="120.0" layoutY="71.0" text="UserID">
+                  <Label fx:id="userIdLabel2" layoutX="106.0" layoutY="68.0" text="UserID">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -36,15 +36,15 @@
             </AnchorPane>
             <AnchorPane prefHeight="98.0" prefWidth="56.0">
                <children>
-                  <Hyperlink layoutX="-9.0" layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="25.0" prefWidth="64.0" text="Sign Out" textFill="#eb75e3" />
+                  <Hyperlink layoutX="10.0" layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="25.0" prefWidth="64.0" text="Sign Out" textFill="#eb75e3" />
                </children>
             </AnchorPane>
          </children>
       </HBox>
       <Separator prefWidth="200.0" />
-      <ToolBar prefHeight="52.0" prefWidth="950.0">
+      <ToolBar prefHeight="52.0" prefWidth="950.0" style="-fx-background-color: ffe6f3;">
         <items>
-            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="91.0" style="-fx-background-color: #ffe6f3;" text="Groups">
+            <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="91.0" text="Groups">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#myGroupButtonPressed" text="My Groups" />
                 <MenuItem mnemonicParsing="false" onAction="#findAGroupButtonPressed" text="Find a Group" />
@@ -54,8 +54,8 @@
                   <Insets left="3.0" right="3.0" />
                </padding>
             </MenuButton>
-          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Map" />
-            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" style="-fx-background-color: #ffe6f3;" text="Settings" />
+          <Button mnemonicParsing="false" onAction="#mapButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Map" />
+            <Button mnemonicParsing="false" onAction="#settingsButtonPressed" prefHeight="36.0" prefWidth="85.0" text="Settings" />
         </items>
          <padding>
             <Insets left="5.0" right="5.0" />

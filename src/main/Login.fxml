@@ -8,7 +8,7 @@
 
 <AnchorPane minHeight="700.0" prefWidth="950.0" style="-fx-background-color: #ffcce6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.LoginController">
    <children>
-      <Button layoutX="417.0" layoutY="487.0" mnemonicParsing="false" onAction="#Login" style="-fx-background-color: #ffe6f3;" text="Login">
+      <Button layoutX="417.0" layoutY="487.0" mnemonicParsing="false" onAction="#Login" text="Login">
          <font>
             <Font size="24.0" />
          </font>
@@ -28,7 +28,7 @@
             <Font name="Courier New Bold Italic" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="403.0" layoutY="561.0" mnemonicParsing="false" onAction="#NewUser" style="-fx-background-color: #ffe6f3;" text="New User">
+      <Button layoutX="399.0" layoutY="561.0" mnemonicParsing="false" onAction="#NewUser" text="New User">
          <font>
             <Font size="22.0" />
          </font>

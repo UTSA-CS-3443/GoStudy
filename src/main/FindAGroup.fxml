@@ -14,7 +14,7 @@
          <children>
             <AnchorPane prefHeight="93.0" prefWidth="319.0">
                <children>
-                  <Label layoutX="14.0" layoutY="14.0" text="GoStudy">
+                  <Label layoutX="14.0" layoutY="14.0" style="-fx-background-color: ffe6f3;" text="GoStudy">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="72.0" />
                      </font>
@@ -27,7 +27,7 @@
             <AnchorPane prefHeight="98.0" prefWidth="402.0" />
             <AnchorPane prefHeight="93.0" prefWidth="162.0">
                <children>
-                  <Label fx:id="userIdLabel" layoutX="120.0" layoutY="71.0" text="UserID">
+                  <Label fx:id="userIdLabel" layoutX="106.0" layoutY="68.0" text="UserID">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -36,13 +36,13 @@
             </AnchorPane>
             <AnchorPane prefHeight="98.0" prefWidth="56.0">
                <children>
-                  <Hyperlink layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="17.0" prefWidth="55.0" text="Sign Out" />
+                  <Hyperlink layoutX="-9.0" layoutY="79.0" onAction="#signOutButtonPressed" prefHeight="25.0" prefWidth="64.0" text="Sign Out" textFill="#e865c5" />
                </children>
             </AnchorPane>
          </children>
       </HBox>
       <Separator prefWidth="200.0" />
-      <ToolBar prefHeight="52.0" prefWidth="950.0">
+      <ToolBar prefHeight="52.0" prefWidth="950.0" style="-fx-background-color: ffe6f3;">
         <items>
             <MenuButton mnemonicParsing="false" prefHeight="36.0" prefWidth="85.0" text="Groups">
               <items>
@@ -72,7 +72,7 @@
                      <children>
                         <VBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="-1.0" prefHeight="36.0" prefWidth="201.0">
                            <children>
-                              <Label alignment="CENTER" text="Search public groups">
+                              <Label alignment="CENTER" style="-fx-background-color: ffe6f3;" text="Search public groups">
                                  <padding>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
@@ -96,8 +96,8 @@
                               <Label text="Major:" GridPane.rowIndex="1" />
                               <Label text="Class:" GridPane.rowIndex="2" />
                               <Label text="Building:" GridPane.rowIndex="3" />
-                              <TextField fx:id="nameTextField" GridPane.columnIndex="1" />
-                              <TextField fx:id="classTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="nameTextField" style="-fx-background-color: ffe6f3;" GridPane.columnIndex="1" />
+                              <TextField fx:id="classTextField" style="-fx-background-color: ffe6f3;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                               <TextField fx:id="buildingTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                               <TextField fx:id="majorTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
@@ -116,7 +116,7 @@
                 <AnchorPane maxHeight="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="286.0" prefWidth="158.0">
                      <children>
                         <ListView fx:id="foundGroupsListView" focusTraversable="false" layoutX="-3.0" layoutY="33.0" maxHeight="1.7976931348623157E308" prefHeight="266.0" prefWidth="204.0" />
-                        <Label layoutX="6.0" layoutY="6.0" text="Found Groups" />
+                        <Label layoutX="6.0" layoutY="6.0" style="-fx-background-color: ffe6f3;" text="Found Groups" />
                      </children>
                   </AnchorPane>
               </items>

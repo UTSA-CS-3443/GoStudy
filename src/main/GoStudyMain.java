@@ -12,12 +12,10 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
-
 /**
- * The main method for GoStudy. It initializes all screens and controllers
- * and handles switching between them.
- * @author StephensonA
- *
+ * Main is set to modularize screen views to allow new screens to be easily implemented
+ * Extends Application for JavaFX
+ * @author gitSchwifty
  */
 public class GoStudyMain extends Application{
 
@@ -45,15 +43,14 @@ public class GoStudyMain extends Application{
 		root.getChildren().add(child);
 		screens.get(name).getController().on_load();
 	}
-	
+
 	
 	/**
 	 * init_screen() uses the fxml of the screen's name passed to it and the controller associated with said screen and creates
 	 * a screenInfo for it.
 	 * It then populates screens with a newly created screenInfo.
-	 * @param name
-	 * @throws Exception
 	 */
+
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
 		Pane screen = (Pane) fxmlLoader.load();
@@ -64,7 +61,7 @@ public class GoStudyMain extends Application{
 	/**
 	 * init_screen()
 	 * a method to initialize all screens used by GoStudy
-	 */
+		*/
 	public void init_screens() {
 		try {
 			
@@ -82,12 +79,9 @@ public class GoStudyMain extends Application{
 			e.printStackTrace();
 		}
 	}
-	
-	/* (non-Javadoc)
-	 * @see javafx.application.Application#start(javafx.stage.Stage)
-	 * 
-	 * creates the first screen to be used by GoStudy, and initializes
-	 * all screens
+	/**
+	 * Start application by primaryStage
+	 * Login screen
 	 */
 	@Override
 	public void start(Stage primaryStage) {
@@ -108,9 +102,8 @@ public class GoStudyMain extends Application{
 				e.printStackTrace();
 			}
 	}
-	
 	/**
-	 * main method which merely calls launch
+	 * Launch in main
 	 * @param args
 	 */
 	public static void main(String[] args) {
