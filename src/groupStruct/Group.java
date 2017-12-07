@@ -9,6 +9,11 @@ import java.util.ArrayList;
 
 import users.User;
 
+/**
+ * Group object, getters/setters
+ * @author Sam/Carlos
+ *
+ */
 public class Group {
 	private String groupName; //AOA Final
 	private String fileName; //replace spaces with underscore and add ".txt", AOA_Final.txt
@@ -23,6 +28,18 @@ public class Group {
 	private ArrayList<User> groupMembers;
 	private int iSeatsTaken;
 	
+	/**
+	 * creates a group, not a constructor because sometimes all variables are uneeded 
+	 * @param groupName
+	 * @param className
+	 * @param majorName
+	 * @param location
+	 * @param locationNotes
+	 * @param time
+	 * @param access
+	 * @param seatLimit
+	 * @return Group
+	 */
 	public static Group newGroup(String groupName, String className, String majorName, String location, String locationNotes
 			, String time, String access, String seatLimit) {
 		Group group = new Group();
@@ -39,8 +56,11 @@ public class Group {
 		return group;
 	}
 	
-	//MAIN MAIN!!!
-	//join doesnt append to file
+	/**
+	 * user joins group, appends user to the end of group text file
+	 * @param user
+	 * @return boolean
+	 */
 	public boolean joinGroup(User user) {
 		/*if (this.groupMembers.size() == this.iSeatsTaken) //removed for final product 
 			return false;*/
@@ -74,7 +94,11 @@ public class Group {
 			return true;
 		//}
 	}
-	
+	/**
+	 * User leaves group, deletes user from group text file
+	 * @param user
+	 * @return boolean
+	 */
 	public boolean leaveGroup(User user) {
 		System.out.println("IN LEAVE GROUP");
 		//if (!this.groupMembers.contains(user))
@@ -106,7 +130,11 @@ public class Group {
 	public String toString() {
 		return this.groupName;
 	}
-	
+	/**
+	 * converts group name to file name, converts spaces to underscores 
+	 * @param string
+	 * @return String
+	 */
 	public static String stringToFileName(String string) {
 		string = string.replaceAll(" ", "_");
 		string = string + ".txt";
@@ -162,6 +190,10 @@ public class Group {
 		this.locationNotes = locationNotes;
 	}
 
+	/**
+	 * returns substring of class name, CS3423 = CS
+	 * @return String
+	 */
 	public String getMajorName() {
 		//TODO temp fix for demo video for returning proper major name
 		if(className.length() == 7)

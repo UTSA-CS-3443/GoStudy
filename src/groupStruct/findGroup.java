@@ -1,9 +1,19 @@
 package groupStruct;
 
 import java.util.ArrayList;
-
+/**
+ * All the different tools for search
+ * @author Sam/Carlos
+ *
+ */
 public class findGroup {
 	//finds group by name
+	/**
+	 * finds group by group name
+	 * @param name
+	 * @param currentGroups
+	 * @return ArrayList<Group>
+	 */
 	public static ArrayList<Group> findGroupByName(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
 		for (Group group : currentGroups) {
@@ -15,6 +25,12 @@ public class findGroup {
 	}
 
 	//finds groups by major
+	/**
+	 * finds group by major 
+	 * @param name
+	 * @param currentGroups
+	 * @return ArrayList<Group>
+	 */
 	public static ArrayList<Group> findGroupByMajor(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
 		for (Group group : currentGroups) {
@@ -26,6 +42,12 @@ public class findGroup {
 	}
 
 	//finds groups by class
+	/**
+	 * find groups by class 
+	 * @param name
+	 * @param currentGroups
+	 * @return ArrayList<Group>
+	 */
 	public static ArrayList<Group> findGroupByClass(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
 		for (Group group : currentGroups) {
@@ -37,6 +59,12 @@ public class findGroup {
 	}
 
 	//finds groups by building
+	/**
+	 * find groups by building name 
+	 * @param name
+	 * @param currentGroups
+	 * @return ArrayList<Group>
+	 */
 	public static ArrayList<Group> findGroupByBuilding(String name, ArrayList<Group> currentGroups) {
 		ArrayList<Group> matchedGroups = new ArrayList<>();
 		for (Group group : currentGroups) {

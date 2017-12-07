@@ -11,9 +11,20 @@ import java.nio.file.Paths;
 
 import users.User;
 
+/**
+ * Edit/Create/Delete group files
+ * @author Sam/Carlos
+ *
+ */
 public class GroupFileEdit {
 	
 	//validate user information
+	/**
+	 * creates a new group file
+	 * @param group
+	 * @param user
+	 * @return boolean
+	 */
 	public static boolean createGroupFile(Group group, User user) {
 			try {
 				File f = new File("Groups/" + group.getFileName());
@@ -44,7 +55,13 @@ public class GroupFileEdit {
 				return false;
 			}
 	}
-	
+	/**
+	 * delete old group file and creates new one
+	 * @param oldGroup
+	 * @param editGroup
+	 * @param user
+	 * @return boolean
+	 */
 	public static boolean editGroup(Group oldGroup, Group editGroup, User user){
 		 boolean success = deleteGroupFile(oldGroup, user);
 		 if (!success) {
@@ -55,6 +72,12 @@ public class GroupFileEdit {
 		 return success;
 	}
 	
+	/**
+	 * deletes group file 
+	 * @param group
+	 * @param user
+	 * @return boolean
+	 */
 	public static boolean deleteGroupFile(Group group, User user) {
 		String path = "Groups/" + group.getFileName();
 		File file = new File(path);
@@ -70,6 +93,11 @@ public class GroupFileEdit {
 	}
 	
 	//returns true if all user input is correct
+	/**
+	 * sadly does not validate anything :(
+	 * @param group
+	 * @return boolean
+	 */
 	public static boolean validateAll(Group group) {
 		return true;
 	}

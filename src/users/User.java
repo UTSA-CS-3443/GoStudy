@@ -16,15 +16,21 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * 
- * @author Sam Burnett, Gloria Trevino
+ * User object, join/leaves group change passwords 
+ * @author Sam Burnett, Gloria Trevino, Carlos Martinez, Victoria Huearta 
  *
  */
 public class User {
 
 	private String userName;
 	private String password;
-
+	
+	/**
+	 * creates User object, sets name and pass
+	 * @param userName
+	 * @param password
+	 * @return User
+	 */
 	public static User newUser(String userName, String password) {
 		User user = new User();
 		user.userName = userName;
@@ -49,6 +55,11 @@ public class User {
 	}
 
 	// creates a array list of groups that are owned by the user
+	/**
+	 * Returns array list of groups you own
+	 * @param groupList
+	 * @return ArrayList<Group>
+	 */
 	public ArrayList<Group> ownedGroups(ArrayList<Group> groupList) {
 		ArrayList<Group> ownedGroups = new ArrayList<>();
 		for (Group group : groupList) {
@@ -60,6 +71,11 @@ public class User {
 	}
 
 	// creates a array list of groups that the user is apart of
+	/**
+	 * Returns array list of groups you are apart of 
+	 * @param groupList
+	 * @return ArrayList<Group>
+	 */
 	public ArrayList<Group> memberedGroups(ArrayList<Group> groupList) {
 		ArrayList<Group> memberedGroups = new ArrayList<>();
 		for (Group group : groupList) {

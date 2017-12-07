@@ -7,11 +7,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import users.User;
-//MAIN !!!!!!!!!
+
 //goes through Groups directory and creates Group objects and adds them to the groups list
+/**
+ * Reads group files and construct group objects
+ * @author Sam and Carlos
+ *
+ */
 public class FileRead {
 	 //creates groupList, loops through files and calls constructGroup
-	 public static ArrayList<Group> constructList() {
+	 /**
+	 * Loops through Group directory and calls construct group which actually reads files
+	 * @return ArrayList<Group>
+	 */
+	public static ArrayList<Group> constructList() {
 		 ArrayList<Group> groupList = new ArrayList<>();
 		 File path = new File("./Groups");
 		 File[] files = path.listFiles();
@@ -22,7 +31,12 @@ public class FileRead {
 		 return groupList;
 	 }
 	 //takes file as parameter, loops through line by line and creates a group
-	 public static Group constructGroup(File file) {
+	 /**
+	 * Reads file and constructs a group object
+	 * @param file
+	 * @return Group
+	 */
+	public static Group constructGroup(File file) {
 		 Group group = new Group();
 		 User user = new User();
 		 User user1 = new User();
