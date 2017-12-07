@@ -12,17 +12,12 @@ import javafx.stage.Stage;
 import users.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-<<<<<<< HEAD
-
-//MAIN MAIN!!
-=======
 
 /**
  * Main is set to modularize screen views to allow new screens to be easily implemented
  * Extends Application for JavaFX
  * @author gitSchwifty
  */
->>>>>>> 864f41b470a98338bdf95ff92c217451bfa70d2b
 public class GoStudyMain extends Application{
 
 	/**
@@ -31,14 +26,14 @@ public class GoStudyMain extends Application{
 	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
 	private static Stage main_stage;
 	static Pane root;
-<<<<<<< HEAD
+
 	public static User user;
-=======
+
 	
 	/**
 	 * ArrayList of Groups which is gathered from the Groups Folder via constructList();
 	 */
->>>>>>> 864f41b470a98338bdf95ff92c217451bfa70d2b
+
 	public static ArrayList<Group> groupList = FileRead.constructList();
 	public static Group selectedGroup = groupList.get(0);
 	

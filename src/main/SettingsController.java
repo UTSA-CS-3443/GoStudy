@@ -134,14 +134,12 @@ public class SettingsController extends CommonController{
      */
 	@Override
 	void on_load() {
-<<<<<<< HEAD
+
 		userIdLabel.setText(GoStudyMain.user.getUserName());
 		userIdLabel2.setText(GoStudyMain.user.getUserName());
 		// TODO Auto-generated method stub
-=======
-		userIdLabel.setText("Annie");
-		userIdLabel2.setText("Annie");
->>>>>>> 864f41b470a98338bdf95ff92c217451bfa70d2b
+
+
 	}
 
 }
