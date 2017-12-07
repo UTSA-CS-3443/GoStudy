@@ -9,16 +9,17 @@ import groupStruct.Group;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import users.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
-
+//MAIN MAIN!!
 public class GoStudyMain extends Application{
 
 	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
 	private static Stage main_stage;
 	static Pane root;
-	
+	public static User user;
 	public static ArrayList<Group> groupList = FileRead.constructList();
 	public static Group selectedGroup = groupList.get(0);
 	//public static Group group1 = groupList.get(0);

@@ -1,9 +1,10 @@
 package main;
-
+//MAIN!!!!!!
 import java.util.Optional;
 
 import groupStruct.FileRead;
 import groupStruct.Group;
+import groupStruct.GroupFileEdit;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -18,6 +19,7 @@ import javafx.scene.control.Labeled;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import users.User;
 
 public class MyGroupsController extends CommonController{
 
@@ -48,12 +50,17 @@ public class MyGroupsController extends CommonController{
 	@Override
 	void on_load() {
 		GoStudyMain.groupList = FileRead.constructList();
-		userIdLabel.setText("Annie");
+		userIdLabel.setText(GoStudyMain.user.getUserName());
+		//groupInfoAnchorPane.setVisible(false);
 		myGroups.clear();
 		otherGroups.clear();
 		
-		myGroups.addAll(GoStudyMain.groupList);
-    	otherGroups.addAll(GoStudyMain.groupList);
+		myGroups.addAll(GoStudyMain.user.ownedGroups(GoStudyMain.groupList));
+		ownGroupListView.setItems(myGroups);
+		//myGroups.addAll(GoStudyMain.groupList);
+		//otherGroups.addAll(GoStudyMain.groupList);
+		otherGroups.addAll(GoStudyMain.user.memberedGroups(GoStudyMain.groupList));
+		apartOfGroupListView.setItems(otherGroups);
     	
 		ownGroupListView.refresh();
 		apartOfGroupListView.refresh();
@@ -64,7 +71,7 @@ public class MyGroupsController extends CommonController{
     public void initialize(){
     	//creates ObservableList for Owned Groups
     	//change this to GoStudyMain.groupList to array of user's created groups
-    	ownGroupListView.setItems(myGroups);
+    	//ownGroupListView.setItems(myGroups);
     	
     	ownGroupListView.getSelectionModel().selectedItemProperty().addListener(
     			new ChangeListener<Group>() {
@@ -85,13 +92,13 @@ public class MyGroupsController extends CommonController{
     					GoStudyMain.selectedGroup = newValue;
     					apartOfGroupListView.getSelectionModel().select(-1);
     					//TODO temp fix for demo video
-    					ownerLabel.setText("Annie");
+    					ownerLabel.setText(newValue.getGroupOwner().getUserName());
     				}
     			} );
     	
     	//creates observableList for Groups the user is apart of
     	//change GoStudyMain.groupList to array of groups the user is in.
-    	apartOfGroupListView.setItems(myGroups);
+    	//apartOfGroupListView.setItems(myGroups);
     	
     	apartOfGroupListView.getSelectionModel().selectedItemProperty().addListener(
     			new ChangeListener<Group>() {
@@ -160,6 +167,13 @@ public class MyGroupsController extends CommonController{
     	
     	Optional<ButtonType> result = confirm.showAndWait();
     	if(result.isPresent() && result.get() == ButtonType.OK) {
+    		String  name = groupNameLabel.getText();
+    		String fileName = Group.stringToFileName(name);
+    		Group group = new Group();
+    		group.setFileName(fileName);
+    		User user = new User();
+    		user.setUserName("empty");
+    		GroupFileEdit.deleteGroupFile(group, user);
     		//delete the group
     		on_load();
     	}
@@ -174,9 +188,18 @@ public class MyGroupsController extends CommonController{
     	
     	Optional<ButtonType> result = confirm.showAndWait();
     	if(result.isPresent() && result.get() == ButtonType.OK) {
-    		//remove user from group(?) 
+    		Group group = null;
+    		for (Group group1: otherGroups) {
+    			if (group1.getGroupName().equals(groupNameLabel.getText()))
+    				group = group1;
+    		}
+        	
+        	boolean b = group.leaveGroup(GoStudyMain.user);
+        	if (b == false)
+        		System.out.println("LEAVE GROUPS FAILED");
     	}
     	
+
     	Alert changeSuccess = new Alert(AlertType.INFORMATION);
     	changeSuccess.setHeaderText("Successfully left group");
     	changeSuccess.setTitle("Success");

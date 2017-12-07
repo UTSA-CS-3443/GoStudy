@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import users.User;
 
 /**
  * 
@@ -85,6 +86,11 @@ public class LoginController extends CommonController {
 				// looks for user in the stringBuffer
 				if ((stringBuffer.toString()).contains(user)) {
 					// goes to MyGroups if login is successful -- annie
+					//MAIN!!!!
+					User user1 = new User();
+					user1.setUserName(username);
+					user1.setPassword(pass);
+					GoStudyMain.user = user1;
 					GoStudyMain.new_child("MyGroups");
 				} else {
 					// If user doesn't exist

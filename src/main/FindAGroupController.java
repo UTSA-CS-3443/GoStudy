@@ -46,7 +46,7 @@ public class FindAGroupController extends CommonController {
     
     public void on_load(){
     	foundGroupsListView.refresh();
-    	userIdLabel.setText("Annie");
+    	userIdLabel.setText(GoStudyMain.user.getUserName());
     };
     
     public void initialize() {
@@ -124,6 +124,13 @@ public class FindAGroupController extends CommonController {
     @FXML
     void joinGroupButtonPressed(ActionEvent event) {
     	//should check to see if they are apart of the group before adding them
+    	//System.out.println(GoStudyMain.selectedGroup.getGroupName());
+    	System.out.println(groupNameLabel.getText());
+    	Group group = new Group();
+    	group.setFileName(Group.stringToFileName(groupNameLabel.getText()));
+    	boolean b = group.joinGroup(GoStudyMain.user);
+    	if (b == false)
+    		System.out.println("JOIN FAILURE!!");
     	Alert joinSuccess = new Alert(AlertType.INFORMATION);
     	joinSuccess.setHeaderText("Successfully joined group!");
     	joinSuccess.setTitle("Success");

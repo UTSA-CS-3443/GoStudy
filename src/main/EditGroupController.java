@@ -77,8 +77,8 @@ public class EditGroupController extends CommonController{
     	//creates edited group
     	Group editedGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextField.getText(), access, spotsAvailableTextField.getText());
-    	User user = new User();
-    	user.setUserName("pablo_migo");
+    	User user = GoStudyMain.user;
+    	//user.setUserName("pablo_migo");
     	GroupFileEdit.editGroup(GoStudyMain.selectedGroup, editedGroup, user);
     	
     	Alert editSuccess = new Alert(AlertType.INFORMATION);

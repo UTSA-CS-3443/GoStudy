@@ -6,4 +6,4 @@ Room 3.4.3
 5:00 AM
 PUBLIC
 500
-pablo_migo
+pablomigo

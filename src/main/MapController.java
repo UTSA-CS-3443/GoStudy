@@ -47,7 +47,7 @@ public class MapController extends CommonController {
      * @return void
      */
     public void on_load(){
-    	userIdLabel.setText("Annie");
+    	userIdLabel.setText(GoStudyMain.user.getUserName());
     	foundGroups.clear();
        	mapGroupsListView.getSelectionModel().select(-1);
     	mapGroupsListView.refresh();

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import users.User;
-
+//MAIN !!!!!!!!!
 //goes through Groups directory and creates Group objects and adds them to the groups list
 public class FileRead {
 	 //creates groupList, loops through files and calls constructGroup
@@ -25,6 +25,9 @@ public class FileRead {
 	 public static Group constructGroup(File file) {
 		 Group group = new Group();
 		 User user = new User();
+		 User user1 = new User();
+		 ArrayList<User> users = new ArrayList<User>();
+		 String line;
 		 BufferedReader br = null;
 		 try {
 			br = new BufferedReader(new FileReader(file));
@@ -39,6 +42,12 @@ public class FileRead {
 			group.setSeatLimit(br.readLine());
 			user.setUserName(br.readLine());
 			group.setGroupOwner(user);
+			while((line = br.readLine()) != null) { //START NEW
+				user1.setUserName(line);
+				//System.out.printf("CONSTRUCT GROUP, user:%s in group: %s\n", user1.getUserName(), group.getGroupName());
+				users.add(user1);
+			}
+			group.setGroupMembers(users); //END NEW
 			br.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

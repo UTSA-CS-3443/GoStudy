@@ -1,5 +1,10 @@
 package groupStruct;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import users.User;
@@ -34,30 +39,67 @@ public class Group {
 		return group;
 	}
 	
-	
-	//check if seat limit has not been met, otherwise join and add one to members
+	//MAIN MAIN!!!
+	//join doesnt append to file
 	public boolean joinGroup(User user) {
-		if (this.groupMembers.size() == this.iSeatsTaken)
-			return false;
-		if (this.access.equals("PRIVATE")) //this not needed
-			return false;
-		if (this.groupMembers.contains(user))
-			return false;
-		else {
-			this.groupMembers.add(user);
-			this.iSeatsTaken++;
+		/*if (this.groupMembers.size() == this.iSeatsTaken) //removed for final product 
+			return false;*/
+		/*if (this.access.equals("PRIVATE")) //removed for final product
+			return false;*/
+		//if (this.groupMembers.contains(user)) NEED TO ADD THIS BACK!!!!!!!!
+		//	return false;
+		//else { AND THIS!!!!!!!!!
+			//this.groupMembers.add(user); NEED TO ADD THIS BACK!!!!!!!!!
+			//this.iSeatsTaken++;
+			//START NEW !!!
+			try {
+				//System.out.println("IN JOIN GROUP");
+				File file = new File("Groups/" + this.getFileName());
+				if (!file.exists()) {	
+					System.out.println("FILE DOES NOT EXIST");
+					return false;
+				}
+				FileWriter fw = new FileWriter(file, true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				//PrintWriter out = new PrintWriter(bw);
+				//out.println(user.getUserName());
+				//out.close();
+				bw.write(user.getUserName() + "\n");
+				bw.close();
+			} catch (IOException e) {
+				System.out.println("IO EXCEPTION");
+				e.printStackTrace();
+			}
+			//END NEW !!!!
 			return true;
-		}
+		//}
 	}
 	
 	public boolean leaveGroup(User user) {
-		if (!this.groupMembers.contains(user))
-			return false;
-		else {
+		System.out.println("IN LEAVE GROUP");
+		//if (!this.groupMembers.contains(user))
+		//	return false;
+		//else {
 			this.groupMembers.remove(user);
-			this.iSeatsTaken--;
+			//System.out.println(user.getUserName() + " user wants to leave!!!!\n");
+			//this.iSeatsTaken--;
+			Group newGroup = this;
+			
+			GroupFileEdit.deleteGroupFile(this, user);
+			GroupFileEdit.createGroupFile(newGroup, newGroup.getGroupOwner());
+			try {
+				FileWriter fw = new FileWriter(this.getFileName(), true);
+				BufferedWriter bw = new BufferedWriter(fw);
+				//PrintWriter out = new PrintWriter(bw);
+				for (User user1: newGroup.getGroupMembers()){
+					bw.write(user1.getUserName() + "\n");
+				}
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return true;
-		}
+		//}
 	}
 	
 	@Override 

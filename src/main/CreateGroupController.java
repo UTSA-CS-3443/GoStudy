@@ -52,7 +52,7 @@ public class CreateGroupController extends CommonController {
     @FXML private Label errRoomNumber;
     
     public void on_load(){
-    	userIdLabel.setText("Annie");
+    	userIdLabel.setText(GoStudyMain.user.getUserName());
     };
     
     /*
@@ -84,8 +84,8 @@ public class CreateGroupController extends CommonController {
     		access = "PUBLIC";
     	Group newGroup = Group.newGroup(groupNameTextField.getText(), classTextField.getText(), majorTextField.getText(), buildingTextField.getText()
     			, meetingNotesTextArea.getText(), meetingTimeTextBox.getText(), access, spotsAvailableTextField.getText());
-    	User user = new User();
-    	user.setUserName("pablo_migo");
+    	User user = GoStudyMain.user;
+    	//user.setUserName("pablo_migo");
     	GroupFileEdit.createGroupFile(newGroup, user);
 
     	

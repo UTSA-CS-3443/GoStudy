@@ -27,7 +27,7 @@ public class GroupController extends CommonController{
     private static Group newValue;
 
     public void on_load() {
-    	userIdLabel.setText("Annie");
+    	userIdLabel.setText(GoStudyMain.user.getUserName());
 		groupNameLabel.setText(newValue.getGroupName());
 		buildingLabel.setText(newValue.getLocation());
 		meetingNotesLabel.setText(newValue.getLocationNotes());
@@ -48,6 +48,8 @@ public class GroupController extends CommonController{
     @FXML
     void joinGroupButtonPressed(ActionEvent event) {
     	//should check to see if they are apart of the group before adding them
+    	//System.out.println("HELELELELELELEEOLOLOL");
+    	
     	Alert joinSuccess = new Alert(AlertType.INFORMATION);
     	joinSuccess.setHeaderText("Successfully joined group!");
     	joinSuccess.setTitle("Success");
