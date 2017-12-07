@@ -1,7 +1,6 @@
 package main;
 
 
-import groupStruct.FileRead;
 import groupStruct.Group;
 import groupStruct.GroupFileEdit;
 import javafx.event.ActionEvent;
@@ -15,6 +14,12 @@ import javafx.scene.control.ToggleGroup;
 import users.User;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * The controller for the CreateGroup FXML/screen
+ * It gathers information from the user to create a new group
+ * @author StephensonA
+ *
+ */
 public class CreateGroupController extends CommonController {
 	
 	//an incomplete list of majors which can be used later ensure a valid major is entered.
@@ -51,28 +56,35 @@ public class CreateGroupController extends CommonController {
     @FXML private Label errClass;
     @FXML private Label errRoomNumber;
     
+
     public void on_load(){
     	userIdLabel.setText(GoStudyMain.user.getUserName());
     };
     
-    /*
+    /**
      *	These Action events are specific to the Create Group 
      *	Controller.
      */
 
-    //handles the public radio button pressed Action Event
+    /**handles the public radio button pressed Action Event*/
     @FXML
     void publicRadioButtonPressed(ActionEvent event) {
     	//these actually don't need to do anything
     }
 
-    //handles the private radio button pressed Action Event
+    /**handles the private radio button pressed Action Event*/
     @FXML
     void privateRadioButtonPressed(ActionEvent event) {
     	//these actually don't need to do anything
     }
 
-    //handles the create button pressed Action Event
+    /**
+     * handles the create button pressed Action Event
+     * Gathers information from the CreateGroup screen,
+     * creates a new Group from the information and shows
+     * an alert to the user if the groups was successfully
+     * created
+     */
     @FXML
     void createButtonPressed(ActionEvent event) {
     	//should probably parse each text field, and alert user if entered incorrectly
@@ -101,43 +113,61 @@ public class CreateGroupController extends CommonController {
     	//createFailure.show();
     	}
     
-    /*
+    /**
      *	These Action events all deal with the Menu bar buttons, and should
      *	be the same across all Controllers, except the login page and account
      *	creation controllers.
      */
      
-    //handles SignOut button pressed ActionEvent
+    /**
+     * handles SignOut button pressed ActionEvent
+     * changes to the Login screen
+     */
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");
     }
 
-    //handles My Groups button pressed ActionEvent
+    /**
+     * handles My Groups button pressed ActionEvent
+     * changes to the MyGroups screen
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
 
-    //handles Find a Group button pressed ActionEvent
+    /**
+     * handles Find a Group button pressed ActionEvent
+     * changes screen to FindAGroup
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
 
-    //handles Create a Group button pressed ActionEvent
+    /**
+     * handles Create a Group button pressed ActionEvent
+     * changes screen to CreateGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
 
-    //handles Map Button pressed ActionEvent
+    /**
+     * handles Map Button pressed ActionEvent
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
     
-    //handles Settings button pressed Action Event
+    /**
+     * handles Settings button pressed Action Event
+     * changes screen to settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");

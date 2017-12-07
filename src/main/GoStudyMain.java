@@ -12,20 +12,40 @@ import javafx.stage.Stage;
 import users.User;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+<<<<<<< HEAD
 
 //MAIN MAIN!!
+=======
+
+/**
+ * Main is set to modularize screen views to allow new screens to be easily implemented
+ * Extends Application for JavaFX
+ * @author gitSchwifty
+ */
+>>>>>>> 864f41b470a98338bdf95ff92c217451bfa70d2b
 public class GoStudyMain extends Application{
 
+	/**
+	 * static map which stores the name of the screen as a string, and the screen info
+	 */
 	static Map<String, ScreenInfo> screens = new HashMap<String, ScreenInfo>();		//this keeps track of all the .fxml and their associated controllers
 	private static Stage main_stage;
 	static Pane root;
+<<<<<<< HEAD
 	public static User user;
+=======
+	
+	/**
+	 * ArrayList of Groups which is gathered from the Groups Folder via constructList();
+	 */
+>>>>>>> 864f41b470a98338bdf95ff92c217451bfa70d2b
 	public static ArrayList<Group> groupList = FileRead.constructList();
 	public static Group selectedGroup = groupList.get(0);
-	//public static Group group1 = groupList.get(0);
-	//public static Group group2 = groupList.get(1);
 	
-	//switches to the screen given from name. name should NOT include ".fxml" at the end
+	/**
+	 * new_child switches to the screen given from name. name should NOT include ".fxml" at the end
+	 * @param name
+	 */
 	public static void new_child(String name) {
 		root.getChildren().clear();
 		
@@ -33,7 +53,14 @@ public class GoStudyMain extends Application{
 		root.getChildren().add(child);
 		screens.get(name).getController().on_load();
 	}
+
 	
+	/**
+	 * init_screen() uses the fxml of the screen's name passed to it and the controller associated with said screen and creates
+	 * a screenInfo for it.
+	 * It then populates screens with a newly created screenInfo.
+	 */
+
 	private void init_screen(String name) throws Exception{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(name + ".fxml"));
 		Pane screen = (Pane) fxmlLoader.load();
@@ -41,7 +68,10 @@ public class GoStudyMain extends Application{
 		screens.put(name, new ScreenInfo(screen, (CommonController) controller));
 	}
 	
-	//place all .fxmls here so it can be put into screens
+	/**
+	 * init_screen()
+	 * a method to initialize all screens used by GoStudy
+		*/
 	public void init_screens() {
 		try {
 			
@@ -59,12 +89,15 @@ public class GoStudyMain extends Application{
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * Start application by primaryStage
+	 * Login screen
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 				main_stage = primaryStage;
-				root = FXMLLoader.load(getClass().getResource("Map.fxml"));
+				root = FXMLLoader.load(getClass().getResource("Login.fxml"));
 				Scene scene = new Scene(root);
 				
 				init_screens();
@@ -79,7 +112,10 @@ public class GoStudyMain extends Application{
 				e.printStackTrace();
 			}
 	}
-	
+	/**
+	 * Launch in main
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -17,7 +17,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-
+/**
+ * The controller for the FindAGroup FXML/screen
+ * Allows the user to search for groups by group name,
+ * class, major, and building
+ * @author StephensonA
+ *
+ */
 public class FindAGroupController extends CommonController {
 
 	//instance variables which refer to GUI components
@@ -44,11 +50,21 @@ public class FindAGroupController extends CommonController {
     private final ObservableList<Group> foundGroups = FXCollections.observableArrayList();
 	@FXML private Labeled userIdLabel;
     
+    /**
+     * When EditGroup is displayed...
+     * refresh the GroupsListView
+     */
     public void on_load(){
     	foundGroupsListView.refresh();
     	userIdLabel.setText(GoStudyMain.user.getUserName());
     };
     
+    /**
+     * initialize()
+     * when FindAGroup is initialized, create a ListView which stores foundGroups.
+     * Whenever a change is made, called changed() to set the group information
+     * to the selected group
+     */
     public void initialize() {
 	foundGroupsListView.setItems(foundGroups);
 	
@@ -76,7 +92,13 @@ public class FindAGroupController extends CommonController {
      *	Controller.
      */
     
-    //handles search button pressed action event
+    /**
+     * gets the text from the search fields and uses methods in findGroup
+     * to search for each of the terms. The final array of groups which is returned
+     * is set to foundGroups and findGroupsListView is refreshed. If no groups are found,
+     * alert the user.
+     * @param event
+     */
     @FXML
 	void searchButtonPressed(ActionEvent event) {
 		// clears the last search
@@ -107,7 +129,10 @@ public class FindAGroupController extends CommonController {
 			noMatches.showAndWait();
 	}
 
-    //handles reset button pressed action event
+    /**
+     * clears the text in the search fields and clears foundGroups
+     * @param event
+     */
     @FXML
     void resetButtonPressed(ActionEvent event) {
     	//clear list of found groups
@@ -121,6 +146,10 @@ public class FindAGroupController extends CommonController {
     	groupDisplayPane.setVisible(false);
     }
     
+    /**
+     * join the currently selected group, if not already in it
+     * @param event
+     */
     @FXML
     void joinGroupButtonPressed(ActionEvent event) {
     	//should check to see if they are apart of the group before adding them
@@ -149,32 +178,52 @@ public class FindAGroupController extends CommonController {
      *	creation controllers.
      */
     
-    
+    /**
+     * changes to the MyGroups screen
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
-
+    
+    /**
+     * changes to the FindAGroup screen
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
-
+    
+    /**
+     * changes screen to CreateGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
 
+
+    /**
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
 
+
+    /**
+     * changes screen to Settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");
     }
     
+    /**
+     * changes screen to Login
+     * @param event
+     */
     @FXML 
     void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");

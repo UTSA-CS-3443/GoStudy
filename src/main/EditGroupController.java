@@ -12,6 +12,12 @@ import javafx.scene.control.ToggleGroup;
 import users.User;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * The controller for the EditGroup FXML/screen
+ * It gathers information from the user to edit a specific group
+ * @author StephensonA
+ *
+ */
 public class EditGroupController extends CommonController{
 	
 	//instance variables which refer to GUI components
@@ -38,7 +44,10 @@ public class EditGroupController extends CommonController{
     @FXML private Label errBuilding;
     
     
-    //displays data from the selected group from MyGroups
+    /**
+     * When EditGroup is displayed...
+     * displays data from the selected group from MyGroups
+     */
     public void on_load() {
     	groupNameTextField.setText(GoStudyMain.selectedGroup.getGroupName());
     	majorTextField.setText(GoStudyMain.selectedGroup.getMajorName());
@@ -67,6 +76,13 @@ public class EditGroupController extends CommonController{
     	//Doesn't need to do anything
     }
 
+    /**
+     * handles the editButtonPressed Action Event
+     * Gathers information from the EditGroup screen,
+     * edits the group data, and shows
+     * an alert to the user if the groups was successfully
+     * edited
+     */
     @FXML
     void editButtonPressed(ActionEvent event) {
     	String access;
@@ -99,32 +115,57 @@ public class EditGroupController extends CommonController{
      *	creation controllers.
      */
      
-    
+    /**
+     * handles SignOut button pressed ActionEvent
+     * changes to the Login screen
+     */
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");
     }
-
+    
+    /**
+     * handles My Groups button pressed ActionEvent
+     * changes to the MyGroups screen
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
-
+    
+    /**
+     * handles Find a Group button pressed ActionEvent
+     * changes screen to FindAGroup
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
 
+
+    /**
+     * handles Create a Group button pressed ActionEvent
+     * changes screen to CreateGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
 
+
+    /**
+     * handles Map Button pressed ActionEvent
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
 
+    /**
+     * handles Settings button pressed Action Event
+     * changes screen to settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");

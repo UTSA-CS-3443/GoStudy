@@ -21,6 +21,12 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import users.User;
 
+/**
+ * controller for the MyGroups controller. handles the display of all the groups
+ * the user owns and is apart of.
+ * @author StephensonA
+ *
+ */
 public class MyGroupsController extends CommonController{
 
 	public static Group selectedGroup;		//the currently selected group.
@@ -46,7 +52,11 @@ public class MyGroupsController extends CommonController{
     private final ObservableList<Group> myGroups = FXCollections.observableArrayList();
     private final ObservableList<Group> otherGroups = FXCollections.observableArrayList();
     
-
+    /**
+     * when this screen is loaded, construct the file list, clear
+     * myGroups and otherGroups, and re-populate them with the new file list.
+     * refresh both listViews.
+     */
 	@Override
 	void on_load() {
 		GoStudyMain.groupList = FileRead.constructList();
@@ -67,6 +77,11 @@ public class MyGroupsController extends CommonController{
 		groupInfoAnchorPane.setVisible(false);
 	}
     
+	/**
+	 * On initialization, create two ListViews, one for group's the user
+	 * owns, and another for groups the user is apart of. Update them the groupInfo
+	 * panel with whichever group is currently selected.
+	 */
     //initialize controller
     public void initialize(){
     	//creates ObservableList for Owned Groups
@@ -129,37 +144,20 @@ public class MyGroupsController extends CommonController{
      *	Controller.
      */
 
-    /*
-     * Probably will not be implemented, leaving here though just in case
-    @FXML
-    void sendInvitesButtonPressed(ActionEvent event) {
-    	TextInputDialog sendInvites = new TextInputDialog();
-    	sendInvites.setHeaderText("Enter emails, separated by commas");
-    	sendInvites.setTitle("Send Invites");
-    	
-    	Optional<String> emails = sendInvites.showAndWait();
-    	System.out.print(emails);						//will return in the format "Optional[whateverUserEntered]"
-    	System.out.print(emails.isPresent());			//will return true if the user hit "OK" or false if "cancel"
-    	
-    	//have a method to parse emails. if parsed successfully. return the success message. otherwise show failure.
-    	Alert sendSuccess = new Alert(AlertType.INFORMATION);
-    	sendSuccess.setHeaderText("Successfully sent emails");
-    	sendSuccess.setTitle("Success");
-    	sendSuccess.show();
-    	
-    	Alert sendFailure = new Alert(AlertType.ERROR);
-    	sendFailure.setHeaderText("Failed to send emails");
-    	sendFailure.setTitle("Failure");
-    	//sendFailure.show();
-    }
-    */
-
+    /**
+     * takes user to the groupEdit page
+     * @param event
+     */
     @FXML
     void editGroupButtonPressed(ActionEvent event) {
     	//takes you to group edit screen
     	GoStudyMain.new_child("EditGroup");
     }
 
+    /**
+     * Deletes the group the user has selected
+     * @param event
+     */
     @FXML
     void deleteGroupButtonPressed(ActionEvent event) {
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
@@ -180,6 +178,11 @@ public class MyGroupsController extends CommonController{
     	
     }
     
+    /**
+     * gets user confirmation to leave Group, and removes user
+     * from Group, and alerts if the the removal was successful for not.
+     * @param event
+     */
     @FXML
     void leaveGroupButtonPressed(ActionEvent event) {
     	Alert confirm = new Alert(AlertType.CONFIRMATION);
@@ -218,38 +221,50 @@ public class MyGroupsController extends CommonController{
     *	creation controllers.
     */
 
-    //handles SignOut button pressed ActionEvent
+    /**
+     * changes screen to Login
+     */
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	//should change views to the login page
     	GoStudyMain.new_child("Login");
     }
 
-    //handles My Groups button pressed ActionEvent
+    /**
+     * changes screen to MyGroups
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
     
-    //handles Find a Group button pressed ActionEvent
+    /**
+     * changes screen to FindAGroup
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
 
-    //handles Create a Group button pressed ActionEvent
+    /**
+     * changes screen to CreateGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
 
-    //handles Map Button pressed ActionEvent
+    /**
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
 
-    //handles Settings button pressed Action Event
+    /**
+     * changes screen to Settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");

@@ -8,7 +8,22 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.AnchorPane;
-
+/**
+ * The controller for the Group FXML/screen
+ * When the user selects a group from the Map screen,
+ * it takes them here. Displays group data and has a button for
+ * the user to join the group.
+ * @author StephensonA
+ *
+ */
+/**
+ * @author steph
+ *
+ */
+/**
+ * @author steph
+ *
+ */
 public class GroupController extends CommonController{
 
     @FXML private Label groupNameLabel;
@@ -41,10 +56,19 @@ public class GroupController extends CommonController{
 		ownerLabel.setText("Shrek");
     }
     
+    /**
+     * sets newValue to be equal to the group passed to it
+     * @param mapGroup
+     */
     public static void getMapGroup(Group mapGroup) {
     	newValue = mapGroup;
     }
     
+    
+    /**
+     * join the currently selected group, if not already in it
+     * @param event
+     */
     @FXML
     void joinGroupButtonPressed(ActionEvent event) {
     	//should check to see if they are apart of the group before adding them
@@ -61,32 +85,44 @@ public class GroupController extends CommonController{
     	//joinFailure.show();
     }    
     
-    
+    /**
+     * changes screen to Login
+     */
     @FXML
     void signOutButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Login");
     }
-
+    /**
+     * changes screen to MyGroups
+     */
     @FXML
     void myGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("MyGroups");
     }
-
+    /**
+     * changes screen to FindAGroup
+     */
     @FXML
     void findAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("FindAGroup");
     }
-
+    /**
+     * changes screen to CreateGroup
+     */
     @FXML
     void createAGroupButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("CreateGroup");
     }
-
+    /**
+     * changes screen to Map
+     */
     @FXML
     void mapButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Map");
     }
-
+    /**
+     * changes screen to Settings
+     */
     @FXML
     void settingsButtonPressed(ActionEvent event) {
     	GoStudyMain.new_child("Settings");

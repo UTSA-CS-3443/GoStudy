@@ -26,8 +26,6 @@ import users.User;
  */
 public class LoginController extends CommonController {
 
-	private Parent root;
-	private static ArrayList<Node> nodes;
 	@FXML
 	private Label lblLabel;
 	@FXML
