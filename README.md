@@ -44,7 +44,7 @@ Source:(http://www.cs.utsa.edu/~cs3443/javafx/index.html)
   
 ## Deployment
 
-Any issues, email gloriabytes@gmail.com.
+Any issues, email .
 
 
 ## Built With
